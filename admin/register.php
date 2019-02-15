@@ -8,9 +8,9 @@ $errors = [];
 if (isset($_GET['action']) && $_GET['action'] =='rewrite'){
     //$_POSTに擬似的に値を代入する
     //バリデーションを働かせるため
-    $_POST['input_name'] = $_SESSION['49_LearnSNS']['name'];
-    $_POST['input_email'] = $_SESSION['49_LearnSNS']['email'];
-    $_POST['input_password'] = $_SESSION['49_LearnSNS']['password'];
+    $_POST['input_name'] = $_SESSION['49_CostCut']['name'];
+    $_POST['input_email'] = $_SESSION['49_CostCut']['email'];
+    $_POST['input_password'] = $_SESSION['49_CostCut']['password'];
 
     //check.phpが空の場合、check.phpへ再遷移してもらう
     $errors['rewrite'] = true;
@@ -73,7 +73,7 @@ if (!empty($_POST)){
 <html lang="ja">
 <head>
     <meta charset="utf-8">
-    <title>Learn SNS</title>
+    <title>Cebu Costs Simulator</title>
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
@@ -83,7 +83,8 @@ if (!empty($_POST)){
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2 thumbnail">
                 <h2 class="text-center content_header">アカウント作成</h2>
-                <form method="POST" action="register.php" enctype="multipart/form-data">
+                <form method="POST" ac
+                tion="register.php" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="name">ユーザー名</label>
                         <input type="text" name="input_name" class="form-control" id="name" placeholder="山田 太郎"
@@ -115,7 +116,7 @@ if (!empty($_POST)){
                     </div>
                     <input type="submit" class="btn btn-default" value="確認">
                     <span style="float: right; padding-top: 6px;">ログインは
-                        <a href="../signin.php">こちら</a>
+                        <a href="login.php">こちら</a>
                     </span>
                 </form>
             </div>
