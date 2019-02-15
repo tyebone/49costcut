@@ -1,3 +1,12 @@
+<?php
+// ①各questionに対する
+
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -22,116 +31,89 @@
     <p>aaaaaaaaaaaaaaaaa</p>
   </div>
 
+</body>
   <div>
-    <h2>Q1.年齢と性別を選んでください</h2>
-      <select name="sample1">
-        <option value="1">29歳以下の男性</option>
-        <option value="2">29歳以下の女性</option>
-        <option value="3">30歳以上の男性</option>
-        <option value="4">30歳以上の女性</option>
-      </select>
+    <fieldset>
+      <legend>Q1.年齢と性別を選んでください</legend>
+        <label><input type="radio" name="Q1" >29歳以下の男性</label>
+        <label><input type="radio" name="Q1" >29歳以下の女性</label>
+        <label><input type="radio" name="Q1" >30歳以上の男性</label>
+        <label><input type="radio" name="Q1" >30歳以上の女性</label>
+    </fieldset>
   </div>
   <div>
-    <h2>Q2.朝食はどれぐらい食べますか</h2>
-      <select name="sample1">
-        <option value="1">食べない or 学校で用意されている</option>
-        <option value="2">かる〜く食べる</option>
-        <option value="3">しっかり食べる</option>
-      </select>
+    <fieldset>
+      <legend>Q2.朝食はどれぐらい食べますか</legend>
+        <label><input type="radio" name="Q2" >食べないor学校で用意されている</label>
+        <label><input type="radio" name="Q2" >かる〜く食べる</label>
+        <label><input type="radio" name="Q2" >しっかり食べる</label>
+    </fieldset>
+  </div>
+  <div>
+    <fieldset>
+      <legend>Q3.昼食はどれぐらい食べますか</legend>
+        <label><input type="radio" name="Q3" >食べないor学校で用意されている</label>
+        <label><input type="radio" name="Q3" >かる〜く食べる</label>
+        <label><input type="radio" name="Q3" >しっかり食べる</label>
+    </fieldset>
+  </div>
+  <div>
+    <fieldset>
+      <legend>Q4.夕食はどれぐらい食べますか</legend>
+        <label><input type="radio" name="Q4" >食べないor学校で用意されている</label>
+        <label><input type="radio" name="Q4" >かる〜く食べる</label>
+        <label><input type="radio" name="Q4" >しっかり食べる</label>
+    </fieldset>
+  </div>
+  <div>
+    <fieldset>
+      <legend>Q5.主な交通手段はなんですか</legend>
+        <label><input type="radio" name="Q5" >徒歩</label>
+        <label><input type="radio" name="Q5" >ジプニー</label>
+        <label><input type="radio" name="Q5" >グラブ or タクシー</label>
+    </fieldset>
+  </div>
+  <div>
+    <fieldset>
+      <legend>Q6.洗濯の頻度はどれくらいですか</legend>
+        <label><input type="radio" name="Q6" >自分で手洗い</label>
+        <label><input type="radio" name="Q6" >週1〜2回</label>
+        <label><input type="radio" name="Q6" >週3回以上</label>
+    </fieldset>
+  </div>
+  <div>
+    <fieldset>
+      <legend>Q7.あなたの土日の過ごし方</legend>
+        <label><input type="radio" name="Q7" >どこにも行かない</label>
+        <label><input type="radio" name="Q7" >日帰り旅行に行きたい</label>
+        <label><input type="radio" name="Q7" >泊まりで旅行に行きた</label>
+    </fieldset>
+  </div>
+  <div>
+    <fieldset>
+      <legend>Q8.マッサージは行きたいですか</legend>
+        <label><input type="radio" name="Q8" >特に行きたくない</label>
+        <label><input type="radio" name="Q8" >リーズナブルなところに行きたい</label>
+        <label><input type="radio" name="Q8" >週高級スパに行きたい</label>
+    </fieldset>
+  </div>
+  <div>
+    <fieldset>
+      <legend>Q9.当てはまるものを選択してください(複数選択可)</legend>
+        <label class=""><input class="" type="checkbox" value=""> おみやげを買いたい</label>
+        <label class=""><input class="" type="checkbox" value=""> 現地の服が欲しい</label>
+        <label class=""><input class="" type="checkbox" value=""> 習い事を始めたい</label>
+        <label class=""><input class="" type="checkbox" value=""> お酒を飲みたい</label>
+        <label class=""><input class="" type="checkbox" value=""> タバコを吸いたい</label>
+        <label class=""><input class="" type="checkbox" value=""> カジノに行きたい</label>
+        <label class=""><input class="" type="checkbox" value=""> 夜のスポットに遊びに行きたい</label>
+    </fieldset>
+  </div>
+    <div class="">
+      <a href="" class="" target="">
+        結果表示
+      </a>
     </div>
-    <div>
-      <h2>Q3.昼食はどれぐらい食べますか</h2>
-        <select name="sample1">
-          <option value="1">食べないor学校で用意されている</option>
-          <option value="2">かる〜く食べる</option>
-          <option value="3">しっかり食べる</option>
-        </select>
-    </div>
-    <div>
-      <h2>Q4.夕食はどれぐらい食べますか</h2>
-        <select name="sample1">
-          <option value="1">食べないor学校で用意されている</option>
-          <option value="2">かる〜く食べる</option>
-          <option value="3">しっかり食べる</option>
-        </select>
-    </div>
-    <div>
-      <h2>Q5.主な交通手段はなんですか</h2>
-        <select name="sample1">
-          <option value="1">徒歩</option>
-          <option value="2">ジプニー</option>
-          <option value="3">バイクタクシー</option>
-          <option value="4">グラブor タクシー</option>
-        </select>
-    </div>
-    <div>
-      <h2>Q6.洗濯の頻度はどれくらいですか</h2>
-        <select name="sample1">
-          <option value="1">自分で手洗い</option>
-          <option value="2">週1〜2回</option>
-          <option value="3">週3回以上</option>
-        </select>
-    </div>
-    <div>
-      <h2>Q7.あなたの土日の過ごし方は</h2>
-        <select name="sample1">
-          <option value="1">どこにも行かない</option>
-          <option value="2">日帰り旅行に行きたい</option>
-          <option value="3">泊まりで旅行に行きたい</option>
-        </select>
-    </div>
-    <div>
-      <h2>Q8.マッサージは行きたいですか</h2>
-        <select name="sample1">
-          <option value="1">特に行きたくない</option>
-          <option value="2">リーズナブルなところに行きたい</option>
-          <option value="3">週高級スパに行きたい</option>
-        </select>
-    </div>
-    <div>
-      <h2>Q9.当てはまるものを選択してください(複数選択可)</h2>
-        <ul style="list-style: none;">
-          <li>
-            <label class="">
-              <input class="" type="checkbox" value=""> おみやげを買いたい
-            </label>
-          </li>
-          <li>
-            <label class="">
-              <input class="" type="checkbox" value=""> 現地の服が欲しい
-            </label>
-          </li>
-          <li>
-            <label class="">
-              <input class="" type="checkbox" value=""> 習い事を始めたい
-            </label>
-          </li>
-          <li>
-            <label class="">
-              <input class="" type="checkbox" value=""> お酒を飲みたい
-            </label>
-          </li>
-          <li>
-            <label class="">
-              <input class="" type="checkbox" value=""> タバコを吸いたい
-            </label>
-          </li>
-          <li>
-            <label class="">
-              <input class="" type="checkbox" value=""> カジノに行きたい
-            </label>
-          </li>
-          <li>
-            <label class="">
-              <input class="" type="checkbox" value=""> 夜のスポットに遊びに行きたい
-            </label>
-          </li>
-        </ul>
-        <div class="">
-          <a href="" class="" target="">
-            結果表示
-          </a>
-        </div>
     </div>
     <footer>
 
