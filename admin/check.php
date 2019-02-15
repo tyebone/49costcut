@@ -1,4 +1,42 @@
 <?php
+session_start();
+//require（ファイル名）;
+//指定されたファイルの中身が丸々移植される
+//DBとつなげるときに使う関数require
+require('../dbconnect.php');
+
+//49_LearnSNSのセッションが空だった場合、register.phpに強制的に遷移（強制遷移の実装）
+if(!isset($_SESSION['49_CostCut'])){
+    //register.phpへの遷移処理
+    header('Location: register.php');
+    //exit();以降の処理は全ておこなわれない
+    exit();
+}
+
+$name = $_SESSION['49_CostCut']['name'];
+$email = $_SESSION['49_CostCut']['email'];
+$password = $_SESSION['49_CostCut']['password'];
+
+//POST送信されたとき
+if(!empty($_POST)){
+    echo 'POST送信されました';
+    //ユーザー登録処理
+    $sql = 'INSERT INTO `users` (`name`,`email`,`password`,`img_name`,`created`)VALUES(?,?,?,?,NOW())';
+
+    //password_hash
+    //文字列を単純に保管するのは危険
+    //ハッシュ化という文字列の暗号化をおこなう
+    $data = [$name,$email,password_hash($password,PASSWORD_DEFAULT),$img_name];
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute($data);
+
+    //不要になったセッション情報を破棄する
+    unset($_SESSION['49_CostCut']);
+
+    //thanks.phpへの遷移
+    header('Location: thanks.php');
+    exit();
+}
 
 ?>
 <!DOCTYPE html>
@@ -15,22 +53,22 @@
             <div class="col-xs-8 col-xs-offset-2 thumbnail">
                 <h2 class="text-center content_header">アカウント情報確認</h2>
                 <div class="row">
-                    
                     <div class="col-xs-8">
                         <div>
                             <span>ユーザー名</span>
-                            <p class="lead">野原みさえ</p>
+                            <p class="lead"><?php echo htmlspecialchars($name); ?></p>
                         </div>
                         <div>
                             <span>メールアドレス</span>
-                            <p class="lead">misae@nohara.com</p>
+                            <p class="lead"><?php echo htmlspecialchars($email); ?></p>
                         </div>
                         <div>
                             <span>パスワード</span>
                             <p class="lead">●●●●●●●●</p>
                         </div>
-                        <form method="POST" action="thanks.php">
-                            <a href="signup.php?action=rewrite" class="btn btn-default">&laquo;&nbsp;戻る</a> | 
+                        <form method="POST" action="check.php">
+                            <a href="signup.php?action=rewrite" class="btn btn-default">&laquo;&nbsp;戻る</a>
+                            <!-- type='hidden'ブラウザ上にはなにも表示がされない ユーザーが入力/選択する必要はないが、処理する上で必要なものを設定する-->
                             <input type="hidden" name="action" value="submit">
                             <input type="submit" class="btn btn-primary" value="ユーザー登録">
                         </form>
