@@ -1,0 +1,14 @@
+
+.center{
+    padding: 20px;              /* 余白指定 */
+    text-align:  center;        /* 中央寄せ */
+    background-color:     /* 背景色指定 */
+    height: 100px;              /* 高さ指定 */
+}
+
+img {
+max-width: 50%;
+
+height: auto;
+}
+
