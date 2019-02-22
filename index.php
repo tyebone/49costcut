@@ -1,5 +1,10 @@
 <?php
-
+$dsn = 'mysql:dbname=49_CostCut;host=localhost';
+$user = 'root';
+$password = '';
+$dbh = new PDO($dsn, $user, $password);
+$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$dbh->query('SET NAMES utf8');
 
 $answer_1 = $_POST['Q1'];
 $answer_2 = $_POST['Q2'];
@@ -17,17 +22,52 @@ $answer_9 = array_sum($answer_9);
 // 結果表示させる機能
 print_r ($answer_9);
 
+// カテゴリー分け
+$answers = [];
+
+if ($answer_2 || $answer_3 || $answer_4) {
+  $category = 1;
+}elseif ($answer_5 || $answer_6) {
+  $category = 2;
+} else {
+  $category = 3;
+}
+
+// 識別コード
+$code = time() . '_' . rand();
+// 年齢と性別(Q1)
+$type = $answer_1;
+// カテゴリー分け
+$foods = [$answer_2, $answer_3, $answer_4];
+$life = [$answer_5, $answer_6];
+$play = [$answer_7, $answer_8, $answer_9];
+$category = ['food' => $foods, 'life' => $life, 'play' => $play];
+// それぞれanswerの値
+$price = ['answer' => [$answer_2, $answer_3, $answer_4, $answer_5, $answer_6, $answer_7, $answer_8, $answer_9]];
+
+$answer = ['category' => $category, 'price' => $price, 'code' => $code, 'type' => $type];
+
+// $answers[] = ['category' => $category, 'price' => $price, 'cord' => $cord, 'type' => $type];
 
 
-// $sql = 'INSERT INTO`answers`(`category`, `price`, `code`,`type`) VALUES (?, ?, ?, NOW())';
-
-// $data = [$,$,$,];
-// $stmt = $dbh->prepare($sql);
-// $stmt -> execute($data);
+foreach ($answers as $key => $value) {
+    $answers[] = "('{$category}', '{$name}', '{$gender}')";
+}
 
 
-echo '<br>';
-var_dump($_POST);
+$sql = 'INSERT INTO`answers`(`category`, `price`, `code`,`type`) VALUES (?, ?, ?, ?)';
+$data = [$category,$price,$code,$type];
+$stmt = $dbh->prepare($sql);
+
+
+
+
+
+
+
+
+echo '<pre>';
+var_dump($data);
 echo '</pre>';
 
 
