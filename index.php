@@ -40,6 +40,9 @@ foreach ($answers as $key[$i] => $value) {
   } else {
     $category = 3;
 }
+$sql = 'INSERT INTO`answers`(`category`, `price`, `code`,`type`) VALUES (?, ?, ?, ?)';
+$data = [$category,$price,$code,$type];
+$stmt = $dbh->prepare($sql);
 }
 
 
@@ -62,9 +65,6 @@ foreach ($answers as $key[$i] => $value) {
 
 
 
-$sql = 'INSERT INTO`answers`(`category`, `price`, `code`,`type`) VALUES (?, ?, ?, ?)';
-$data = [$category,$price,$code,$type];
-$stmt = $dbh->prepare($sql);
 
 
 
