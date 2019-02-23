@@ -6,53 +6,60 @@ $dbh = new PDO($dsn, $user, $password);
 $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $dbh->query('SET NAMES utf8');
 
-$answer_1 = $_POST['Q1'];
-$answer_2 = $_POST['Q2'];
-$answer_3 = $_POST['Q3'];
-$answer_4 = $_POST['Q4'];
-$answer_5 = $_POST['Q5'];
-$answer_6 = $_POST['Q6'];
-$answer_7 = $_POST['Q7'];
-$answer_8 = $_POST['Q8'];
-$answer_9 = $_POST['Q9'];
-
-
-// Q9の合計値計算
-$answer_9 = array_sum($answer_9);
-// 結果表示させる機能
-print_r ($answer_9);
+//
+// $answer_1 = $_POST['Q1'];
+// $answer_2 = $_POST['Q2'];
+// $answer_3 = $_POST['Q3'];
+// $answer_4 = $_POST['Q4'];
+// $answer_5 = $_POST['Q5'];
+// $answer_6 = $_POST['Q6'];
+// $answer_7 = $_POST['Q7'];
+// $answer_8 = $_POST['Q8'];
+// $answer_9 = $_POST['Q9'];
 
 // カテゴリー分け
 $answers = [];
-
-if ($answer_2 || $answer_3 || $answer_4) {
-  $category = 1;
-}elseif ($answer_5 || $answer_6) {
-  $category = 2;
-} else {
-  $category = 3;
-}
-
+// Q9の合計値計算
+$key['Q9'] = array_sum($_POST['Q9']);
 // 識別コード
 $code = time() . '_' . rand();
 // 年齢と性別(Q1)
-$type = $answer_1;
+$type = $_POST['Q1'];
 // カテゴリー分け
-$foods = [$answer_2, $answer_3, $answer_4];
-$life = [$answer_5, $answer_6];
-$play = [$answer_7, $answer_8, $answer_9];
-$category = ['food' => $foods, 'life' => $life, 'play' => $play];
-// それぞれanswerの値
-$price = ['answer' => [$answer_2, $answer_3, $answer_4, $answer_5, $answer_6, $answer_7, $answer_8, $answer_9]];
+for ($i = 1; $i < 10; $i++) {
+  $key[$i] = $_POST[$i];
+}
+foreach ($answers as $key[$i] => $value) {
+  if ($key['Q9']) {
+    continue;
+  }
+  if ($key['Q2'] || $key['Q3'] || $key['Q4']) {
+    $category = 1;
+  }elseif ($key['Q5'] || $key['Q6']) {
+    $category = 2;
+  } else {
+    $category = 3;
+}
+}
 
-$answer = ['category' => $category, 'price' => $price, 'code' => $code, 'type' => $type];
+
+
+
+
+
+
+// $foods = [$answer_2, $answer_3, $answer_4];
+// $life = [$answer_5, $answer_6];
+// $play = [$answer_7, $answer_8, $answer_9];
+// $category = ['food' => $foods, 'life' => $life, 'play' => $play];
+// // それぞれanswerの値
+// $price = ['answer' => [$answer_2, $answer_3, $answer_4, $answer_5, $answer_6, $answer_7, $answer_8, $answer_9]];
+
+// $answer = ['category' => $category, 'price' => $price, 'code' => $code, 'type' => $type];
 
 // $answers[] = ['category' => $category, 'price' => $price, 'cord' => $cord, 'type' => $type];
 
 
-foreach ($answers as $key => $value) {
-    $answers[] = "('{$category}', '{$name}', '{$gender}')";
-}
 
 
 $sql = 'INSERT INTO`answers`(`category`, `price`, `code`,`type`) VALUES (?, ?, ?, ?)';
