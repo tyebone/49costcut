@@ -21,6 +21,7 @@ $password = $_SESSION['49_CostCut']['password'];
 if(!empty($_POST)){
     echo 'POST送信されました';
     //ユーザー登録処理
+    //CREATE処理 INSERT文
     $sql = 'INSERT INTO `users` (`name`,`email`,`password`,`img_name`,`created`)VALUES(?,?,?,?,NOW())';
 
     //password_hash
@@ -34,16 +35,15 @@ if(!empty($_POST)){
     unset($_SESSION['49_CostCut']);
 
     //thanks.phpへの遷移
-    header('Location: thanks.php');
+    header('Location: index.php');
     exit();
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="utf-8">
-    <title>Learn SNS</title>
+    <title>CebuCostsSimulator</title>
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.css">
 </head>
