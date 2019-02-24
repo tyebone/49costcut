@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 //$errorsの定義
 $errors = [];
@@ -65,7 +66,6 @@ if (!empty($_POST)){
     //エラーがなかった場合、
     //変数$errorsになにも入力が無かった場合
     if(empty($errors)){
-
         //$_SESSION
         //セッションは各サーバの簡易的な保管庫
         //連想配列形式で値を保持する

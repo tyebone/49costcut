@@ -17,24 +17,26 @@ $name = $_SESSION['49_CostCut']['name'];
 $email = $_SESSION['49_CostCut']['email'];
 $password = $_SESSION['49_CostCut']['password'];
 
-//POST送信されたとき
+//POST送信されたとき（=POST送信じゃなく、ないとき
+//register.phpからデータが送られてきた状態
 if(!empty($_POST)){
     echo 'POST送信されました';
     //ユーザー登録処理
     //CREATE処理 INSERT文
-    $sql = 'INSERT INTO `users` (`name`,`email`,`password`,`img_name`,`created`)VALUES(?,?,?,?,NOW())';
+    $sql = 'INSERT INTO `owners` (`name`,`email`,`password`,`created`)VALUES(?,?,?,NOW())';
 
     //password_hash
     //文字列を単純に保管するのは危険
     //ハッシュ化という文字列の暗号化をおこなう
-    $data = [$name,$email,password_hash($password,PASSWORD_DEFAULT),$img_name];
+    //$nameとかは16行目から18行目で定義している
+    $data = [$name,$email,password_hash($password,PASSWORD_DEFAULT)];
     $stmt = $dbh->prepare($sql);
     $stmt->execute($data);
 
     //不要になったセッション情報を破棄する
     unset($_SESSION['49_CostCut']);
 
-    //thanks.phpへの遷移
+    //index.phpへの遷移
     header('Location: index.php');
     exit();
 }
@@ -67,7 +69,7 @@ if(!empty($_POST)){
                             <p class="lead">●●●●●●●●</p>
                         </div>
                         <form method="POST" action="check.php">
-                            <a href="signup.php?action=rewrite" class="btn btn-default">&laquo;&nbsp;戻る</a>
+                            <a href="register.php?action=rewrite" class="btn btn-default">&laquo;&nbsp;戻る</a>
                             <!-- type='hidden'ブラウザ上にはなにも表示がされない ユーザーが入力/選択する必要はないが、処理する上で必要なものを設定する-->
                             <input type="hidden" name="action" value="submit">
                             <input type="submit" class="btn btn-primary" value="ユーザー登録">
