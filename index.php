@@ -6,19 +6,9 @@ $dbh = new PDO($dsn, $user, $password);
 $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $dbh->query('SET NAMES utf8');
 
-//
-// $answer_1 = $_POST['Q1'];
-// $answer_2 = $_POST['Q2'];
-// $answer_3 = $_POST['Q3'];
-// $answer_4 = $_POST['Q4'];
-// $answer_5 = $_POST['Q5'];
-// $answer_6 = $_POST['Q6'];
-// $answer_7 = $_POST['Q7'];
-// $answer_8 = $_POST['Q8'];
-// $answer_9 = $_POST['Q9'];
 
-// カテゴリー分け
 $answers = [];
+$answers[] = $_POST;
 // Q9の合計値計算
 $key['Q9'] = array_sum($_POST['Q9']);
 // 識別コード
@@ -26,9 +16,12 @@ $code = time() . '_' . rand();
 // 年齢と性別(Q1)
 $type = $_POST['Q1'];
 // カテゴリー分け
-for ($i = 1; $i < 10; $i++) {
-  $key[$i] = $_POST[$i];
+$key = [];
+for ($i = 2; $i <= 8; $i++) {
+  $key[$i] = $_POST['Q'.$i];
 }
+
+// カテゴリー分け
 foreach ($answers as $key[$i] => $value) {
   if ($key['Q9']) {
     continue;
@@ -40,41 +33,19 @@ foreach ($answers as $key[$i] => $value) {
   } else {
     $category = 3;
 }
-$sql = 'INSERT INTO`answers`(`category`, `price`, `code`,`type`) VALUES (?, ?, ?, ?)';
-$data = [$category,$price,$code,$type];
-$stmt = $dbh->prepare($sql);
+  $sql = 'INSERT INTO`answers`(`category`, `price`, `code`,`type`) VALUES (?, ?, ?, ?)';
+  $data = [$category,$value,$code,$type];
+  $stmt = $dbh->prepare($sql);
 }
 
 
-
-
-
-
-
-// $foods = [$answer_2, $answer_3, $answer_4];
-// $life = [$answer_5, $answer_6];
-// $play = [$answer_7, $answer_8, $answer_9];
-// $category = ['food' => $foods, 'life' => $life, 'play' => $play];
-// // それぞれanswerの値
-// $price = ['answer' => [$answer_2, $answer_3, $answer_4, $answer_5, $answer_6, $answer_7, $answer_8, $answer_9]];
-
-// $answer = ['category' => $category, 'price' => $price, 'code' => $code, 'type' => $type];
-
-// $answers[] = ['category' => $category, 'price' => $price, 'cord' => $cord, 'type' => $type];
-
-
-
-
-
-
-
-
-
-
-
+// print "{$value}"
+// echo '<pre>';
+// var_dump($category);
+// echo '</pre>';
 
 echo '<pre>';
-var_dump($data);
+var_dump(compact('answers', 'key', 'code', 'type', 'value', 'category'));
 echo '</pre>';
 
 
@@ -147,7 +118,7 @@ echo '</pre>';
     <div class="col-6 border ">
       <fieldset>
         <legend>Q5.主な交通手段はなんですか</legend>
-          <label><input type="radio" class="" id="question_5" checked="checked" name="Q5" value="">徒歩</label>
+          <label><input type="radio" class="" id="question_5" checked="checked" name="Q5" value="0">徒歩</label>
           <label><input type="radio" class="" id="question_5" name="Q5" value="420">ジプニー</label>
           <label><input type="radio" class="" id="question_5" name="Q5" value="4800">バイクタクシー</label>
           <label><input type="radio" class="" id="question_5" name="Q5" value="9000">タクシー</label>
