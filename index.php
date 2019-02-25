@@ -7,46 +7,54 @@ $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $dbh->query('SET NAMES utf8');
 
 
+
 $answers = [];
-$answers[] = $_POST;
-// Q9の合計値計算
-$key['Q9'] = array_sum($_POST['Q9']);
-// 識別コード
-$code = time() . '_' . rand();
-// 年齢と性別(Q1)
-$type = $_POST['Q1'];
-// カテゴリー分け
-$key = [];
-for ($i = 2; $i <= 8; $i++) {
-  $key[$i] = $_POST['Q'.$i];
+for ($i = 1; $i < 16; $i++) {
+  $key = 'Q' . $i;
+  $answers[$key] = $_POST[$key];
 }
 
+
+// 年齢と性別(Q1)
+$type = $answers['Q1'];
+// Q9の合計値計算
+// $answer_9 = array_sum($_POST['Q9']);
+// 識別コード
+$code = time() . '_' . rand();
+
+
+
 // カテゴリー分け
-foreach ($answers as $key[$i] => $value) {
-  if ($key['Q9']) {
-    continue;
+$category = 0;
+foreach ($answers as $key => $value) {
+  if ($key == 'Q2' || $key == 'Q3' || $key == 'Q4') {
+    $category = 1;  // 食費
+  }elseif ($key == 'Q5') {
+    $category = 2;  // 交通費
+  }elseif ($key == 'Q6' || $key == 'Q13') {
+    $category = 3;  // 生活費
+  }elseif ($key == 'Q7' || $key == 'Q12' || $key == 'Q14') {
+    $category = 4;  // 交際費
+  }elseif ($key == 'Q8' || $key == 'Q10' || $key == 'Q6') {
+    $category = 5;  // 衣服・美容
+  }else {
+    $category = 6;  // 趣味・娯楽
   }
-  if ($key['Q2'] || $key['Q3'] || $key['Q4']) {
-    $category = 1;
-  }elseif ($key['Q5'] || $key['Q6']) {
-    $category = 2;
-  } else {
-    $category = 3;
-}
   $sql = 'INSERT INTO`answers`(`category`, `price`, `code`,`type`) VALUES (?, ?, ?, ?)';
   $data = [$category,$value,$code,$type];
   $stmt = $dbh->prepare($sql);
+  $stmt->execute($data);
 }
 
+// print "{$answer_9}";
 
-// print "{$value}"
 // echo '<pre>';
-// var_dump($category);
+// var_dump($type);
 // echo '</pre>';
 
-echo '<pre>';
-var_dump(compact('answers', 'key', 'code', 'type', 'value', 'category'));
-echo '</pre>';
+// echo '<pre>';
+// var_dump(compact('answers', 'key', 'code', 'type', 'value', 'category'));
+// echo '</pre>';
 
 
 
@@ -81,8 +89,8 @@ echo '</pre>';
 
 </body>
 <div class="row justify-content-center">
-  <form method="POST" action="index.php" >
-    <div class="col-6 border ">
+  <form method="POST" action="index.php">
+    <div class="col-6 border">
       <fieldset>
         <legend>Q1.年齢と性別を選んでください</legend>
           <label><input type="radio" class="" id="question_1" checked="checked" name="Q1" value="1">29歳以下の男性</label>
@@ -148,19 +156,61 @@ echo '</pre>';
           <label><input type="radio" class="" id="question_8" name="Q8" value="4000">週高級スパに行きたい</label>
       </fieldset>
     </div>
-    <div class="col-7 border ">
+    <div class="col-6 border ">
       <fieldset>
-        <legend>Q9.当てはまるものを選択してください(複数選択可)</legend>
-          <label class=""><input class="" type="checkbox" class="" id="question_9" name="Q9[]" value="5000"> おみやげを買いたい</label>
-          <label class=""><input class="" type="checkbox" class="" id="question_9" name="Q9[]" value="5000"> 現地で服が買いたい</label>
-          <label class=""><input class="" type="checkbox" class="" id="question_9" name="Q9[]" value="3000"> 習い事を始めたい</label>
-          <label class=""><input class="" type="checkbox" class="" id="question_9" name="Q9[]" value="5000"> お酒を飲みたい</label>
-          <label class=""><input class="" type="checkbox" class="" id="question_9" name="Q9[]" value="3000"> タバコを吸いたい</label>
-          <label class=""><input class="" type="checkbox" class="" id="question_9" name="Q9[]" value="4000"> カジノに行きたい</label>
-          <label class=""><input class="" type="checkbox" class="" id="question_9" name="Q9[]" value="8000"> 夜のスポットに遊びに行きたい</label>
+        <legend>Q9.お土産はどのくらい買いたいですか</legend>
+          <label><input type="radio" class="" id="question_9" checked="checked" name="Q9" value="0">特に買わない</label>
+          <label><input type="radio" class="" id="question_9" name="Q9" value="1200">リーズナブルなところに行きたい</label>
+          <label><input type="radio" class="" id="question_9" name="Q9" value="4000">週高級スパに行きたい</label>
       </fieldset>
     </div>
-    <div class="">
+    <div class="col-6 border ">
+      <fieldset>
+        <legend>Q10.服を買いたい</legend>
+          <label><input type="radio" class="" id="question_10" checked="checked" name="Q10" value="0">特に買わない</label>
+          <label><input type="radio" class="" id="question_10" name="Q10" value="2000">最低限のものだけ買いたい</label>
+          <label><input type="radio" class="" id="question_10" name="Q10" value="4000">たくさん買いたい</label>
+      </fieldset>
+    </div>
+    <div class="col-6 border ">
+      <fieldset>
+        <legend>Q11.習い事を始めたい</legend>
+          <label><input type="radio" class="" id="question_11" checked="checked" name="Q11" value="0">特にしない</label>
+          <label><input type="radio" class="" id="question_11" name="Q11" value="2000">1つだけ始めたい</label>
+          <label><input type="radio" class="" id="question_11" name="Q11" value="4000">何個かやりたい</label>
+      </fieldset>
+    </div>
+    <div class="col-6 border ">
+      <fieldset>
+        <legend>Q12.カジノに行きたい</legend>
+          <label><input type="radio" class="" id="question_12" checked="checked" name="Q12" value="0">行かない</label>
+          <label><input type="radio" class="" id="question_12" name="Q12" value="4000">たまに行きたい</label>
+          <label><input type="radio" class="" id="question_12" name="Q12" value="10000">行きまくる</label>
+      </fieldset>
+    </div>
+    <div class="col-6 border ">
+      <fieldset>
+        <legend>Q13.タバコを嗜みたい</legend>
+          <label><input type="radio" class="" id="question_13" checked="checked" name="Q13" value="0">特に嗜まない</label>
+          <label><input type="radio" class="" id="question_13" name="Q13" value="1500">たまに嗜む程度</label>
+          <label><input type="radio" class="" id="question_13" name="Q13" value="3000">毎日嗜みたい</label>
+      </fieldset>
+    </div>
+    <div class="col-6 border ">
+      <fieldset>
+        <legend>Q14.飲み会に参加したい</legend>
+          <label><input type="radio" class="" id="question_14" checked="checked" name="Q14" value="0">特に行かない</label>
+          <label><input type="radio" class="" id="question_14" name="Q14" value="2000">たまに参加したい</label>
+          <label><input type="radio" class="" id="question_14" name="Q14" value="5000">いっぱい参加したい</label>
+      </fieldset>
+    </div>
+    <div class="col-6 border ">
+      <fieldset>
+        <legend>Q15.夜のスポットに遊びに行きたい</legend>
+          <label><input type="radio" class="" id="question_15" checked="checked" name="Q15" value="0">特に行かない</label>
+          <label><input type="radio" class="" id="question_15" name="Q15" value="4000">1度は行きたい</label>
+          <label><input type="radio" class="" id="question_15" name="Q15" value="8000">行きまくりたい</label>
+      </fieldset>
 
       <input type="submit" value="結果表示">
 <!--       <a href="" class="" value="">
