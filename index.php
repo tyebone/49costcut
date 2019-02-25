@@ -1,10 +1,5 @@
 <?php
-$dsn = 'mysql:dbname=49_CostCut;host=localhost';
-$user = 'root';
-$password = '';
-$dbh = new PDO($dsn, $user, $password);
-$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$dbh->query('SET NAMES utf8');
+require('dbconnect.php');
 
 if (!empty($_POST)){
 
@@ -75,9 +70,9 @@ foreach ($answers as $key => $value) {
 
 <body class="container center back">
   <div class="">
-    <a class="" href="">TOP </a>
+    <a class="" href="index.php">TOP </a>
     <a class="" href="">About</a>
-    <a class="" href="">管理者ログイン</a>
+    <a class="" href="admin/register.php">管理者ログイン</a>
   </div>
   <div class="  ">
     <h1><a href="index.php"><img src="image/IMG_4821.JPG" alt=""></a></h1>
