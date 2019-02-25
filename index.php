@@ -80,11 +80,12 @@ foreach ($answers as $key => $value) {
     <a class="" href="">管理者ログイン</a>
   </div>
   <div class="  ">
-    <h1><a href="index.php"><img src="image/IMG_4821.JPG" alt=""></a></h1>
+    <h1>セブ島節約シュミレーター</h1>
+    <a href="index.php"><img src="image/IMG_4821.JPG" alt=""></a>
   </div>
   <div class="border">
-    <h2>サイト説明文</h2>
-    <p>aaaaaaaaaaaaaaaaa</p>
+    <p>リーズナブルに楽しめるセブ島留学ですが、気づいたらお金を使いすぎた……ということになりがち。<br>
+セブ島節約シュミレーターで、あなたの節約度を診断してみましょう。</p>
   </div>
   <div class="row justify-content-center">
     <form method="POST" action="index.php">
@@ -215,6 +216,8 @@ foreach ($answers as $key => $value) {
 
   <!-- 以下結果表示 -->
   <div class="all_area">
+    <h2>あなたの節約度は・・・</h2>
+    <h1>超人レベルです</h1>
     <div class="chart_area1">
       <div class="chart1and2">
         <div id="result_chart1">
@@ -243,7 +246,7 @@ foreach ($answers as $key => $value) {
           </canvas>
         </div>
         <div class="result_sentence2">
-          <p>あなたはダミーに比べて低いです</p>
+          <p>あなたの節約度は超人レベルです。すべてのカテゴリーにおいて理想的な家計状況であると言えるでしょう。これからもセブライフを楽しんでください。</p>
         </div>
     </div>
         <div class="result_share">
