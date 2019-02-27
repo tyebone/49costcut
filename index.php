@@ -6,7 +6,7 @@ if (!empty($_POST)){
 $answers = [];
 for ($i = 1; $i < 16; $i++) {
   $key = 'Q' . $i;
-  $answers[$key] = $_POST[$key];
+  $answers[$key] = intval($_POST[$key]);
 }
 
 
@@ -18,9 +18,14 @@ $type = $answers['Q1'];
 $code = time() . '_' . rand();
 
 
-
 // カテゴリー分け
 $category = 0;
+$category1 = 0;
+$category2 = 0;
+$category3 = 0;
+$category4 = 0;
+$category5 = 0;
+$category6 = 0;
 foreach ($answers as $key => $value) {
   if ($key == 'Q2' || $key == 'Q3' || $key == 'Q4') {
     $category = 1;  // 食費
@@ -39,19 +44,49 @@ foreach ($answers as $key => $value) {
   $data = [$category,$value,$code,$type];
   $stmt = $dbh->prepare($sql);
   $stmt->execute($data);
+  if ($category == 1){
+    $category1 += $value;
+  }elseif ($category == 2) {
+    $category2 += $value;
+  }elseif ($category == 3) {
+    $category3 += $value;
+  }elseif ($category == 4) {
+    $category4 += $value;
+  }elseif ($category == 5) {
+    $category5 += $value;
+  }elseif ($category == 6) {
+    $category6 += $value;
+  }
+
+}
+// 円グラフ1（type別にグラフを表示）
+
+// if ($type  == 1) {
+//   // 円グラフaを表示
+// }elseif ($type == 2) {
+//   // 円グラフbを表示
+// }elseif ($type == 3) {
+//   // 円グラフcを表示
+// }else{
+//   // 円グラフdを表示
+// }
+
+
+// 円グラフ2表示
+
+
+// チャートグラフ表示
+
+
+
+
+
+
+echo $category2;
+
 }
 
-// print "{$answer_9}";
 
-// echo '<pre>';
-// var_dump($answers);
-// echo '</pre>';
-
-// echo '<pre>';
-// var_dump(compact('answers', 'key', 'code', 'type', 'value', 'category'));
-// echo '</pre>';
-
-}
 
 
 ?>
@@ -253,7 +288,5 @@ foreach ($answers as $key => $value) {
   </div>
 </body>
     <footer>
-
     </footer>
-
 </html>
