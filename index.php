@@ -74,22 +74,41 @@ foreach ($answers as $key => $value) {
 
 // 円グラフ2表示
 
-
 // チャートグラフ表示
+$sql = 'SELECT * FROM `answers` WHERE `price` = ? AND `code` = ?';
+        $data = [$price, $code];
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute($data);
 
 
 
 
 
 
-echo $category2;
 
 }
 
 
+// if (!empty($_POST)){
+//   echo "<h1>GET</h1>";
+// }else{
 
+ // $html = <<< EOM
+
+  // <h1>POST</h1>
+  // "testdayo"
+
+//  EOM
+
+//  echo $html
+// }
 
 ?>
+
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -242,9 +261,7 @@ echo $category2;
         <input type="submit" value="結果表示">
       </div>
     </form>
-
-  <!-- 以下結果表示 -->
-  <div class="all_area">
+<div class="all_area">
     <div class="chart_area1">
       <div class="chart1and2">
         <div id="result_chart1">
@@ -286,6 +303,8 @@ echo $category2;
   <script src="js/pieChart2.js"></script>
   <script src="js/barChart.js"></script>
   </div>
+  <!-- 以下結果表示 -->
+  
 </body>
     <footer>
     </footer>
