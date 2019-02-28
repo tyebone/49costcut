@@ -1,17 +1,12 @@
 <?php
-$dsn = 'mysql:dbname=49_CostCut;host=localhost';
-$user = 'root';
-$password = '';
-$dbh = new PDO($dsn, $user, $password);
-$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$dbh->query('SET NAMES utf8');
+require('dbconnect.php');
 
 if (!empty($_POST)){
 
 $answers = [];
 for ($i = 1; $i < 16; $i++) {
   $key = 'Q' . $i;
-  $answers[$key] = $_POST[$key];
+  $answers[$key] = intval($_POST[$key]);
 }
 
 
@@ -23,9 +18,14 @@ $type = $answers['Q1'];
 $code = time() . '_' . rand();
 
 
-
 // カテゴリー分け
 $category = 0;
+$category1 = 0;
+$category2 = 0;
+$category3 = 0;
+$category4 = 0;
+$category5 = 0;
+$category6 = 0;
 foreach ($answers as $key => $value) {
   if ($key == 'Q2' || $key == 'Q3' || $key == 'Q4') {
     $category = 1;  // 食費
@@ -44,22 +44,71 @@ foreach ($answers as $key => $value) {
   $data = [$category,$value,$code,$type];
   $stmt = $dbh->prepare($sql);
   $stmt->execute($data);
+  if ($category == 1){
+    $category1 += $value;
+  }elseif ($category == 2) {
+    $category2 += $value;
+  }elseif ($category == 3) {
+    $category3 += $value;
+  }elseif ($category == 4) {
+    $category4 += $value;
+  }elseif ($category == 5) {
+    $category5 += $value;
+  }elseif ($category == 6) {
+    $category6 += $value;
+  }
+
+}
+// 円グラフ1（type別にグラフを表示）
+
+// if ($type  == 1) {
+//   // 円グラフaを表示
+// }elseif ($type == 2) {
+//   // 円グラフbを表示
+// }elseif ($type == 3) {
+//   // 円グラフcを表示
+// }else{
+//   // 円グラフdを表示
+// }
+
+
+// 円グラフ2表示
+
+// チャートグラフ表示
+$sql = 'SELECT * FROM `answers` WHERE `price` = ? AND `code` = ?';
+        $data = [$price, $code];
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute($data);
+
+
+
+
+
+
+
 }
 
-// print "{$answer_9}";
 
-// echo '<pre>';
-// var_dump($answers);
-// echo '</pre>';
+// if (!empty($_POST)){
+//   echo "<h1>GET</h1>";
+// }else{
 
-// echo '<pre>';
-// var_dump(compact('answers', 'key', 'code', 'type', 'value', 'category'));
-// echo '</pre>';
+ // $html = <<< EOM
 
-}
+  // <h1>POST</h1>
+  // "testdayo"
 
+//  EOM
+
+//  echo $html
+// }
 
 ?>
+
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -75,9 +124,9 @@ foreach ($answers as $key => $value) {
 
 <body class="container center back">
   <div class="">
-    <a class="" href="">TOP </a>
+    <a class="" href="index.php">TOP </a>
     <a class="" href="">About</a>
-    <a class="" href="">管理者ログイン</a>
+    <a class="" href="admin/register.php">管理者ログイン</a>
   </div>
   <div class="  ">
     <h1><a href="index.php"><img src="image/IMG_4821.JPG" alt=""></a></h1>
@@ -212,9 +261,7 @@ foreach ($answers as $key => $value) {
         <input type="submit" value="結果表示">
       </div>
     </form>
-
-  <!-- 以下結果表示 -->
-  <div class="all_area">
+<div class="all_area">
     <div class="chart_area1">
       <div class="chart1and2">
         <div id="result_chart1">
@@ -256,9 +303,9 @@ foreach ($answers as $key => $value) {
   <script src="js/pieChart2.js"></script>
   <script src="js/barChart.js"></script>
   </div>
+  <!-- 以下結果表示 -->
+  
 </body>
     <footer>
-
     </footer>
-
 </html>
