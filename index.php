@@ -68,52 +68,90 @@ foreach ($answers as $key => $value) {
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700" rel="stylesheet">
+</head>
 
 
 <header>
+<div class='text-center'>
   <a class="" href="index.php">TOP </a>
   <a class="" href="">About</a>
   <a class="" href="admin/register.php">管理者ログイン</a>
+</div>
 </header>
 
 
-<body>
-<div class="container-fluid">
-  <div class="row justify-content-center">
-      <h1><a href="index.php">セブ島留学生のための生活費シュミレーター</a></h1>
+<body class="bg-warning">
+
+<div class="container">
+
+  <div class="text-center">
+   <p>セブ島留学生のための生活費シュミレーター</p>
+ </div>
+
+<!--   <div class="row">
+    <div class='col-md-3'></div>
+    <div class='col-md-6 text-center'><img src="image/top.jpg"></div>
+    <div class='col-md-3'></div>
   </div>
-  <div class="row justify-content-center">
-      <img src="image/top.jpg">
+ -->
+<div class="row">
+  <div class='col-md-2'></div>
+  <div class='col-md-8'>
+  <img class="text-center img-fluid" src="image/top.jpg">
   </div>
-  <div class="row justify-content-center">
-         <h2>サイト説明文</h2>
-  </div>
-    <div class="row justify-content-center">
-         <p>aaaaaaaaaaaaaaaaa</p>
-  </div>
+  <div class='col-md-2'></div>
 </div>
 
-<form method="POST" action="index.php">
-  <div class="row justify-content-center">
-        <fieldset>
-          <legend>Q1.年齢と性別を選んでください</legend>
-            <label><input type="radio" class="" id="question_1" checked="checked" name="Q1" value="1">29歳以下の男性</label>
-            <label><input type="radio" class="" id="question_1" name="Q1" value="2">29歳以下の女性</label>
-            <label><input type="radio" class="" id="question_1" name="Q1" value="3">30歳以上の男性</label>
-            <label><input type="radio" class="" id="question_1" name="Q1" value="4">30歳以上の女性</label>
-      </fieldset>
+  <div class="row">
+    <div class='col-md-3'></div>
+    <div class='col-md-6 text-center'><h2>サイト説明文</h2></div>
+    <div class='col-md-3'></div>
   </div>
 
-  <div class="row justify-content-center">
+   <div class="row">
+
+    <div class='col-md-3'></div>
+    <div class='col-md-6 text-center'>
+      <p>説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文</p>
+    </div>
+    <div class='col-md-3'></div>
+
+  </div>
+
+
+</div>
+<br>
+<form method="POST" action="index.php">
+  <div class="row">
+    <div class ="col-md-3"></div>
+    <div class ='col-md-6 card card-body bg-light mb-3 border-dark'>
         <fieldset>
-          <legend>Q2.朝食はどれぐらい食べますか</legend>
+          <p class="under wf-mplus1p">問題1</p>
+            <p>年齢と性別を選んでください</p>
+            <label><p><input type="radio" class="" id="question_1" checked="checked" name="Q1" value="1">29歳以下の男性</p></label>
+            <label><p><input type="radio" class="" id="question_1" name="Q1" value="2">29歳以下の女性</p></label>
+            <label><p><input type="radio" class="" id="question_1" name="Q1" value="3">30歳以上の男性</p></label>
+            <label><p><input type="radio" class="" id="question_1" name="Q1" value="4">30歳以上の女性</p></label>
+      </fieldset>
+    </div>
+      <div class ="col-md-3"></div>
+  </div>
+  <br>
+  <div class="row">
+    <div class ="col-md-3"></div>
+    <div class ='col-md-6 card card-body'>
+        <fieldset>
+          <h4>Q2.朝食はどれぐらい食べますか</h4>
             <label><input type="radio" class="" id="question_2" checked="checked" name="Q2" value="0">食べないor学校で用意されている</label>
             <label><input type="radio" class="" id="question_2" name="Q2" value="4500">かる〜く食べる</label>
             <label><input type="radio" class="" id="question_2" name="Q2" value="9000">しっかり食べる</label>
         </fieldset>
   </div>
-
+    <div class ="col-md-3"></div>
+  </div>
+  <br>
     <div class="row justify-content-center">
         <fieldset>
           <legend>Q3.昼食はどれぐらい食べますか</legend>
