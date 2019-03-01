@@ -3,62 +3,67 @@ require('dbconnect.php');
 
 if (!empty($_POST)){
 
-$answers = [];
-for ($i = 1; $i < 16; $i++) {
-  $key = 'Q' . $i;
-  $answers[$key] = intval($_POST[$key]);
-}
-
-
-// 年齢と性別(Q1)
-$type = $answers['Q1'];
-// Q9の合計値計算
-// $answer_9 = array_sum($_POST['Q9']);
-// 識別コード
-$code = time() . '_' . rand();
-
-
-// カテゴリー分け
-$category = 0;
-$category1 = 0;
-$category2 = 0;
-$category3 = 0;
-$category4 = 0;
-$category5 = 0;
-$category6 = 0;
-foreach ($answers as $key => $value) {
-  if ($key == 'Q2' || $key == 'Q3' || $key == 'Q4') {
-    $category = 1;  // 食費
-  }elseif ($key == 'Q5') {
-    $category = 2;  // 交通費
-  }elseif ($key == 'Q6' || $key == 'Q13') {
-    $category = 3;  // 生活費
-  }elseif ($key == 'Q7' || $key == 'Q12' || $key == 'Q14') {
-    $category = 4;  // 交際費
-  }elseif ($key == 'Q8' || $key == 'Q10' || $key == 'Q6') {
-    $category = 5;  // 衣服・美容
-  }else {
-    $category = 6;  // 趣味・娯楽
-  }
-  $sql = 'INSERT INTO`answers`(`category`, `price`, `code`,`type`) VALUES (?, ?, ?, ?)';
-  $data = [$category,$value,$code,$type];
-  $stmt = $dbh->prepare($sql);
-  $stmt->execute($data);
-  if ($category == 1){
-    $category1 += $value;
-  }elseif ($category == 2) {
-    $category2 += $value;
-  }elseif ($category == 3) {
-    $category3 += $value;
-  }elseif ($category == 4) {
-    $category4 += $value;
-  }elseif ($category == 5) {
-    $category5 += $value;
-  }elseif ($category == 6) {
-    $category6 += $value;
+  $answers = [];
+  for ($i = 1; $i < 16; $i++) {
+    $key = 'Q' . $i;
+    $answers[$key] = intval($_POST[$key]);
   }
 
-}
+
+  // 年齢と性別(Q1)
+  $type = $answers['Q1'];
+  // Q9の合計値計算
+  // $answer_9 = array_sum($_POST['Q9']);
+  // 識別コード
+  $code = time() . '_' . rand();
+
+
+  // カテゴリー分け
+  $category = 0;
+  $category1 = 0;
+  $category2 = 0;
+  $category3 = 0;
+  $category4 = 0;
+  $category5 = 0;
+  $category6 = 0;
+
+  foreach ($answers as $key => $value) {
+    if ($key == 'Q1') {
+      continue;
+    }elseif($key == 'Q2' || $key == 'Q3' || $key == 'Q4') {
+      $category = 1;  // 食費
+    }elseif ($key == 'Q5') {
+      $category = 2;  // 交通費
+    }elseif ($key == 'Q6' || $key == 'Q13') {
+      $category = 3;  // 生活費
+    }elseif ($key == 'Q7' || $key == 'Q12' || $key == 'Q14') {
+      $category = 4;  // 交際費
+    }elseif ($key == 'Q8' || $key == 'Q10' || $key == 'Q6') {
+      $category = 5;  // 衣服・美容
+    }else {
+      $category = 6;  // 趣味・娯楽
+    }
+
+    $sql = 'INSERT INTO`answers`(`category`, `price`, `code`,`type`) VALUES (?, ?, ?, ?)';
+    $data = [$category,$value,$code,$type];
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute($data);
+
+    if ($category == 1){
+      $category1 += $value;
+    }elseif ($category == 2) {
+      $category2 += $value;
+    }elseif ($category == 3) {
+      $category3 += $value;
+    }elseif ($category == 4) {
+      $category4 += $value;
+    }elseif ($category == 5) {
+      $category5 += $value;
+    }elseif ($category == 6) {
+      $category6 += $value;
+    }
+  }
+
 // 円グラフ1（type別にグラフを表示）
 
 // if ($type  == 1) {
@@ -73,35 +78,35 @@ foreach ($answers as $key => $value) {
 
 
 // 円グラフ2表示
+// 仮echo
+  echo $category1 . '<br>';
+  echo $category2 . '<br>';
+  echo $category3 . '<br>';
+  echo $category4 . '<br>';
+  echo $category5 . '<br>';
+  echo $category6 . '<br>';
 
 // チャートグラフ表示
-$sql = 'SELECT * FROM `answers` WHERE `price` = ? AND `code` = ?';
-        $data = [$price, $code];
-        $stmt = $dbh->prepare($sql);
-        $stmt->execute($data);
+  $sql = 'SELECT `code`, SUM(`price`) AS `price_sum` FROM `answers` GROUP BY `code`';
+  $stmt = $dbh->prepare($sql);
+  $stmt->execute();
 
+  $prices = [];
 
-
-
-
-
+  while (true) {
+    $price = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($price == false) {
+        break;
+    }
+    $prices[] = $price;
+}
+// echo '<pre>';
+// var_dump($category6);
+// echo '</pre>';
 
 }
 
 
-// if (!empty($_POST)){
-//   echo "<h1>GET</h1>";
-// }else{
-
- // $html = <<< EOM
-
-  // <h1>POST</h1>
-  // "testdayo"
-
-//  EOM
-
-//  echo $html
-// }
 
 ?>
 
@@ -261,6 +266,12 @@ $sql = 'SELECT * FROM `answers` WHERE `price` = ? AND `code` = ?';
         <input type="submit" value="結果表示">
       </div>
     </form>
+
+<?php
+if($_POST){
+
+  $html = <<< EOM
+
 <div class="all_area">
     <div class="chart_area1">
       <div class="chart1and2">
@@ -304,7 +315,20 @@ $sql = 'SELECT * FROM `answers` WHERE `price` = ? AND `code` = ?';
   <script src="js/barChart.js"></script>
   </div>
   <!-- 以下結果表示 -->
-  
+EOM;
+
+
+}else{
+
+  $html = <<< EOM
+
+EOM;
+
+}
+
+echo $html;
+
+?>
 </body>
     <footer>
     </footer>
