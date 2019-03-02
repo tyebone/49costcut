@@ -71,6 +71,13 @@ foreach ($answers as $key => $value) {
 //   // 円グラフdを表示
 // }
 
+$value_array = ['value1'=>1]
+//配列をJSON形式に変換
+$jsonstr =  json_encode($value_array);
+
+
+
+
 
 // 円グラフ2表示
 
@@ -80,6 +87,9 @@ $sql = 'SELECT * FROM `answers` WHERE `price` = ? AND `code` = ?';
         $stmt = $dbh->prepare($sql);
         $stmt->execute($data);
 
+$chart2data_array = ['']
+$jsonstr =  json_encode($chart2data_array);
+//json_encodeでjson化
 
 
 
