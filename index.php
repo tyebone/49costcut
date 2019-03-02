@@ -86,6 +86,12 @@ if (!empty($_POST)){
   echo $category5 . '<br>';
   echo $category6 . '<br>';
 
+$data2 = [];
+$data2 = ['category1' => $category1,'category2' => $category2,'ctaegory3' => $category3,'category4' => $category4,'category5' => $category5,'category6' => $category6];
+
+
+
+
 // チャートグラフ表示
   $sql = 'SELECT `code`, SUM(`price`) AS `price_sum` FROM `answers` GROUP BY `code`';
   $stmt = $dbh->prepare($sql);
@@ -101,28 +107,28 @@ if (!empty($_POST)){
     }
     $prices[] = $price;
   }
-    $choujin = [];
-    $tetujin = [];
-    $futu = [];
-    $shiroto = [];
-    $syoshinsya =[];
+    // $choujin = [];
+    // $tatujin = [];
+    // $futu = [];
+    // $shiroto = [];
+    // $syoshinsya =[];
 
-    if ($prices == 0 < 35000) {
-      $choujin = $prices;
-    }elseif ($prices == 35000 < 70000) {
-      $tetujin = $prices;
-    }elseif ($prices == 70000 < 105000) {
-      $futu = $prices;
-    }elseif ($prices == 105000 < 120000) {
-      $shiroto = $prices;
-    }else{
-      $syoshinsya = $prices;
-    }
+    // if ($prices == 0 < 35000) {
+    //   $choujin = $prices;
+    // }elseif ($prices == 35000 < 70000) {
+    //   $tetujin = $prices;
+    // }elseif ($prices == 70000 < 105000) {
+    //   $futu = $prices;
+    // }elseif ($prices == 105000 < 120000) {
+    //   $shiroto = $prices;
+    // }else{
+    //   $syoshinsya = $prices;
+    // }
 
 
 
   echo '<pre>';
-  var_dump($shiroto);
+  var_dump($data2);
   echo '</pre>';
 
 
