@@ -76,9 +76,7 @@ if (!empty($_POST)){
 //   // 円グラフdを表示
 // }
 
-$value_array = ['value1'=>1]
-//配列をJSON形式に変換
-$jsonstr =  json_encode($value_array);
+
 
 
 
@@ -93,7 +91,12 @@ $jsonstr =  json_encode($value_array);
   echo $category5 . '<br>';
   echo $category6 . '<br>';
 
-// チャートグラフ表示
+$data2 = [];
+$data2 = ['category1'=>$category1,'category2'=>$category2,'ctaegory3'=>$category3,'category4'=>$category4,'category5'=>$category5,'category6'=>$category6];
+
+
+
+// barchart表示
   $sql = 'SELECT `code`, SUM(`price`) AS `price_sum` FROM `answers` GROUP BY `code`';
   $stmt = $dbh->prepare($sql);
   $stmt->execute();
@@ -107,23 +110,49 @@ $jsonstr =  json_encode($value_array);
         break;
     }
     $prices[] = $price;
-}
+  }
 
 //json_encodeでjson化
-$chart2data_array = ['']
-$jsonstr =  json_encode($chart2data_array);
+$jsonstr = json_encode($prices);
+
+
 
 // echo '<pre>';
 // var_dump($category6);
 // echo '</pre>';
 
-}
 
 
+// $choujin=[];
+// $tatujin=[];
+// $futu=[];
+// $sirouto=[];
+// $shosinsha=[];
 
+// $id_count = count('id');
+
+// $i = 0;
+
+// while ($i < $id_count){
+
+//   if($total_socore < 35000){
+//     $a += count($id_count);
+
+//   }elseif($total_socore < 70000){
+//     $b += count($id_count);
+
+//   }elseif($total_socore < 10500){
+//     $c += count($id_count);
+
+//   }elseif($toral_socore < 120000){
+//     $e += count($id_count);
+
+//   }else($total_socore < 140000){
+//     $d += count($id_count);
+//   }
+
+ }
 ?>
-
-
 
 
 
@@ -284,6 +313,7 @@ $jsonstr =  json_encode($chart2data_array);
 if($_POST){
 
   $html = <<< EOM
+
 
 <div class="all_area">
     <div class="chart_area1">

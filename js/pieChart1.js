@@ -1,5 +1,4 @@
 //円グラフ
-
 const aCtx = $('#pieChart1')
 new Chart(aCtx, {
     type:'pie',
@@ -8,7 +7,7 @@ new Chart(aCtx, {
 
         labels: ['食事','交通費','雑費','旅費'],
         datasets: [{
-            data:[],
+            data:[]
             //値 labelsに指定した順番に紐ずく
             //グラフの色
             backgroundColor: [
