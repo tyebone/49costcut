@@ -103,176 +103,263 @@ foreach ($answers as $key => $value) {
   </div>
   <div class='col-md-2'></div>
 </div>
+</div>
 
-  <div class="row">
-    <div class='col-md-3'></div>
-    <div class='col-md-6 text-center'><h2>サイト説明文</h2></div>
-    <div class='col-md-3'></div>
+<br>
+
+ <div class="row">
+  <div class ="col-md-3"></div>
+  <div class ='col-md-6 card card-body bg-light mb-3 border-dark'>
+  <p>リーズナブルに楽しめるセブ島留学ですが、気づいたらお金を使いすぎた……ということになりがち。セブ島節約シュミレーターで、あなたの節約度を診断してみましょう。</p>
   </div>
-
-   <div class="row">
-
-    <div class='col-md-3'></div>
-    <div class='col-md-6 text-center'>
-      <p>説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文</p>
-    </div>
-    <div class='col-md-3'></div>
-
+  <div class ="col-md-3"></div>
   </div>
-
-
 </div>
 <br>
+
 <form method="POST" action="index.php">
   <div class="row">
     <div class ="col-md-3"></div>
     <div class ='col-md-6 card card-body bg-light mb-3 border-dark'>
         <fieldset>
-          <p class="under wf-mplus1p">問題1</p>
+          <p class ="font"><span class="under">問題1</span></p>
             <p>年齢と性別を選んでください</p>
-            <label><p><input type="radio" class="" id="question_1" checked="checked" name="Q1" value="1">29歳以下の男性</p></label>
-            <label><p><input type="radio" class="" id="question_1" name="Q1" value="2">29歳以下の女性</p></label>
-            <label><p><input type="radio" class="" id="question_1" name="Q1" value="3">30歳以上の男性</p></label>
-            <label><p><input type="radio" class="" id="question_1" name="Q1" value="4">30歳以上の女性</p></label>
+            <label><p><input type="radio" class="" id="question_1" checked="checked" name="Q1" value="1">&nbsp;29歳以下の男性&nbsp;&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_1" name="Q1" value="2">&nbsp;29歳以下の女性&nbsp;&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_1" name="Q1" value="3">&nbsp;30歳以上の男性&nbsp;&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_1" name="Q1" value="4">&nbsp;30歳以上の女性</p></label>
       </fieldset>
     </div>
       <div class ="col-md-3"></div>
   </div>
   <br>
+
   <div class="row">
     <div class ="col-md-3"></div>
-    <div class ='col-md-6 card card-body'>
+    <div class ='col-md-6 card card-body bg-light mb-3 border-dark'>
         <fieldset>
-          <h4>Q2.朝食はどれぐらい食べますか</h4>
-            <label><input type="radio" class="" id="question_2" checked="checked" name="Q2" value="0">食べないor学校で用意されている</label>
-            <label><input type="radio" class="" id="question_2" name="Q2" value="4500">かる〜く食べる</label>
-            <label><input type="radio" class="" id="question_2" name="Q2" value="9000">しっかり食べる</label>
+          <p class ="font"><span class="under">問題2</span></p>
+          <p>朝食をどれぐらい食べますか</p>
+            <label><p><input type="radio" class="" id="question_2" checked="checked" name="Q2" value="0">&nbsp;食べない、もしくは学校で用意されている&nbsp;&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_2" name="Q2" value="1500">&nbsp;軽く食べる&nbsp;&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_2" name="Q2" value="4500">&nbsp;しっかり食べる</label>
         </fieldset>
   </div>
     <div class ="col-md-3"></div>
   </div>
   <br>
-    <div class="row justify-content-center">
+
+  <div class="row">
+    <div class ="col-md-3"></div>
+    <div class ='col-md-6 card card-body bg-light mb-3 border-dark'>
         <fieldset>
-          <legend>Q3.昼食はどれぐらい食べますか</legend>
-            <label><input type="radio" class="" id="question_3" checked="checked" name="Q3" value="0">食べないor学校で用意されている</label>
-            <label><input type="radio" class="" id="question_3" name="Q3" value="4500">かる〜く食べる</label>
-            <label><input type="radio" class="" id="question_3" name="Q3" value="9000">しっかり食べる</label>
+          <p class ="font"><span class="under">問題3</span></p>
+          <p>昼食をどれぐらい食べますか</p>
+            <label><p><input type="radio" class="" id="question_3" checked="checked" name="Q3" value="0">&nbsp;食べない、もしくは学校で用意されている&nbsp;&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_3" name="Q3" value="1500">&nbsp;軽く食べる&nbsp;&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_3" name="Q3" value="4500">&nbsp;しっかり食べる</label>
         </fieldset>
   </div>
+    <div class ="col-md-3"></div>
+  </div>
+  <br>
 
-  <div class="row justify-content-center">
+  <div class="row">
+    <div class ="col-md-3"></div>
+    <div class ='col-md-6 card card-body bg-light mb-3 border-dark'>
         <fieldset>
-          <legend>Q4.夕食はどれぐらい食べますか</legend>
-            <label><input type="radio" class="" id="question_4" checked="checked" name="Q4" value="0">食べないor学校で用意されている</label>
-            <label><input type="radio" class="" id="question_4" name="Q4" value="4500">かる〜く食べる</label>
-            <label><input type="radio" class="" id="question_4" name="Q4" value="9000">しっかり食べる</label>
+          <p class ="font"><span class="under">問題4</span></p>
+          <p>夕食をどれぐらい食べますか</p>
+            <label><p><input type="radio" class="" id="question_4" checked="checked" name="Q4" value="0">&nbsp;食べない、もしくは学校で用意されている&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_4" name="Q4" value="1500">&nbsp;軽く食べる&nbsp;&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_4" name="Q4" value="9000">&nbsp;しっかり食べる</label>
         </fieldset>
   </div>
+    <div class ="col-md-3"></div>
+  </div>
+  <br>
 
-  <div class="row justify-content-center">
+
+  <div class="row">
+    <div class ="col-md-3"></div>
+    <div class ='col-md-6 card card-body bg-light mb-3 border-dark'>
         <fieldset>
-          <legend>Q5.主な交通手段はなんですか</legend>
-            <label><input type="radio" class="" id="question_5" checked="checked" name="Q5" value="0">徒歩</label>
-            <label><input type="radio" class="" id="question_5" name="Q5" value="420">ジプニー</label>
-            <label><input type="radio" class="" id="question_5" name="Q5" value="4800">バイクタクシー</label>
-            <label><input type="radio" class="" id="question_5" name="Q5" value="9000">タクシー</label>
+          <p class ="font"><span class="under">問題5</span></p>
+          <p>おもな交通手段はなんですか</p>
+            <label><p><input type="radio" class="" id="question_5" checked="checked" name="Q5" value="0">&nbsp;徒歩&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_5" name="Q5" value="400">&nbsp;ジプニー&nbsp;&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_5" name="Q5" value="2000">&nbsp;バイクタクシー&nbsp;&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_5" name="Q5" value="3000">&nbsp;タクシー</p></label>
         </fieldset>
   </div>
+    <div class ="col-md-3"></div>
+  </div>
+  <br>
 
-  <div class="row justify-content-center">
+ <div class="row">
+    <div class ="col-md-3"></div>
+    <div class ='col-md-6 card card-body bg-light mb-3 border-dark'>
         <fieldset>
-          <legend>Q6.洗濯の頻度はどれくらいですか</legend>
-            <label><input type="radio" class="" id="question_6" checked="checked" name="Q6" value="0">自分で手洗い</label>
-            <label><input type="radio" class="" id="question_6" name="Q6" value="1000">週1〜2回</label>
-            <label><input type="radio" class="" id="question_6" name="Q6" value="2500">週3回以上</label>
+          <p class ="font"><span class="under">問題6</span></p>
+          <p>洗濯の頻度はどれぐらいですか</p>
+            <label><p><input type="radio" class="" id="question_6" checked="checked" name="Q6" value="0">&nbsp;自分で手洗いする&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_6" name="Q6" value="1500">&nbsp;軽く食べる&nbsp;&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_6" name="Q6" value="9000">&nbsp;しっかり食べる</label>
         </fieldset>
   </div>
+    <div class ="col-md-3"></div>
+  </div>
+  <br>
 
-  <div class="row justify-content-center">
+   <div class="row">
+    <div class ="col-md-3"></div>
+    <div class ='col-md-6 card card-body bg-light mb-3 border-dark'>
         <fieldset>
-          <legend>Q7.あなたの土日の過ごし方</legend>
-            <label><input type="radio" class="" id="question_7" checked="checked" name="Q7" value="0">どこにも行かない</label>
-            <label><input type="radio" class="" id="question_7" name="Q7" value="10000">日帰り旅行に行きたい</label>
-            <label><input type="radio" class="" id="question_7" name="Q7" value="16000">泊まりで旅行に行きたい</label>
+          <p class ="font"><span class="under">問題7</span></p>
+          <p>携帯電話をどれぐらい利用しますか</p>
+            <label><p><input type="radio" class="" id="question_7" checked="checked" name="Q7" value="0">&nbsp;Wi-Fiのみ利用する&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_7" name="Q7" value="500">&nbsp;少しチャージして利用する&nbsp;&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_7" name="Q7" value="1000">&nbsp;しっかりチャージして利用する</label>
         </fieldset>
   </div>
+    <div class ="col-md-3"></div>
+  </div>
+  <br>
 
-  <div class="row justify-content-center">
+  <div class="row">
+    <div class ="col-md-3"></div>
+    <div class ='col-md-6 card card-body bg-light mb-3 border-dark'>
         <fieldset>
-          <legend>Q8.マッサージは行きたいですか</legend>
-            <label><input type="radio" class="" id="question_8" checked="checked" name="Q8" value="0">特に行きたくない</label>
-            <label><input type="radio" class="" id="question_8" name="Q8" value="1200">リーズナブルなところに行きたい</label>
-            <label><input type="radio" class="" id="question_8" name="Q8" value="4000">週高級スパに行きたい</label>
+          <p class ="font"><span class="under">問題8</span></p>
+          <p>タバコを吸いますか</p>
+            <label><p><input type="radio" class="" id="question_8" checked="checked" name="Q8" value="0">&nbsp;吸わない&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_8" name="Q8" value="1500">&nbsp;一日一箱以下吸う&nbsp;&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_8" name="Q8" value="3000">&nbsp;一日一箱以上吸う</label>
         </fieldset>
   </div>
+    <div class ="col-md-3"></div>
+  </div>
+  <br>
 
-  <div class="row justify-content-center">
+  <div class="row">
+    <div class ="col-md-3"></div>
+    <div class ='col-md-6 card card-body bg-light mb-3 border-dark'>
         <fieldset>
-          <legend>Q9.お土産はどのくらい買いたいですか</legend>
-            <label><input type="radio" class="" id="question_9" checked="checked" name="Q9" value="0">特に買わない</label>
-            <label><input type="radio" class="" id="question_9" name="Q9" value="1200">リーズナブルなところに行きたい</label>
-            <label><input type="radio" class="" id="question_9" name="Q9" value="4000">週高級スパに行きたい</label>
-        </fieldset>
-    </div>
-
-  <div class="row justify-content-center">
-        <fieldset>
-          <legend>Q10.服を買いたい</legend>
-            <label><input type="radio" class="" id="question_10" checked="checked" name="Q10" value="0">特に買わない</label>
-            <label><input type="radio" class="" id="question_10" name="Q10" value="2000">最低限のものだけ買いたい</label>
-            <label><input type="radio" class="" id="question_10" name="Q10" value="4000">たくさん買いたい</label>
+          <p class ="font"><span class="under">問題9</span></p>
+          <p>飲み会に行きますか</p>
+            <label><p><input type="radio" class="" id="question_9" checked="checked" name="Q9" value="0">&nbsp;行かない&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_9" name="Q9" value="2000">&nbsp;週1〜2回行く&nbsp;&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_9" name="Q9" value="6000">&nbsp;週3回以上行く</label>
         </fieldset>
   </div>
+    <div class ="col-md-3"></div>
+  </div>
+  <br>
 
-  <div class="row justify-content-center">
+  <div class="row">
+    <div class ="col-md-3"></div>
+    <div class ='col-md-6 card card-body bg-light mb-3 border-dark'>
         <fieldset>
-          <legend>Q11.習い事を始めたい</legend>
-            <label><input type="radio" class="" id="question_11" checked="checked" name="Q11" value="0">特にしない</label>
-            <label><input type="radio" class="" id="question_11" name="Q11" value="2000">1つだけ始めたい</label>
-            <label><input type="radio" class="" id="question_11" name="Q11" value="4000">何個かやりたい</label>
+          <p class ="font"><span class="under">問題10</span></p>
+          <p>週末はどのように過ごしますか</p>
+            <label><p><input type="radio" class="" id="question_10" checked="checked" name="Q10" value="0">&nbsp;どこにも行かない&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_10" name="Q10" value="2000">&nbsp;日帰りで遊びに行く&nbsp;&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_10" name="Q11" value="6000">&nbsp;泊まりで旅行に行く</label>
         </fieldset>
   </div>
+    <div class ="col-md-3"></div>
+  </div>
+  <br>
 
-  <div class="row justify-content-center">
+  <div class="row">
+    <div class ="col-md-3"></div>
+    <div class ='col-md-6 card card-body bg-light mb-3 border-dark'>
         <fieldset>
-          <legend>Q12.カジノに行きたい</legend>
-            <label><input type="radio" class="" id="question_12" checked="checked" name="Q12" value="0">行かない</label>
-            <label><input type="radio" class="" id="question_12" name="Q12" value="4000">たまに行きたい</label>
-            <label><input type="radio" class="" id="question_12" name="Q12" value="10000">行きまくる</label>
+          <p class ="font"><span class="under">問題11</span></p>
+          <p>マッサージに行きますか</p>
+            <label><p><input type="radio" class="" id="question_11" checked="checked" name="Q11" value="0">&nbsp;行かない&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_11" name="Q11" value="800">&nbsp;リーズナブルなところに行く&nbsp;&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_11" name="Q11" value="2000">&nbsp;高級スパに行く</label>
         </fieldset>
   </div>
+    <div class ="col-md-3"></div>
+  </div>
+  <br>
 
-  <div class="row justify-content-center">
+  <div class="row">
+    <div class ="col-md-3"></div>
+    <div class ='col-md-6 card card-body bg-light mb-3 border-dark'>
         <fieldset>
-          <legend>Q13.タバコを嗜みたい</legend>
-            <label><input type="radio" class="" id="question_13" checked="checked" name="Q13" value="0">特に嗜まない</label>
-            <label><input type="radio" class="" id="question_13" name="Q13" value="1500">たまに嗜む程度</label>
-            <label><input type="radio" class="" id="question_13" name="Q13" value="3000">毎日嗜みたい</label>
+          <p class ="font"><span class="under">問題12</span></p>
+          <p>現地の服を買いますか</p>
+            <label><p><input type="radio" class="" id="question_12" checked="checked" name="Q12" value="0">&nbsp;買わない&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_12" name="Q12" value="1500">&nbsp;1〜2着買う&nbsp;&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_12" name="Q12" value="4000">&nbsp;3着以上買いたい</label>
         </fieldset>
   </div>
+    <div class ="col-md-3"></div>
+  </div>
+  <br>
 
-  <div class="row justify-content-center">
+  <div class="row">
+    <div class ="col-md-3"></div>
+    <div class ='col-md-6 card card-body bg-light mb-3 border-dark'>
         <fieldset>
-          <legend>Q14.飲み会に参加したい</legend>
-            <label><input type="radio" class="" id="question_14" checked="checked" name="Q14" value="0">特に行かない</label>
-            <label><input type="radio" class="" id="question_14" name="Q14" value="2000">たまに参加したい</label>
-            <label><input type="radio" class="" id="question_14" name="Q14" value="5000">いっぱい参加したい</label>
+          <p class ="font"><span class="under">問題13</span></p>
+          <p>習い事やジムに通いますか</p>
+            <label><p><input type="radio" class="" id="question_13" checked="checked" name="Q13" value="0">&nbsp;通わない&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_13" name="Q13" value="1000">&nbsp;1つだけ通う&nbsp;&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_13" name="Q13" value="3000">&nbsp;2つ以上通う</label>
         </fieldset>
   </div>
+    <div class ="col-md-3"></div>
+  </div>
+  <br>
 
-  <div class="row justify-content-center">
+  <div class="row">
+    <div class ="col-md-3"></div>
+    <div class ='col-md-6 card card-body bg-light mb-3 border-dark'>
         <fieldset>
-          <legend>Q15.夜のスポットに遊びに行きたい</legend>
-            <label><input type="radio" class="" id="question_15" checked="checked" name="Q15" value="0">特に行かない</label>
-            <label><input type="radio" class="" id="question_15" name="Q15" value="4000">1度は行きたい</label>
-            <label><input type="radio" class="" id="question_15" name="Q15" value="8000">行きまくりたい</label>
+          <p class ="font"><span class="under">問題14</span></p>
+          <p>カジノに行きますか</p>
+            <label><p><input type="radio" class="" id="question_14" checked="checked" name="Q14" value="0">&nbsp;行かない&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_14" name="Q14" value="2000">&nbsp;週1〜2回行きたい&nbsp;&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_14" name="Q14" value="6000">&nbsp;週3回以上行きたい</label>
         </fieldset>
   </div>
-
-  <div class="row justify-content-center">
-        <button type="button" class="btn btn-Danger"><input type="submit" value="結果表示"></button>
+    <div class ="col-md-3"></div>
   </div>
+  <br>
+
+  <div class="row">
+    <div class ="col-md-3"></div>
+    <div class ='col-md-6 card card-body bg-light mb-3 border-dark'>
+        <fieldset>
+          <p class ="font"><span class="under">問題15</span></p>
+          <p>夜のスポットに遊びに行きますか</p>
+            <label><p><input type="radio" class="" id="question_15" checked="checked" name="Q15" value="0">&nbsp;行かない&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_15" name="Q15" value="2000">&nbsp;一度は行きたい&nbsp;&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_15" name="Q15" value="8000">&nbsp;それ以上行きたい</label>
+        </fieldset>
+  </div>
+    <div class ="col-md-3"></div>
+  </div>
+  <br>
+
+    <div class="row">
+    <div class ="col-md-3"></div>
+    <div class ='col-md-6 card card-body bg-light mb-3 border-dark'>
+        <fieldset>
+          <p class ="font"><span class="under">問題16</span></p>
+          <p>おみやげを買いますか</p>
+            <label><p><input type="radio" class="" id="question_16" checked="checked" name="Q16" value="0">&nbsp;買わない&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_16" name="Q16" value="2000">&nbsp;自分用に少し欲しい&nbsp;&nbsp;&nbsp;</p></label>
+            <label><p><input type="radio" class="" id="question_16" name="Q16" value="4000">&nbsp;友達にもたくさん買いたい</label>
+        </fieldset>
+  </div>
+    <div class ="col-md-3"></div>
+  </div>
+  <br>
 
   </div>
 </form>
