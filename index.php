@@ -511,7 +511,6 @@ EOM;
 }else{
 
 $html = <<< EOM
->>>>>>> kayo_index
 
 EOM;
 
