@@ -76,6 +76,13 @@ if (!empty($_POST)){
 //   // 円グラフdを表示
 // }
 
+$value_array = ['value1'=>1]
+//配列をJSON形式に変換
+$jsonstr =  json_encode($value_array);
+
+
+
+
 
 // 円グラフ2表示
 // 仮echo
@@ -91,6 +98,7 @@ if (!empty($_POST)){
   $stmt = $dbh->prepare($sql);
   $stmt->execute();
 
+
   $prices = [];
 
   while (true) {
@@ -100,6 +108,11 @@ if (!empty($_POST)){
     }
     $prices[] = $price;
 }
+
+//json_encodeでjson化
+$chart2data_array = ['']
+$jsonstr =  json_encode($chart2data_array);
+
 // echo '<pre>';
 // var_dump($category6);
 // echo '</pre>';
