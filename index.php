@@ -3,62 +3,147 @@ require('dbconnect.php');
 
 if (!empty($_POST)){
 
-$answers = [];
-for ($i = 1; $i < 16; $i++) {
-  $key = 'Q' . $i;
-  $answers[$key] = $_POST[$key];
-}
-
-
-// 年齢と性別(Q1)
-$type = $answers['Q1'];
-// Q9の合計値計算
-// $answer_9 = array_sum($_POST['Q9']);
-// 識別コード
-$code = time() . '_' . rand();
-
-
-
-// カテゴリー分け
-$category = 0;
-foreach ($answers as $key => $value) {
-  if ($key == 'Q2' || $key == 'Q3' || $key == 'Q4') {
-    $category = 1;  // 食費
-  }elseif ($key == 'Q5') {
-    $category = 2;  // 交通費
-  }elseif ($key == 'Q6' || $key == 'Q13') {
-    $category = 3;  // 生活費
-  }elseif ($key == 'Q7' || $key == 'Q12' || $key == 'Q14') {
-    $category = 4;  // 交際費
-  }elseif ($key == 'Q8' || $key == 'Q10' || $key == 'Q6') {
-    $category = 5;  // 衣服・美容
-  }else {
-    $category = 6;  // 趣味・娯楽
+  $answers = [];
+  for ($i = 1; $i < 16; $i++) {
+    $key = 'Q' . $i;
+    $answers[$key] = intval($_POST[$key]);
   }
-  $sql = 'INSERT INTO`answers`(`category`, `price`, `code`,`type`) VALUES (?, ?, ?, ?)';
-  $data = [$category,$value,$code,$type];
+
+
+  // 年齢と性別(Q1)
+  $type = $answers['Q1'];
+  // Q9の合計値計算
+  // $answer_9 = array_sum($_POST['Q9']);
+  // 識別コード
+  $code = time() . '_' . rand();
+
+
+  // カテゴリー分け
+  $category = 0;
+  $category1 = 0;
+  $category2 = 0;
+  $category3 = 0;
+  $category4 = 0;
+  $category5 = 0;
+  $category6 = 0;
+
+  foreach ($answers as $key => $value) {
+    if ($key == 'Q1') {
+      continue;
+    }elseif($key == 'Q2' || $key == 'Q3' || $key == 'Q4') {
+      $category = 1;  // 食費
+    }elseif ($key == 'Q5') {
+      $category = 2;  // 交通費
+    }elseif ($key == 'Q6' || $key == 'Q13') {
+      $category = 3;  // 生活費
+    }elseif ($key == 'Q7' || $key == 'Q12' || $key == 'Q14') {
+      $category = 4;  // 交際費
+    }elseif ($key == 'Q8' || $key == 'Q10' || $key == 'Q6') {
+      $category = 5;  // 衣服・美容
+    }else {
+      $category = 6;  // 趣味・娯楽
+    }
+
+    $sql = 'INSERT INTO`answers`(`category`, `price`, `code`,`type`) VALUES (?, ?, ?, ?)';
+    $data = [$category,$value,$code,$type];
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute($data);
+
+    if ($category == 1){
+      $category1 += $value;
+    }elseif ($category == 2) {
+      $category2 += $value;
+    }elseif ($category == 3) {
+      $category3 += $value;
+    }elseif ($category == 4) {
+      $category4 += $value;
+    }elseif ($category == 5) {
+      $category5 += $value;
+    }elseif ($category == 6) {
+      $category6 += $value;
+    }
+  }
+
+// 円グラフ1（type別にグラフを表示）
+
+// if ($type  == 1) {
+//   // 円グラフaを表示
+// }elseif ($type == 2) {
+//   // 円グラフbを表示
+// }elseif ($type == 3) {
+//   // 円グラフcを表示
+// }else{
+//   // 円グラフdを表示
+// }
+
+
+// 円グラフ2表示
+// 仮echo
+  echo $category1 . '<br>';
+  echo $category2 . '<br>';
+  echo $category3 . '<br>';
+  echo $category4 . '<br>';
+  echo $category5 . '<br>';
+  echo $category6 . '<br>';
+
+$data2 = [];
+$data2 = ['category1' => $category1,'category2' => $category2,'ctaegory3' => $category3,'category4' => $category4,'category5' => $category5,'category6' => $category6];
+
+
+
+
+// チャートグラフ表示
+  $sql = 'SELECT `code`, SUM(`price`) AS `price_sum` FROM `answers` GROUP BY `code`';
   $stmt = $dbh->prepare($sql);
-  $stmt->execute($data);
-}
+  $stmt->execute();
 
-// print "{$answer_9}";
 
-// echo '<pre>';
-// var_dump($answers);
-// echo '</pre>';
+  $prices = [];
 
-// echo '<pre>';
-// var_dump(compact('answers', 'key', 'code', 'type', 'value', 'category'));
-// echo '</pre>';
+  while (true) {
+    $price = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($price == false) {
+        break;
+    }
+    $prices[] = $price;
+  }
+    // $choujin = [];
+    // $tatujin = [];
+    // $futu = [];
+    // $shiroto = [];
+    // $syoshinsya =[];
+
+    // if ($prices == 0 < 35000) {
+    //   $choujin = $prices;
+    // }elseif ($prices == 35000 < 70000) {
+    //   $tetujin = $prices;
+    // }elseif ($prices == 70000 < 105000) {
+    //   $futu = $prices;
+    // }elseif ($prices == 105000 < 120000) {
+    //   $shiroto = $prices;
+    // }else{
+    //   $syoshinsya = $prices;
+    // }
+
+
+
+  echo '<pre>';
+  var_dump($data2);
+  echo '</pre>';
+
 
 }
 
 
 ?>
 
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="ja">
-
 
 <head>
 
@@ -363,7 +448,72 @@ foreach ($answers as $key => $value) {
 
   </div>
 </form>
-</div>
-</body>
 
+<?PHP
+if($_POST){
+
+$html = <<< EOM
+
+    <div class="all_area">
+      <div class="chart_area1">
+        <div class="chart1and2">
+          <div id="result_chart1">
+            <!-- 比較グラフ１ -->
+            <p>円グラフ1</p>
+            <canvas id = "pieChart1">
+            </canvas>
+          </div>
+          <div id="result_chart2">
+            <!-- 比較グラフ２ -->
+            <p>円グラフ2</p>
+            <canvas id = "pieChart2">
+            </canvas>
+          </div>
+        </div>
+
+        <div class="result_sentence1">円グラフの文章
+        </div>
+      </div>
+
+      <div class="chart_area2">
+        <div id='barChartarea'>
+          <!-- ラインチャート -->
+          <p>チャートグラフ</p>
+          <canvas id = "barChart">
+          </canvas>
+        </div>
+        <div class="result_sentence2">
+          <p>あなたはダミーに比べて低いです</p>
+        </div>
+      </div>
+      <div class="result_share">
+        <p>twitter</p>
+      </div>
+    </div>
+      <script src="js/jquery.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+      <script src="js/pieChart1.js"></script>
+      <script src="js/pieChart2.js"></script>
+      <script src="js/barChart.js"></script>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="セブ生活費シュミレーター
+あなたの診断結果は〇〇です。" data-url="http://localhost/49_CostCut/index.php" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <!-- 以下結果表示 -->
+EOM;
+
+
+}else{
+
+$html = <<< EOM
+>>>>>>> kayo_index
+
+EOM;
+
+}
+
+echo $html;
+
+?>
+  </body>
+  <footer>
+  </footer>
 </html>
