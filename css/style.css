@@ -1,8 +1,11 @@
-.under {
-  background: linear-gradient(transparent 50%, yellow 50%);
-}
+/*.under {
+  background: linear-gradient(transparent 70%, yellow 30%);
+}*/
 .wf-mplus1p { font-family: "Mplus 1p"; }
 
 .title{font-size: 28px;}
 
-body{font-family: 'Noto Sans JP', sans-serif;}
+body{
+	font-family: 'Noto Sans JP', sans-serif;
+	background-color: #f1ed62;
+}
