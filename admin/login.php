@@ -5,12 +5,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 	<style>body{padding-top: 60px;}</style>
-	
+
     <link href="bootstrap3/css/bootstrap.css" rel="stylesheet" />
- 
+
 	<link href="login-register.css" rel="stylesheet" />
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-	
+
 	<script src="jquery/jquery-1.10.2.js" type="text/javascript"></script>
 	<script src="bootstrap3/js/bootstrap.js" type="text/javascript"></script>
 	<script src="login-register.js" type="text/javascript"></script>
@@ -25,8 +25,7 @@
                  <a class="btn big-register" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">Register</a></div>
             <div class="col-sm-4"></div>
         </div>
-       
-         
+
 		 <div class="modal fade login" id="loginModal">
 		      <div class="modal-dialog login animated">
     		      <div class="modal-content">
@@ -34,7 +33,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         <h4 class="modal-title">Login with</h4>
                     </div>
-                    <div class="modal-body">  
+                    <div class="modal-body">
                         <div class="box">
                              <div class="content">
                                 <div class="social">
@@ -78,7 +77,7 @@
                     </div>
                     <div class="modal-footer">
                         <div class="forgot login-footer">
-                            <span>Looking to 
+                            <span>Looking to
                                  <a href="javascript: showRegisterForm();">create an account</a>
                             ?</span>
                         </div>
@@ -86,7 +85,7 @@
                              <span>Already have an account?</span>
                              <a href="javascript: showLoginForm();">Login</a>
                         </div>
-                    </div>        
+                    </div>
     		      </div>
 		      </div>
 		  </div>
