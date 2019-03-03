@@ -1,24 +1,30 @@
-<?php
+ <?php
 require('dbconnect.php');
+
+// POST送信だったら
+//$answersテーブルが定義される
 
 if (!empty($_POST)){
 
   $answers = [];
   for ($i = 1; $i < 16; $i++) {
     $key = 'Q' . $i;
+    //この時点で、$answers[Q1]とか$answer[Q2]とかの数字が代入される
     $answers[$key] = intval($_POST[$key]);
   }
 
 
   // 年齢と性別(Q1)
+  // $typeには$answers['Q1']が入る
   $type = $answers['Q1'];
-  // Q9の合計値計算
-  // $answer_9 = array_sum($_POST['Q9']);
+
   // 識別コード
+  //time関数は投稿した時間、rand関数はランダムの数列が代入
   $code = time() . '_' . rand();
 
 
   // カテゴリー分け
+  //一旦、0入れとく
   $category = 0;
   $category1 = 0;
   $category2 = 0;
@@ -27,6 +33,7 @@ if (!empty($_POST)){
   $category5 = 0;
   $category6 = 0;
 
+//$keyが['Q1']のときは無視、それぞれ費目ごとに代入
   foreach ($answers as $key => $value) {
     if ($key == 'Q1') {
       continue;
@@ -44,11 +51,13 @@ if (!empty($_POST)){
       $category = 6;  // 趣味・娯楽
     }
 
+// 一件ずつ、SQLのanswersテーブルに代入
     $sql = 'INSERT INTO`answers`(`category`, `price`, `code`,`type`) VALUES (?, ?, ?, ?)';
     $data = [$category,$value,$code,$type];
     $stmt = $dbh->prepare($sql);
     $stmt->execute($data);
 
+//カテゴリーごとに値が代入
     if ($category == 1){
       $category1 += $value;
     }elseif ($category == 2) {
@@ -65,6 +74,7 @@ if (!empty($_POST)){
   }
 
 // 円グラフ1（type別にグラフを表示）
+  // かよさん
 
 // if ($type  == 1) {
 //   // 円グラフaを表示
@@ -86,8 +96,9 @@ if (!empty($_POST)){
   echo $category5 . '<br>';
   echo $category6 . '<br>';
 
+
 $data2 = [];
-$data2 = ['category1' => $category1,'category2' => $category2,'ctaegory3' => $category3,'category4' => $category4,'category5' => $category5,'category6' => $category6];
+$data2 = ['category1' => $category1,'category2' => $category2,'category3' => $category3,'category4' => $category4,'category5' => $category5,'category6' => $category6];
 
 
 
