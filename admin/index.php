@@ -17,7 +17,10 @@ while(true) {
 }
 
 // 通算
-// count($users)
+
+    echo '<pre>';
+    var_dump(count($users));
+    echo '</pre>';
 
 // 今日だけ
 // $usersから今日のユーザーだけ抽出
@@ -52,9 +55,9 @@ while(true){
     $users_number_10s[] = $users_number_10;
 
 
-    echo '<pre>';
-    var_dump($users_number_10s);
-    echo '</pre>';
+    // echo '<pre>';
+    // var_dump($users_number_10s);
+    // echo '</pre>';
 
 $users_number_dates= [];
 while(true){
@@ -66,9 +69,9 @@ if($users_number_date == false){
 
 $users_number_dates[] = $users_number_date;
 
-    echo '<pre>';
-    var_dump($users_number_dates);
-    echo '</pre>';
+    // echo '<pre>';
+    // var_dump($users_number_dates);
+    // echo '</pre>';
  }
 }
 
@@ -143,7 +146,7 @@ $users_number_dates[] = $users_number_date;
             <div class="col-xs-8 col-xs-offset-2 thumbnail">
                 <h2 class="text-center content_header">管理者画面</h2>
                 <p>本日の利用者 10人</p>
-                <p>通算の利用者 100人</p>
+                <p>通算の利用者 <?php echo count($users) ?>人</p>
                 <p>29歳以下男性の通算利用者 30人</p>
                 <p>29歳以下女性の通算利用者 30人</p>
                 <p>30歳以上男性の通算利用者 20人</p>
