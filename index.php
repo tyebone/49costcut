@@ -64,30 +64,8 @@ if (!empty($_POST)){
     }
   }
 
-// 円グラフ1（type別にグラフを表示）
-
-// if ($type  == 1) {
-//   // 円グラフaを表示
-// }elseif ($type == 2) {
-//   // 円グラフbを表示
-// }elseif ($type == 3) {
-//   // 円グラフcを表示
-// }else{
-//   // 円グラフdを表示
-// }
-
-
-// 円グラフ2表示
-// 仮echo
-  // echo $category1 . '<br>';
-  // echo $category2 . '<br>';
-  // echo $category3 . '<br>';
-  // echo $category4 . '<br>';
-  // echo $category5 . '<br>';
-  // echo $category6 . '<br>';
-
-$data2 = [];
-$data2 = ['category1' => $category1,'category2' => $category2,'ctaegory3' => $category3,'category4' => $category4,'category5' => $category5,'category6' => $category6];
+// 円グラフ2にデータを送るためにで使う
+$category = [$category1, $category2,  $category3,  $category4, $category5,  $category6];
 
 
 
@@ -125,13 +103,13 @@ $data2 = ['category1' => $category1,'category2' => $category2,'ctaegory3' => $ca
     //   $syoshinsya = $prices;
     // }
 
+echo $category1;
 
+  echo '<pre>';
+  var_dump($category);
+  echo '</pre>';
 
-  // echo '<pre>';
-  // var_dump($data2);
-  // echo '</pre>';
-
-
+echo $category1, $category2, $category3, $category4, $category5, $category6;
 }
 
 
@@ -189,7 +167,7 @@ $data2 = ['category1' => $category1,'category2' => $category2,'ctaegory3' => $ca
       </div>
       <br>
 
-      <form method="POST" action="index.php">
+      <form method="POST" action="index.php#回答">
         <section class="What inView -in rounded-lg row">
           <div class ="col-md-1"></div>
           <div class="What__inner well well-lg row col-md-10 card card-body bg-light mb-3 border-dark">
@@ -449,75 +427,64 @@ $data2 = ['category1' => $category1,'category2' => $category2,'ctaegory3' => $ca
       </form>
 
 
-   <?php
-    if($_POST){
+      <?php if(!empty($_POST)): ?>
 
-    $html = <<< EOM
+        <div id="回答" class="all_area">
+          <div class="chart_area1x">
+            <div class="chart1and2 row">
+              <div class="col-md-1 text-center"></div>
+              <div id="result_chart1" class="col-md-5 text-center">
+                <!-- 比較グラフ１ -->
+                <p>円グラフ1</p>
+                <canvas id = "pieChart1"></canvas>
+              </div>
+              <div id="result_chart2" class="col-md-5 text-center">
+                <!-- 比較グラフ２ -->
+                <p>円グラフ2</p>
+                <canvas id = "pieChart2"></canvas>
+              </div>
+              <div class="col-md-1 text-center"></div>
+            </div>
 
-    <div class="all_area">
-    <div class="chart_area1x">
-    <div class="chart1and2 row">
-    <div class="col-md-1 text-center"></div>
-    <div id="result_chart1" class="col-md-5 text-center">
-    <!-- 比較グラフ１ -->
-    <p>円グラフ1</p>
-    <canvas id = "pieChart1">
-    </canvas>
-    </div>
-    <div id="result_chart2" class="col-md-5 text-center">
-    <!-- 比較グラフ２ -->
-    <p>円グラフ2</p>
-    <canvas id = "pieChart2">
-    </canvas>
-    </div>
-    <div class="col-md-1 text-center"></div>
-    </div>
-
-    <div class="result_sentence1">
-    </div>
-    </div>
-
-    <div class="chart_area2 row text-center">
-      <div class="col-md-2"></div>
-      <div id='barChartarea' class="col-md-8">
-      <!-- ラインチャート -->
-        <div class="row">
-          <div class ="col-md-3"></div>
-          <div class ='col-md-6 card card-body bg-light mb-3 border-dark'>
-            <p>あなたの節約度は…………</p>
+          <div class="result_sentence1"></div>
           </div>
-          <div class ="col-md-3"></div>
+
+          <div class="chart_area2 row text-center">
+            <div class="col-md-2"></div>
+            <div id='barChartarea' class="col-md-8">
+            <!-- ラインチャート -->
+              <div class="row">
+                <div class ="col-md-3"></div>
+                <div class ='col-md-6 card card-body bg-light mb-3 border-dark'>
+                  <p>あなたの節約度は…………</p>
+                </div>
+                <div class ="col-md-3"></div>
+              </div>
+              <p>チャートグラフ</p>
+              <canvas id = "barChart"></canvas>
+            </div>
+          </div>
+          <div class='text-center'>
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="セブ生活費シュミレーター  あなたの診断結果は〇〇です。" data-url="http://localhost/49_CostCut/index.php" data-show-count="false">シェアする</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
         </div>
-      <p>チャートグラフ</p>
-      <canvas id = "barChart">
-      </canvas>
-      </div>
-      </div>
-      <div class='text-center'>
-        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="セブ生活費シュミレーター  あなたの診断結果は〇〇です。" data-url="http://localhost/49_CostCut/index.php" data-show-count="false">シェアする</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      </div>
+
+      <?php endif; ?>
+
     </div>
-
-  <!-- 以下結果表示 -->
-EOM;
-
-  }else{
-
-  $html = <<< EOM
-
-EOM;
-  }
-  echo $html;
-
-?>
-
   </body>
     <script src="js/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
     <script src="js/pieChart1.js"></script>
+      <script>
+        showPie1(<?php echo $type; ?>);
+      </script>
     <script src="js/pieChart2.js"></script>
+      <script>
+        showPie2(<?php echo $category1, '<br>',$category2, $category3, $category4, $category5, $category6; ?>);
+      </script>
     <script src="js/barChart.js"></script>
-   </div>
   <footer>
   </footer>
 </html>
