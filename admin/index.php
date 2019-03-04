@@ -1,6 +1,8 @@
 <?php
 require('../dbconnect.php');
 
+date_default_timezone_set('Asia/Manila');
+
 // answersテーブルからcodeとtypeを取得
 $sql = 'SELECT `code`, `type` FROM `answers` GROUP BY `code`';
 $stmt = $dbh->prepare($sql);
@@ -40,10 +42,10 @@ $time = [];
 $user_dates = [];
 // $usersの一件ずつに要件定義
 foreach($users as $user) {
-    // $timeに$user['code']の冒頭の10桁を代入
-    $time = substr($user['code'],0,10);
-    // $user_dateは$timeで取得した10桁からそれぞれの日付を取得
-    $user_date = date("Y/m/d", $time);
+    // // $timeに$user['code']の冒頭の10桁を代入
+    // $time += substr($user['code'],0,10);
+    // // $user_dateは$timeで取得した10桁からそれぞれの日付を取得
+    // $user_date = date("Y/m/d", $time);
 
 // 3.カテゴリーごとの人数を取得
     // echo '<pre>';
@@ -54,7 +56,7 @@ foreach($users as $user) {
         $m20 ++ ;
     }elseif($user['type'] == 2){
         // echo 'hoge2';
-        $f20 += $user['type'];
+        $f20 ++;
     }elseif($user['type'] == 3){
         // echo 'hoge3';
         $m30 ++;
@@ -65,7 +67,7 @@ foreach($users as $user) {
 }
 
     echo '<pre>';
-    var_dump($user_date);
+    var_dump(array($time));
     echo '</pre>';
 
     echo '<pre>';
@@ -75,11 +77,11 @@ foreach($users as $user) {
 
 // もしも$today(今日の日付)と$user_dataに代入されている日付が同じ場合
 // $today_numに$usersに入っているデータの数を代入
-if($today == $user_date){
-     $today_num = count($user);
-     }else{
-     $today_num = 0;
-}
+// if($today == $user_date){
+//      $today_num = count($user);
+//      }else{
+//      $today_num = 0;
+// }
 
 
 
@@ -231,8 +233,8 @@ if($today == $user_date){
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2 thumbnail">
                 <h2 class="text-center content_header">管理者画面</h2>
-                <p>本日の利用者 <?php echo $today_num; ?>人</p>
-                <p>通算の利用者 <?php echo count($users) ?>人</p>
+<!--                 <p>本日の利用者 <?php echo $today_num; ?>人</p>
+ -->                <p>通算の利用者 <?php echo count($users) ?>人</p>
                 <p>29歳以下男性の通算利用者 <?php echo $m20; ?>人</p>
                 <p>29歳以下女性の通算利用者 <?php echo $f20; ?>人</p>
                 <p>30歳以上男性の通算利用者 <?php echo $m30; ?>人</p>

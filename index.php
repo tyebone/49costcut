@@ -1,6 +1,7 @@
  <?php
 require('dbconnect.php');
 
+date_default_timezone_set('Asia/Manila');
 $today = date("Y/m/d");
 echo $today.'hoge'.'<br>';
 
