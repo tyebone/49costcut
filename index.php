@@ -482,7 +482,7 @@ echo $category1, $category2, $category3, $category4, $category5, $category6;
       </script>
     <script src="js/pieChart2.js"></script>
       <script>
-        showPie2(<?php echo $category1, '<br>',$category2, $category3, $category4, $category5, $category6; ?>);
+        showPie2(<?php echo json_encode($category); ?>);
       </script>
     <script src="js/barChart.js"></script>
   <footer>
