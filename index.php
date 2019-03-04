@@ -1,6 +1,10 @@
  <?php
 require('dbconnect.php');
 
+$today = date("Y/m/d");
+echo $today.'hoge'.'<br>';
+
+
 // POST送信だったら
 //$answersテーブルが定義される
 
@@ -11,7 +15,7 @@ if (!empty($_POST)){
     $key = 'Q' . $i;
     //この時点で、$answers[Q1]とか$answer[Q2]とかの数字が代入される
     $answers[$key] = intval($_POST[$key]);
-  }
+}
 
 
   // 年齢と性別(Q1)
@@ -20,6 +24,7 @@ if (!empty($_POST)){
 
   // 識別コード
   //time関数は投稿した時間、rand関数はランダムの数列が代入
+  date_default_timezone_set('Asia/Tokyo');
   $code = time() . '_' . rand();
 
 

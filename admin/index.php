@@ -9,6 +9,8 @@ $stmt->execute();
 // 1.通算の人数を取得
 // usersという配列を定義
 $users = [];
+
+
 while(true) {
     // レコード一件ずつ取得
     $record = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -22,29 +24,98 @@ while(true) {
     $users[] = $record;
 }
 
-// 今日だけ
+// 2.本日分の人数を取得
 // $usersから今日のユーザーだけ抽出
 // $today変数に今日の日付を定義
+date_default_timezone_set('Asia/Tokyo');
 $today = date("Y/m/d");
-echo $today.'hoge'.'<br>';
+// echo $today.'hoge'.'<br>';
 
+$m20 = 0;
+$f20 = 0;
+$m30 = 0;
+$f30 = 0;
+
+$time = [];
+$user_dates = [];
 // $usersの一件ずつに要件定義
 foreach($users as $user) {
-    // $timeに10桁のtimeを
+    // $timeに$user['code']の冒頭の10桁を代入
     $time = substr($user['code'],0,10);
     // $user_dateは$timeで取得した10桁からそれぞれの日付を取得
     $user_date = date("Y/m/d", $time);
+
+// 3.カテゴリーごとの人数を取得
+    // echo '<pre>';
+    // var_dump($user['type']);
+    // echo '</pre>';
+
+    if($user['type'] == 1){
+        $m20 ++ ;
+    }elseif($user['type'] == 2){
+        // echo 'hoge2';
+        $f20 += $user['type'];
+    }elseif($user['type'] == 3){
+        // echo 'hoge3';
+        $m30 ++;
+    }elseif($user['type'] == 4){
+        // echo 'hoge4'.'<br>';
+        $f30 ++;
+    }
 }
 
+    echo '<pre>';
+    var_dump($user_date);
+    echo '</pre>';
+
+    echo '<pre>';
+    var_dump($today);
+    echo '</pre>';
+
+
 // もしも$today(今日の日付)と$user_dataに代入されている日付が同じ場合
-// $today_numberに$usersに入っているデータの数を代入
+// $today_numに$usersに入っているデータの数を代入
 if($today == $user_date){
-     $today_num = count($users);
+     $today_num = count($user);
      }else{
-    }
+     $today_num = 0;
+}
+
+
+
+// $m20_num = count($f30);
+
+    echo '<pre>';
+    var_dump($m20);
+    echo '</pre>';
+
+    echo '<pre>';
+    var_dump($f20);
+    echo '</pre>';
+
+    echo '<pre>';
+    var_dump($m30);
+    echo '</pre>';
+
+    echo '<pre>';
+    var_dump($f30);
+    echo '</pre>';
+
+// echo $f20.'<br>';
+// echo $m30.'<br>';
+// echo $f30.'<br>';
+
+
+
+
+
+// $m30_num = count($m30);
+
+
+
 
     // echo '<pre>';
-    // var_dump($users);
+    // var_dump($today_num);
     // echo '</pre>';
 
 
@@ -160,12 +231,12 @@ if($today == $user_date){
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2 thumbnail">
                 <h2 class="text-center content_header">管理者画面</h2>
-                <p>本日の利用者 <?php echo $today_number; ?>人</p>
+                <p>本日の利用者 <?php echo $today_num; ?>人</p>
                 <p>通算の利用者 <?php echo count($users) ?>人</p>
-                <p>29歳以下男性の通算利用者 30人</p>
-                <p>29歳以下女性の通算利用者 30人</p>
-                <p>30歳以上男性の通算利用者 20人</p>
-                <p>30歳以上女性の通算利用者 20人</p>
+                <p>29歳以下男性の通算利用者 <?php echo $m20; ?>人</p>
+                <p>29歳以下女性の通算利用者 <?php echo $f20; ?>人</p>
+                <p>30歳以上男性の通算利用者 <?php echo $m30; ?>人</p>
+                <p>30歳以上女性の通算利用者 <?php echo $f30; ?>人</p>
                 <br>
                 <p>新規登録</p>
                 <p>確認</p>
