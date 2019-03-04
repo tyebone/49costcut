@@ -189,7 +189,7 @@ $data2 = ['category1' => $category1,'category2' => $category2,'ctaegory3' => $ca
       </div>
       <br>
 
-      <form method="POST" action="index.php">
+      <form method="POST" action="index.php#hogehoge">
         <section class="What inView -in rounded-lg row">
           <div class ="col-md-1"></div>
           <div class="What__inner well well-lg row col-md-10 card card-body bg-light mb-3 border-dark">
@@ -447,76 +447,62 @@ $data2 = ['category1' => $category1,'category2' => $category2,'ctaegory3' => $ca
           <div class ="col-md-1"></div>
         </section>
       </form>
-
-
-   <?php
-    if($_POST){
-
-    $html = <<< EOM
-
-    <div class="all_area">
-    <div class="chart_area1x">
-    <div class="chart1and2 row">
-    <div class="col-md-1 text-center"></div>
-    <div id="result_chart1" class="col-md-5 text-center">
-    <!-- 比較グラフ１ -->
-    <p>円グラフ1</p>
-    <canvas id = "pieChart1">
-    </canvas>
-    </div>
-    <div id="result_chart2" class="col-md-5 text-center">
-    <!-- 比較グラフ２ -->
-    <p>円グラフ2</p>
-    <canvas id = "pieChart2">
-    </canvas>
-    </div>
-    <div class="col-md-1 text-center"></div>
-    </div>
-
-    <div class="result_sentence1">
-    </div>
-    </div>
-
-    <div class="chart_area2 row text-center">
-      <div class="col-md-2"></div>
-      <div id='barChartarea' class="col-md-8">
-      <!-- ラインチャート -->
-        <div class="row">
-          <div class ="col-md-3"></div>
-          <div class ='col-md-6 card card-body bg-light mb-3 border-dark'>
-            <p>あなたの節約度は…………</p>
-          </div>
-          <div class ="col-md-3"></div>
-        </div>
-      <p>チャートグラフ</p>
-      <canvas id = "barChart">
+    <?php if(!empty($_POST)): ?>
+      <div id="hogehoge" class="all_area">
+      <div class="chart_area1x">
+      <div class="chart1and2 row">
+      <div class="col-md-1 text-center"></div>
+      <div id="result_chart1" class="col-md-5 text-center">
+      <!-- 比較グラフ１ -->
+      <p>円グラフ1</p>
+      <canvas id = "pieChart1">
       </canvas>
       </div>
+      <div id="result_chart2" class="col-md-5 text-center">
+      <!-- 比較グラフ２ -->
+      <p>円グラフ2</p>
+      <canvas id = "pieChart2">
+      </canvas>
       </div>
-      <div class='text-center'>
-        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="セブ生活費シュミレーター  あなたの診断結果は〇〇です。" data-url="http://localhost/49_CostCut/index.php" data-show-count="false">シェアする</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <div class="col-md-1 text-center"></div>
       </div>
-    </div>
 
-  <!-- 以下結果表示 -->
-EOM;
+      <div class="result_sentence1">
+      </div>
+      </div>
 
-  }else{
-
-  $html = <<< EOM
-
-EOM;
-  }
-  echo $html;
-
-?>
+      <div class="chart_area2 row text-center">
+        <div class="col-md-2"></div>
+        <div id='barChartarea' class="col-md-8">
+        <!-- ラインチャート -->
+          <div class="row">
+            <div class ="col-md-3"></div>
+            <div class ='col-md-6 card card-body bg-light mb-3 border-dark'>
+              <p>あなたの節約度は…………</p>
+            </div>
+            <div class ="col-md-3"></div>
+          </div>
+        <p>チャートグラフ</p>
+        <canvas id = "barChart">
+        </canvas>
+        </div>
+        </div>
+        <div class='text-center'>
+          <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="セブ生活費シュミレーター  あなたの診断結果は〇〇です。" data-url="http://localhost/49_CostCut/index.php" data-show-count="false">シェアする</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </div>
+    <?php endif; ?>
 
   </body>
     <script src="js/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
-    <script src="js/pieChart1.js"></script>
+    <!-- <script src="js/pieChart1.js"></script> -->
     <script src="js/pieChart2.js"></script>
     <script src="js/barChart.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      showPie1(<?php echo $type; ?>);
+    </script>
    </div>
   <footer>
   </footer>
