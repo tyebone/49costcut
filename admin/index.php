@@ -2,9 +2,34 @@
 require('../dbconnect.php');
 
 // answersテーブルからcodeとtypeを取得
-$sql = 'SELECT code FROM`answers`GROUP BY code';
+$sql = 'SELECT `code`, `type` FROM `answers` GROUP BY `code`';
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
+
+$users = [];
+while(true) {
+    // レコード一件ずつ取得
+    $record = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($record == false) { // レコードこれ以上ない
+        break;
+    }
+    $users[] = $record;
+}
+
+// 通算
+// count($users)
+
+// 今日だけ
+// $usersから今日のユーザーだけ抽出
+foreach($users as $user) {
+    $time = substr($user['code'],0,10);
+    echo $time . '<br>';
+    echo date("Y/m/d", $time) . '<br>';
+}
+
+// type別
+// $usersから
+
 
 
 // $today = strtotime('today 00:00:00').'<br>';
