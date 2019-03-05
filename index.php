@@ -64,13 +64,13 @@ if (!empty($_POST)){
     }
   }
 
-// 円グラフ2にデータを送るためにで使う
-$category = [$category1, $category2,  $category3,  $category4, $category5,  $category6];
+  // 円グラフ2にデータを送るためにで使う
+  $category = [$category1, $category2,  $category3,  $category4, $category5,  $category6];
 
 
 
 
-// チャートグラフ表示
+  // チャートグラフ表示
   $sql = 'SELECT `code`, SUM(`price`) AS `price_sum` FROM `answers` GROUP BY `code`';
   $stmt = $dbh->prepare($sql);
   $stmt->execute();
@@ -85,32 +85,52 @@ $category = [$category1, $category2,  $category3,  $category4, $category5,  $cat
     }
     $prices[] = $price;
   }
-    // $choujin = [];
-    // $tatujin = [];
-    // $futu = [];
-    // $shiroto = [];
-    // $syoshinsya =[];
 
-    // if ($prices == 0 < 35000) {
-    //   $choujin = $prices;
-    // }elseif ($prices == 35000 < 70000) {
-    //   $tetujin = $prices;
-    // }elseif ($prices == 70000 < 105000) {
-    //   $futu = $prices;
-    // }elseif ($prices == 105000 < 120000) {
-    //   $shiroto = $prices;
-    // }else{
-    //   $syoshinsya = $prices;
-    // }
+  // バーチャートへデータを送るためにpriceのみ抽出
+  $price_sum = array_column($prices, 'price_sum');
 
-// $filtered = array_filter($prices, function($row){
-//     return $row['price_sum'] == 2;
-// });
-$price_sum = array_column($prices, 'price_sum');
+  // 説明文表示のための合計値
+  $your_price = array_sum($category);
 
   echo '<pre>';
-  var_dump($type);
+  var_dump($your_price);
   echo '</pre>';
+
+  // 文字代入
+  $cyoujin = '超人';
+  $cyoujin_bun = 'すべてのカテゴリーにおいて理想的な家計状況であると言えるでしょう。'.'<br>'.'これからもセブライフを楽しんでください。';
+
+  $tatujin = '達人';
+  $tatujin_bun = 'たまにハメを外してしまうことがありますが、胸を張れる家計状況であると言えるでしょう。'.'<br>'.'節約の仕方を周りの人にアドバイスしてあげましょう。';
+
+  $futu = '普通';
+  $futu_bun = 'まさに平均点。さまざまなカテゴリーで改善の余地があります。'.'<br>'.'さらなる高みを目指してください。';
+
+  $shiroto = '素人';
+  $shiroto_bun = '楽しんでいますが、このままだと、財政的に破綻します。'.'<br>'.'これからは気を引き締めて節約活動に励みましょう。';
+
+  $syoshinsya = '初心者';
+  $syoshinsya_bun = 'ヘタしたら日本にいるときよりも、浪費しているのではないでしょうか。'.'<br>'.'財布の中身と相談してセブライフを楽しみましょう。';
+
+  if ($your_price < 15000) {
+    $your_price = $cyoujin;
+    $bun = $cyoujin_bun;
+    }else if ($your_price < 22500) {
+      $your_price = $tatujin;
+      $bun = $tatujin_bun;
+    }else if ($your_price < 30000) {
+      $your_price = $futu;
+      $bun = $futu_bun;
+    }else if ($your_price < 45000) {
+      $your_price = $shiroto;
+      $bun = $shiroto_bun;
+    }else{
+      $your_price = $syoshinsya;
+      $bun = $syoshinsya_bun;
+    }
+
+
+
 
 }
 
@@ -172,7 +192,7 @@ $price_sum = array_column($prices, 'price_sum');
       <form method="POST" action="index.php#回答">
         <section class="What inView -in rounded-lg row">
           <div class ="col-md-1"></div>
-          <div class="What__inner well well-lg row col-md-10 card card-body bg-light mb-3 border-dark">
+          <div class="col-md-10 card card-body bg-light mb-3 border-dark">
           <div class="row">
               <div class ="col-md-2"></div>
               <div class ='col-md-8 card card-body bg-light mb-3 border-dark'>
@@ -319,9 +339,9 @@ $price_sum = array_column($prices, 'price_sum');
                   <p class = "title">週末はどのように過ごしますか</p>
                   <label><p><input type="radio" class="" id="question_10" checked="checked" name="Q10" value="0">&nbsp;どこにも行かない&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_10" name="Q10" value="2000">&nbsp;日帰りで遊びに行く&nbsp;&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_10" name="Q11" value="6000">&nbsp;泊まりで旅行に行く</label>
+                  <label><p><input type="radio" class="" id="question_10" name="Q10" value="6000">&nbsp;泊まりで旅行に行く</label>
                 </fieldset>
-                </div>
+              </div>
               <div class ="col-md-2"></div>
             </div>
             <br>
@@ -430,7 +450,15 @@ $price_sum = array_column($prices, 'price_sum');
 
 
       <?php if(!empty($_POST)): ?>
-
+        <div class="row">
+          <div class ="col-md-3"></div>
+            <div class ='col-md-6 card card-body bg-light mb-3 border-dark text-center'>
+            <!-- 節約度別の説明文 -->
+              <p>あなたの節約度は・・・</p>
+              <p><strong class="text-danger"><?php echo $your_price?></strong>&nbsp;&nbsp;&nbsp;レベルです</p>
+            </div>
+          <div class ="col-md-3"></div>
+        </div>
         <div id="回答" class="all_area">
           <div class="chart_area1x">
             <div class="chart1and2 row">
@@ -458,7 +486,8 @@ $price_sum = array_column($prices, 'price_sum');
               <div class="row">
                 <div class ="col-md-3"></div>
                 <div class ='col-md-6 card card-body bg-light mb-3 border-dark'>
-                  <p>あなたの節約度は…………</p>
+                  <!-- 節約度別の説明文 -->
+                  <p><?php echo $bun?></p>
                 </div>
                 <div class ="col-md-3"></div>
               </div>
