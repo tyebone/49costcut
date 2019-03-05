@@ -1,94 +1,87 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<?php
+//session（セッション）を使うときは一番最初に書く
+session_start();
+require('../dbconnect.php');
 
-	<style>body{padding-top: 60px;}</style>
+$errors = [];
 
-    <link href="bootstrap3/css/bootstrap.css" rel="stylesheet" />
+//課題：post送信されたときに、postに入っている値が空かどうかのバリデーションを書いていく
+if(!empty($_POST)){
+    $email = $_POST['input_email'];
+    $password = $_POST['input_password'];
+    if($email != '' && $password != ''){
+        //正常系
+        //両方入力されているとき
+        //データベースとの照合処理
+        //1.入力されたメールアドレスと一致する登録データを1件DBから取得する
+        $sql = 'SELECT * FROM `owners` WHERE `email` = ?';
+        $data = [$email];
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute($data);
+        //$recordはDBの1レコード（1行）に値する
+        //形式は連想配列
+        //キーはカラムに依存する
+        $record = $stmt->fetch(PDO::FETCH_ASSOC);
 
-	<link href="login-register.css" rel="stylesheet" />
-	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+        //SELECT文の実行結果がある場合は連想配列
+        //結果がない場合はfalseが入る
+        if($record == false){
+            $errors['signin'] = 'failed';
+        }
 
-	<script src="jquery/jquery-1.10.2.js" type="text/javascript"></script>
-	<script src="bootstrap3/js/bootstrap.js" type="text/javascript"></script>
-	<script src="login-register.js" type="text/javascript"></script>
+        //2.パスワード照合
+        //password_verify(文字列,ハッシュ化=暗号化された文字列)
+        //指定したふたつの文字列が合致する場合true
+        //$password と $record['password']は == かどうかを確認している
+        if(password_verify($password,$record['password'])){
+            //認証成功
+            //3.セッションにユーザーのIDを格納
+            $_SESSION['49_CostCut']['id'] = $record['id'];
 
-</head>
-<body>
+            //4.タイムライン画面に遷移
+            header('Location: index.php');
+            exit();
+        }else{
+            //認証失敗
+            $errors['signin'] = 'failed';
+        }
+
+    }else{
+        $errors['signin'] = 'blank';
+    }
+}
+
+
+?>
+<!-- <?php include('layouts/header.php'); ?>
+ --><body style="margin-top: 60px">
     <div class="container">
         <div class="row">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
-                 <a class="btn big-login" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Log in</a>
-                 <a class="btn big-register" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">Register</a></div>
-            <div class="col-sm-4"></div>
+            <div class="col-xs-8 col-xs-offset-2 thumbnail">
+                <h2 class="text-center content_header">サインイン</h2>
+                <form method="POST" action="login.php" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="email">メールアドレス</label>
+                        <input type="email" name="input_email" class="form-control" id="email" placeholder="example@gmail.com">
+                        <?php if(isset($errors['signin']) && $errors['signin'] =='blank'): ?>
+                            <p class= 'text-danger'>メールアドレスとパスワードを正しく入力してください</p>
+                        <?php endif; ?>
+                        <?php if(isset($errors['signin']) && $errors['signin'] =='failed'): ?>
+                            <p class= 'text-danger'>サインインに失敗しました</p>
+                        <?php endif; ?>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">パスワード</label>
+                        <input type="password" name="input_password" class="form-control" id="password" placeholder="4 ~ 16文字のパスワード">
+                    </div>
+                    <input type="submit" class="btn btn-info" value="サインイン">
+                    <span style="float: right; padding-top: 6px;">
+                        <a href="../index.php">戻る</a>
+                    </span>
+                </form>
+            </div>
         </div>
-
-		 <div class="modal fade login" id="loginModal">
-		      <div class="modal-dialog login animated">
-    		      <div class="modal-content">
-    		         <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Login with</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="box">
-                             <div class="content">
-                                <div class="social">
-                                    <a class="circle github" href="/auth/github">
-                                        <i class="fa fa-github fa-fw"></i>
-                                    </a>
-                                    <a id="google_login" class="circle google" href="/auth/google_oauth2">
-                                        <i class="fa fa-google-plus fa-fw"></i>
-                                    </a>
-                                    <a id="facebook_login" class="circle facebook" href="/auth/facebook">
-                                        <i class="fa fa-facebook fa-fw"></i>
-                                    </a>
-                                </div>
-                                <div class="division">
-                                    <div class="line l"></div>
-                                      <span>or</span>
-                                    <div class="line r"></div>
-                                </div>
-                                <div class="error"></div>
-                                <div class="form loginBox">
-                                    <form method="post" action="/login" accept-charset="UTF-8">
-                                    <input id="email" class="form-control" type="text" placeholder="Email" name="email">
-                                    <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                                    <input class="btn btn-default btn-login" type="button" value="Login" onclick="loginAjax()">
-                                    </form>
-                                </div>
-                             </div>
-                        </div>
-                        <div class="box">
-                            <div class="content registerBox" style="display:none;">
-                             <div class="form">
-                                <form method="post" html="{:multipart=>true}" data-remote="true" action="/register" accept-charset="UTF-8">
-                                <input id="email" class="form-control" type="text" placeholder="Email" name="email">
-                                <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                                <input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation">
-                                <input class="btn btn-default btn-register" type="submit" value="Create account" name="commit">
-                                </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="forgot login-footer">
-                            <span>Looking to
-                                 <a href="javascript: showRegisterForm();">create an account</a>
-                            ?</span>
-                        </div>
-                        <div class="forgot register-footer" style="display:none">
-                             <span>Already have an account?</span>
-                             <a href="javascript: showLoginForm();">Login</a>
-                        </div>
-                    </div>
-    		      </div>
-		      </div>
-		  </div>
     </div>
 </body>
+<!-- <?php include('layouts/header.php'); ?> -->
 </html>

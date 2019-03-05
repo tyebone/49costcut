@@ -1,24 +1,31 @@
-<?php
+ <?php
 require('dbconnect.php');
 
+date_default_timezone_set('Asia/Manila');
+$today = date("Y/m/d");
+
+// POST送信だったら
+//$answersテーブルが定義される
 if (!empty($_POST)){
 
   $answers = [];
   for ($i = 1; $i < 17; $i++) {
     $key = 'Q' . $i;
+    //この時点で、$answers[Q1]とか$answer[Q2]とかの数字が代入される
     $answers[$key] = intval($_POST[$key]);
-  }
-
+}
 
   // 年齢と性別(Q1)
+  // $typeには$answers['Q1']が入る
   $type = $answers['Q1'];
-  // Q9の合計値計算
-  // $answer_9 = array_sum($_POST['Q9']);
+
   // 識別コード
+  //time関数は投稿した時間、rand関数はランダムの数列が代入
   $code = time() . '_' . rand();
 
 
   // カテゴリー分け
+  //一旦、0入れとく
   $category = 0;
   $category1 = 0;
   $category2 = 0;
@@ -27,6 +34,7 @@ if (!empty($_POST)){
   $category5 = 0;
   $category6 = 0;
 
+//$keyが['Q1']のときは無視、それぞれ費目ごとに代入
   foreach ($answers as $key => $value) {
     if ($key == 'Q1') {
       continue;
@@ -44,11 +52,13 @@ if (!empty($_POST)){
       $category = 6;  // 趣味・娯楽
     }
 
+// 一件ずつ、SQLのanswersテーブルに代入
     $sql = 'INSERT INTO`answers`(`category`, `price`, `code`,`type`) VALUES (?, ?, ?, ?)';
     $data = [$category,$value,$code,$type];
     $stmt = $dbh->prepare($sql);
     $stmt->execute($data);
 
+//カテゴリーごとに値が代入
     if ($category == 1){
       $category1 += $value;
     }elseif ($category == 2) {
@@ -67,9 +77,6 @@ if (!empty($_POST)){
   // 円グラフ2にデータを送るためにで使う
   $category = [$category1, $category2,  $category3,  $category4, $category5,  $category6];
 
-
-
-
   // チャートグラフ表示
   $sql = 'SELECT `code`, SUM(`price`) AS `price_sum` FROM `answers` GROUP BY `code`';
   $stmt = $dbh->prepare($sql);
@@ -86,15 +93,12 @@ if (!empty($_POST)){
     $prices[] = $price;
   }
 
+
   // バーチャートへデータを送るためにpriceのみ抽出
   $price_sum = array_column($prices, 'price_sum');
 
   // 説明文表示のための合計値
   $your_price = array_sum($category);
-
-  echo '<pre>';
-  var_dump($your_price);
-  echo '</pre>';
 
   // 文字代入
   $cyoujin = '超人';
@@ -130,11 +134,7 @@ if (!empty($_POST)){
     }
 
 
-
-
 }
-
-
 ?>
 
 
