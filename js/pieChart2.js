@@ -1,19 +1,5 @@
 const bCtx = $('#pieChart2')
 function showPie2(category) {
-        // $eat = []
-        // $traffic = []
-        // $life = []
-        // $play = []
-        // $clothe = []
-        // $hoby = []
-
-        // $eat = $category1
-        // $traffic = $category2
-        // $life = $category3
-        // $play = $category4
-        // $clothe = $category5
-        // $hoby = $category6
-
     new Chart(bCtx,{
       type: 'pie',
       data: {
@@ -36,7 +22,6 @@ function showPie2(category) {
 
       }
     })
-
 }
 
 

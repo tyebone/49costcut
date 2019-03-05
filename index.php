@@ -4,7 +4,7 @@ require('dbconnect.php');
 if (!empty($_POST)){
 
   $answers = [];
-  for ($i = 1; $i < 16; $i++) {
+  for ($i = 1; $i < 17; $i++) {
     $key = 'Q' . $i;
     $answers[$key] = intval($_POST[$key]);
   }
@@ -103,13 +103,15 @@ $category = [$category1, $category2,  $category3,  $category4, $category5,  $cat
     //   $syoshinsya = $prices;
     // }
 
-echo $category1;
+// $filtered = array_filter($prices, function($row){
+//     return $row['price_sum'] == 2;
+// });
+$price_sum = array_column($prices, 'price_sum');
 
   echo '<pre>';
-  var_dump($category);
+  var_dump($type);
   echo '</pre>';
 
-echo $category1, $category2, $category3, $category4, $category5, $category6;
 }
 
 
@@ -485,6 +487,9 @@ echo $category1, $category2, $category3, $category4, $category5, $category6;
         showPie2(<?php echo json_encode($category); ?>);
       </script>
     <script src="js/barChart.js"></script>
+      <script>
+        showChart(<?php echo json_encode($price_sum); ?>);
+      </script>
   <footer>
   </footer>
 </html>
