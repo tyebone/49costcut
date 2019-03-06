@@ -78,7 +78,7 @@ foreach($users as $user) {
         <title>セブ生活費シュミレーター</title>
         <link rel="stylesheet" type="text/css" href="js/style.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700" rel="stylesheet">
     </head>
     <header>
         <div class='text-center'>
