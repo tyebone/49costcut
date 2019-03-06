@@ -136,9 +136,9 @@ if (!empty($_POST)){
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
 
 
@@ -178,25 +178,25 @@ if (!empty($_POST)){
         <section class="What inView -in rounded-lg row">
           <div class ="col-md-1"></div>
           <div class="col-md-10 card card-body bg-light mb-3 border-dark">
-          <div class="row">
-              <div class ="col-md-2"></div>
-              <div class ='col-md-8 card card-body bg-light mb-3 border-dark'>
-                <fieldset>
-                  <p class =><span class="under">問題1</span></p>
-                  <p class = "title">年齢と性別を選んでください</p>
-                  <label><p><input type="radio" class="" id="question_1" checked="checked" name="Q1" value="1">&nbsp;29歳以下の男性&nbsp;&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_1" name="Q1" value="2">&nbsp;29歳以下の女性&nbsp;&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_1" name="Q1" value="3">&nbsp;30歳以上の男性&nbsp;&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_1" name="Q1" value="4">&nbsp;30歳以上の女性</p></label>
-                </fieldset>
-              </div>
-              <div class ="col-md-2"></div>
+            <div class="row">
+                <div class ="col-md-1"></div>
+                <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+                  <fieldset>
+                    <p class =><span class="under">問題1</span></p>
+                    <p class = "title">年齢と性別を選んでください</p>
+                    <label><p><input type="radio" class="" id="question_1" checked="checked" name="Q1" value="1">&nbsp;29歳以下の男性&nbsp;&nbsp;&nbsp;</p></label>
+                    <label><p><input type="radio" class="" id="question_1" name="Q1" value="2">&nbsp;29歳以下の女性&nbsp;&nbsp;&nbsp;</p></label>
+                    <label><p><input type="radio" class="" id="question_1" name="Q1" value="3">&nbsp;30歳以上の男性&nbsp;&nbsp;&nbsp;</p></label>
+                    <label><p><input type="radio" class="" id="question_1" name="Q1" value="4">&nbsp;30歳以上の女性</p></label>
+                  </fieldset>
+                </div>
+                <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-2"></div>
-              <div class ='col-md-8 alert alert-secondary'>
+              <div class ="col-md-1"></div>
+              <div class ='col-md-10 alert alert-secondary'>
                 <fieldset>
                   <p class ="font"><span class="under">問題2</span></p>
                   <p class = "title">朝食をどれぐらい食べますか</p>
@@ -205,13 +205,13 @@ if (!empty($_POST)){
                   <label><p><input type="radio" class="" id="question_2" name="Q2" value="4500">&nbsp;しっかり食べる</label>
                 </fieldset>
               </div>
-              <div class ="col-md-2"></div>
+              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-2"></div>
-              <div class ='col-md-8 card card-body bg-light mb-3 border-dark'>
+              <div class ="col-md-1"></div>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題3</span></p>
                   <p class = "title">昼食をどれぐらい食べますか</p>
@@ -220,13 +220,13 @@ if (!empty($_POST)){
                   <label><p><input type="radio" class="" id="question_3" name="Q3" value="4500">&nbsp;しっかり食べる</label>
                 </fieldset>
               </div>
-              <div class ="col-md-2"></div>
+              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-2"></div>
-              <div class ='col-md-8 card card-body bg-light mb-3 border-dark'>
+              <div class ="col-md-1"></div>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題4</span></p>
                   <p class = "title">夕食をどれぐらい食べますか</p>
@@ -235,14 +235,14 @@ if (!empty($_POST)){
                   <label><p><input type="radio" class="" id="question_4" name="Q4" value="9000">&nbsp;しっかり食べる</label>
                 </fieldset>
               </div>
-              <div class ="col-md-2"></div>
+              <div class ="col-md-1"></div>
             </div>
             <br>
 
 
             <div class="row">
-              <div class ="col-md-2"></div>
-              <div class ='col-md-8 card card-body bg-light mb-3 border-dark'>
+              <div class ="col-md-1"></div>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題5</span></p>
                   <p class = "title">おもな交通手段はなんですか</p>
@@ -252,13 +252,13 @@ if (!empty($_POST)){
                   <label><p><input type="radio" class="" id="question_5" name="Q5" value="3000">&nbsp;タクシー</p></label>
                 </fieldset>
               </div>
-              <div class ="col-md-2"></div>
+              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-2"></div>
-                <div class ='col-md-8 card card-body bg-light mb-3 border-dark'>
+              <div class ="col-md-1"></div>
+                <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                   <fieldset>
                     <p class ="font"><span class="under">問題6</span></p>
                     <p class = "title">洗濯の頻度はどれぐらいですか</p>
@@ -267,13 +267,13 @@ if (!empty($_POST)){
                     <label><p><input type="radio" class="" id="question_6" name="Q6" value="9000">&nbsp;しっかり食べる</label>
                   </fieldset>
                 </div>
-              <div class ="col-md-8"></div>
+              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-2"></div>
-              <div class ='col-md-8 card card-body bg-light mb-3 border-dark'>
+              <div class ="col-md-1"></div>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題7</span></p>
                   <p class = "title">携帯電話をどれぐらい利用しますか</p>
@@ -282,13 +282,13 @@ if (!empty($_POST)){
                   <label><p><input type="radio" class="" id="question_7" name="Q7" value="1000">&nbsp;しっかりチャージして利用する</label>
                 </fieldset>
               </div>
-              <div class ="col-md-2"></div>
+              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-2"></div>
-              <div class ='col-md-8 card card-body bg-light mb-3 border-dark'>
+              <div class ="col-md-1"></div>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題8</span></p>
                   <p class = "title">タバコを吸いますか</p>
@@ -297,13 +297,13 @@ if (!empty($_POST)){
                   <label><p><input type="radio" class="" id="question_8" name="Q8" value="3000">&nbsp;一日一箱以上吸う</label>
                 </fieldset>
               </div>
-              <div class ="col-md-2"></div>
+              <div class ="col-md-1"></div>
               </div>
             <br>
 
             <div class="row">
-            <div class ="col-md-2"></div>
-              <div class ='col-md-8 card card-body bg-light mb-3 border-dark'>
+            <div class ="col-md-1"></div>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題9</span></p>
                   <p class = "title">飲み会に行きますか</p>
@@ -312,13 +312,13 @@ if (!empty($_POST)){
                   <label><p><input type="radio" class="" id="question_9" name="Q9" value="6000">&nbsp;週3回以上行く</label>
                 </fieldset>
               </div>
-              <div class ="col-md-2"></div>
+              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-2"></div>
-              <div class ='col-md-8 card card-body bg-light mb-3 border-dark'>
+              <div class ="col-md-1"></div>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題10</span></p>
                   <p class = "title">週末はどのように過ごしますか</p>
@@ -327,13 +327,13 @@ if (!empty($_POST)){
                   <label><p><input type="radio" class="" id="question_10" name="Q10" value="6000">&nbsp;泊まりで旅行に行く</label>
                 </fieldset>
               </div>
-              <div class ="col-md-2"></div>
+              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-2"></div>
-              <div class ='col-md-8 card card-body bg-light mb-3 border-dark'>
+              <div class ="col-md-1"></div>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題11</span></p>
                   <p class = "title">マッサージに行きますか</p>
@@ -342,13 +342,13 @@ if (!empty($_POST)){
                   <label><p><input type="radio" class="" id="question_11" name="Q11" value="2000">&nbsp;高級スパに行く</label>
                 </fieldset>
               </div>
-              <div class ="col-md-2"></div>
+              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-2"></div>
-              <div class ='col-md-8 card card-body bg-light mb-3 border-dark'>
+              <div class ="col-md-1"></div>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題12</span></p>
                   <p class = "title">現地の服を買いますか</p>
@@ -357,13 +357,13 @@ if (!empty($_POST)){
                   <label><p><input type="radio" class="" id="question_12" name="Q12" value="4000">&nbsp;3着以上買いたい</label>
                 </fieldset>
               </div>
-              <div class ="col-md-2"></div>
+              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-2"></div>
-              <div class ='col-md-8 card card-body bg-light mb-3 border-dark'>
+              <div class ="col-md-1"></div>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題13</span></p>
                   <p class = "title">習い事やジムに通いますか</p>
@@ -372,13 +372,13 @@ if (!empty($_POST)){
                   <label><p><input type="radio" class="" id="question_13" name="Q13" value="3000">&nbsp;2つ以上通う</label>
                 </fieldset>
               </div>
-              <div class ="col-md-2"></div>
+              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-2"></div>
-              <div class ='col-md-8 card card-body bg-light mb-3 border-dark'>
+              <div class ="col-md-1"></div>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題14</span></p>
                   <p class = "title">カジノに行きますか</p>
@@ -387,13 +387,13 @@ if (!empty($_POST)){
                   <label><p><input type="radio" class="" id="question_14" name="Q14" value="6000">&nbsp;週3回以上行きたい</label>
                 </fieldset>
               </div>
-              <div class ="col-md-2"></div>
+              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-2"></div>
-              <div class ='col-md-8 card card-body bg-light mb-3 border-dark'>
+              <div class ="col-md-1"></div>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題15</span></p>
                   <p class = "title">夜のスポットに遊びに行きますか</p>
@@ -402,13 +402,13 @@ if (!empty($_POST)){
                   <label><p><input type="radio" class="" id="question_15" name="Q15" value="8000">&nbsp;それ以上行きたい</label>
                 </fieldset>
               </div>
-              <div class ="col-md-2"></div>
+              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-2"></div>
-                <div class ='col-md-8 card card-body bg-light mb-3 border-dark'>
+              <div class ="col-md-1"></div>
+                <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                   <fieldset>
                     <p class ="font"><span class="under">問題16</span></p>
                     <p class = "title">おみやげを買いますか</p>
@@ -417,7 +417,7 @@ if (!empty($_POST)){
                     <label><p><input type="radio" class="" id="question_16" name="Q16" value="4000">&nbsp;友達にもたくさん買いたい</label>
                   </fieldset>
                 </div>
-              <div class ="col-md-2"></div>
+              <div class ="col-md-1"></div>
             </div>
             <br>
 
@@ -430,6 +430,7 @@ if (!empty($_POST)){
             </div>
           </div>
           <div class ="col-md-1"></div>
+        </div>
         </section>
       </form>
 
@@ -440,8 +441,8 @@ if (!empty($_POST)){
             <div class ="col-md-3"></div>
               <div class ='col-md-6 card card-body bg-light mb-3 border-dark text-center'>
               <!-- 節約度別の説明文 -->
-                <p>あなたの節約度は・・・</p>
-                <p><strong class="text-danger"><?php echo $your_type ;?></strong>&nbsp;&nbsp;&nbsp;レベルです</p>
+                <h2>あなたの節約度は・・・</h2>
+                <h3><strong class="text-danger"><?php echo $your_type ;?></strong>&nbsp;&nbsp;&nbsp;レベルです</h3>
               </div>
             <div class ="col-md-3"></div>
           </div>
@@ -450,12 +451,10 @@ if (!empty($_POST)){
               <div class="col-md-1 text-center"></div>
               <div id="result_chart1" class="col-md-5 text-center">
                 <!-- 比較グラフ１ -->
-                <p>円グラフ1</p>
                 <canvas id = "pieChart1"></canvas>
               </div>
               <div id="result_chart2" class="col-md-5 text-center">
                 <!-- 比較グラフ２ -->
-                <p>円グラフ2</p>
                 <canvas id = "pieChart2"></canvas>
               </div>
               <div class="col-md-1 text-center"></div>
@@ -468,19 +467,19 @@ if (!empty($_POST)){
             <div id='barChartarea' class="col-md-8">
             <!-- ラインチャート -->
               <div class="row">
-                <div class ="col-md-3"></div>
-                <div class ='col-md-6 card card-body bg-light mb-3 border-dark'>
+                <div class ="col-md-1"></div>
+                <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                   <!-- 節約度別の説明文 -->
                   <p><?php echo $bun?></p>
                 </div>
-                <div class ="col-md-3"></div>
+                <div class ="col-md-1"></div>
               </div>
-              <p>チャートグラフ</p>
               <canvas id = "barChart"></canvas>
             </div>
           </div>
           <div class='text-center'>
-            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="セブ生活費シュミレーター  あなたの診断結果は〇〇です。" data-url="http://localhost/49_CostCut/index.php" data-show-count="false">シェアする</a>
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="セブ生活費シュミレーター
+            私の診断結果は節約の<?php echo $your_type ;?>です。" data-url="http://localhost/49_CostCut/index.php" data-show-count="false">シェアする</a>
             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
         </div>
