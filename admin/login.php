@@ -59,7 +59,7 @@ if(!empty($_POST)){
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2 thumbnail">
                 <h2 class="text-center content_header">サインイン</h2>
-                <form method="POST" action="login.php" enctype="multipart/form-data">
+                <form method="POST" action="count.php" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="email">メールアドレス</label>
                         <input type="email" name="input_email" class="form-control" id="email" placeholder="example@gmail.com">

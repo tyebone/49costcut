@@ -37,7 +37,7 @@ if(!empty($_POST)){
     unset($_SESSION['49_CostCut']);
 
     //index.phpへの遷移
-    header('Location: index.php');
+    header('Location: count.php');
     exit();
 }
 ?>

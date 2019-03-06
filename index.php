@@ -93,7 +93,6 @@ if (!empty($_POST)){
     $prices[] = $price;
   }
 
-
   // バーチャートへデータを送るためにpriceのみ抽出
   $price_sum = array_column($prices, 'price_sum');
 
@@ -101,36 +100,22 @@ if (!empty($_POST)){
   $your_price = array_sum($category);
 
   // 文字代入
-  $cyoujin = '超人';
-  $cyoujin_bun = 'すべてのカテゴリーにおいて理想的な家計状況であると言えるでしょう。'.'<br>'.'これからもセブライフを楽しんでください。';
-
-  $tatujin = '達人';
-  $tatujin_bun = 'たまにハメを外してしまうことがありますが、胸を張れる家計状況であると言えるでしょう。'.'<br>'.'節約の仕方を周りの人にアドバイスしてあげましょう。';
-
-  $futu = '普通';
-  $futu_bun = 'まさに平均点。さまざまなカテゴリーで改善の余地があります。'.'<br>'.'さらなる高みを目指してください。';
-
-  $shiroto = '素人';
-  $shiroto_bun = '楽しんでいますが、このままだと、財政的に破綻します。'.'<br>'.'これからは気を引き締めて節約活動に励みましょう。';
-
-  $syoshinsya = '初心者';
-  $syoshinsya_bun = 'ヘタしたら日本にいるときよりも、浪費しているのではないでしょうか。'.'<br>'.'財布の中身と相談してセブライフを楽しみましょう。';
-
   if ($your_price < 15000) {
-    $your_price = $cyoujin;
-    $bun = $cyoujin_bun;
+    $your_type = '超人';
+    $bun = 'すべてのカテゴリーにおいて理想的な家計状況であると言えるでしょう。'.'<br>'.'これからもセブライフを楽しんでください。';
     }else if ($your_price < 22500) {
-      $your_price = $tatujin;
-      $bun = $tatujin_bun;
+      $your_type = '達人';
+      $bun = 'たまにハメを外してしまうことがありますが、胸を張れる家計状況であると言えるでしょう。'.'<br>'.'節約の仕方を周りの人にアドバイスしてあげましょう。';
+
     }else if ($your_price < 30000) {
-      $your_price = $futu;
-      $bun = $futu_bun;
+      $your_type = '普通';
+      $bun = 'まさに平均点。さまざまなカテゴリーで改善の余地があります。'.'<br>'.'さらなる高みを目指してください。';
     }else if ($your_price < 45000) {
-      $your_price = $shiroto;
-      $bun = $shiroto_bun;
+      $your_type = '素人';
+      $bun = '楽しんでいますが、このままだと、財政的に破綻します。'.'<br>'.'これからは気を引き締めて節約活動に励みましょう。';
     }else{
-      $your_price = $syoshinsya;
-      $bun = $syoshinsya_bun;
+      $your_type = '初心者';
+      $bun = 'ヘタしたら日本にいるときよりも、浪費しているのではないでしょうか。'.'<br>'.'財布の中身と相談してセブライフを楽しみましょう。';
     }
 
 
@@ -161,7 +146,7 @@ if (!empty($_POST)){
     <div class='text-center'>
       <a class="" href="index.php">TOP </a>
       <a class="" href="">About</a>
-      <a class="" href="admin/register.php">管理者ログイン</a>
+      <a class="" href="admin/login.php">管理者ログイン</a>
     </div>
   </header>
 
@@ -450,16 +435,16 @@ if (!empty($_POST)){
 
 
       <?php if(!empty($_POST)): ?>
-        <div class="row">
-          <div class ="col-md-3"></div>
-            <div class ='col-md-6 card card-body bg-light mb-3 border-dark text-center'>
-            <!-- 節約度別の説明文 -->
-              <p>あなたの節約度は・・・</p>
-              <p><strong class="text-danger"><?php echo $your_price?></strong>&nbsp;&nbsp;&nbsp;レベルです</p>
-            </div>
-          <div class ="col-md-3"></div>
-        </div>
         <div id="回答" class="all_area">
+          <div class="row">
+            <div class ="col-md-3"></div>
+              <div class ='col-md-6 card card-body bg-light mb-3 border-dark text-center'>
+              <!-- 節約度別の説明文 -->
+                <p>あなたの節約度は・・・</p>
+                <p><strong class="text-danger"><?php echo $your_type ;?></strong>&nbsp;&nbsp;&nbsp;レベルです</p>
+              </div>
+            <div class ="col-md-3"></div>
+          </div>
           <div class="chart_area1x">
             <div class="chart1and2 row">
               <div class="col-md-1 text-center"></div>
@@ -475,7 +460,6 @@ if (!empty($_POST)){
               </div>
               <div class="col-md-1 text-center"></div>
             </div>
-
           <div class="result_sentence1"></div>
           </div>
 
