@@ -97,6 +97,7 @@ if (!empty($_POST)){
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link href="js/material-kit.css?v=2.0.5" rel="stylesheet" />
 </head>
 <body style="margin-top: 60px">
     <div class="container">

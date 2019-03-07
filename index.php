@@ -139,6 +139,7 @@ if (!empty($_POST)){
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="css/material-kit.css?v=2.0.5" rel="stylesheet" />
   </head>
 
 
@@ -196,7 +197,7 @@ if (!empty($_POST)){
 
             <div class="row">
               <div class ="col-md-1"></div>
-              <div class ='col-md-10 alert alert-secondary'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題2</span></p>
                   <p class = "title">朝食をどれぐらい食べますか</p>
@@ -436,7 +437,7 @@ if (!empty($_POST)){
 
 
       <?php if(!empty($_POST)): ?>
-        <div id="回答" class="all_area">
+        <div id="回答" class="all_area box-sizing">
           <div class="row">
             <div class ="col-md-3"></div>
               <div class ='col-md-6 card card-body bg-light mb-3 border-dark text-center'>
@@ -451,11 +452,11 @@ if (!empty($_POST)){
               <div class="col-md-1 text-center"></div>
               <div id="result_chart1" class="col-md-5 text-center">
                 <!-- 比較グラフ１ -->
-                <canvas id = "pieChart1"></canvas>
+                <canvas id = "pieChart1" width="400" height="400"></canvas>
               </div>
               <div id="result_chart2" class="col-md-5 text-center">
                 <!-- 比較グラフ２ -->
-                <canvas id = "pieChart2"></canvas>
+                <canvas id = "pieChart2" width="400" height="400"></canvas>
               </div>
               <div class="col-md-1 text-center"></div>
             </div>
@@ -474,14 +475,18 @@ if (!empty($_POST)){
                 </div>
                 <div class ="col-md-1"></div>
               </div>
-              <canvas id = "barChart"></canvas>
+              <canvas id = "barChart" width="400" height="200"></canvas>
             </div>
           </div>
-          <div class='text-center'>
-            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="セブ生活費シュミレーター
-            私の診断結果は節約の<?php echo $your_type ;?>です。" data-url="http://localhost/49_CostCut/index.php" data-show-count="false">シェアする</a>
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-          </div>
+              <div class="text-center row border-box">
+                <div class ="col-md-3"></div>
+                <div class ='col-md-6 text-center'>
+                  <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="セブ生活費シュミレーター
+                    私の診断結果は節約の<?php echo $your_type ;?>です。" data-url="http://localhost/49_CostCut/index.php" data-show-count="false">シェアする</a>
+                  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+              </div>
+            <div class ="col-md-3"></div>
         </div>
 
       <?php endif; ?>

@@ -63,6 +63,7 @@ if(!empty($_POST)){
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.css">
+    <link href="js/material-kit.css?v=2.0.5" rel="stylesheet" />
 </head>
     <body style="margin-top: 60px">
         <div class="container">
