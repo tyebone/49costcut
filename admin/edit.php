@@ -1,24 +1,73 @@
 <?php
 require('../dbconnect.php');
 
-
-// $q = '';
-if(!empty($_POST)){
-
-$q_content = $_POST['input_question'];
-//オーナーIDを代入して
-
-// INSERT文にて、IDはオートで入る
-	$sql = 'INSERT INTO `questions`(`content`,`created`,`updated`)VALUES(?,NOW(),NOW())';
-    $data = [$q_content,owner0d];
-    $stmt = $dbh->prepare($sql);
-    $stmt->execute($data);
+// $questionsテーブルからデータを取得する
+$q_sql = 'SELECT * FROM `questions` ORDER BY `q_id`';
+$q_stmt = $dbh->prepare($q_sql);
+$q_stmt->execute();
+// $questionsという名前の配列を作る
+$questions = [];
+while(true){
+// $question_tableという名前の連想配列を作り、一件ずつレコードを追加していく
+$question_table = $q_stmt->fetch(PDO::FETCH_ASSOC);
+if($question_table == false){
+  break;
+}
+// $questionsの中に$question_tableを配置する
+$questions[] = $question_table;
 }
 
+// $optionsテーブルからデータを取得する
+$o_sql = 'SELECT * FROM `options` ORDER BY `question_id`';
+$o_stmt = $dbh->prepare($o_sql);
+$o_stmt->execute();
+// $optionsという名前の配列を作る
+$options = [];
+while(true){
+// $option_tableという名前の連想配列を作り、一件ずつレコードを追加していく
+$option_table = $o_stmt->fetch(PDO::FETCH_ASSOC);
+if($option_table == false){
+  break;
+}
+// $optionの中に$option_tableを配置する
+$options[] = $option_table;
+}
+
+// $q_edits配列を用意する
+// index.phpの12行目以降と同じ考え方
+// $q_qs = [];
+// post送信で更新ボタンが押されると、以下の処理がおこなわれる
+// それぞれの問題文にはname = $q_edit['数字']が入っている
+//もしも['']の中の数字と問題の数字が一緒
+// いや、問題文にはすでにvalueが定義しているから
+// 問答無用にDBに代入されればよし。
+
+
+
+if(!empty($_POST)){
+
+// echo '<pre>';
+// var_dump($_POST['q_q3']);
+// echo '</pre>';
+
+    if($i = 3){
+    $q_sql = '
+    UPDATE `questions`
+    SET `content` = ?
+    WHERE `q_id` = ?
+    ';
+    $q_data = [$_POST['q_q'.$i],$i];
+    $q_stmt = $dbh->prepare($q_sql);
+    $q_stmt->execute($q_data);
+
+    // $q_qs[] = $q_q;
+    }
+
+header('Location: edit.php');
+}
+
+
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html>
@@ -36,10 +85,10 @@ $q_content = $_POST['input_question'];
 
 <form method="POST" action="edit.php">
 
-<h1>問題1</h1>
+<h1>問題3</h1>
 <p>問題文</p>
 <!-- textarea内にユーザーが記述したものはそのままvalueになる -->
-<textarea name="input_question" placeholder="hoge"></textarea><br>
+<textarea name = "q_q3"><?php echo $questions[2]['content']; ?></textarea><br>
 <p>問題1の回答1</p>
 <textarea></textarea>
 <textarea></textarea>
@@ -55,7 +104,6 @@ $q_content = $_POST['input_question'];
 <textarea input type="number"></textarea>
 
 <input type = "submit" class="btn btn-primary" value="結果表示">
-
 
 </form>
 </body>
