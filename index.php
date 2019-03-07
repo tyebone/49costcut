@@ -190,11 +190,11 @@ $options[] = $option_table;
   <body class=" mx-auto center-block">
     <div class="all_area box-sizing">
       <div class="text-center">
-        <p>セブ島留学生のための生活費シュミレーター</p>
+        <p class = title>セブ島留学生のための生活費シュミレーター</p>
       </div>
       <div class="row">
         <div class='mx-auto'>
-          <img class="mx-auto d-block col-md-9" src="image/top.jpg">
+          <img class="mx-auto d-block col-md-9" src="image/1522112832.png">
         </div>
       </div>
       <br>
