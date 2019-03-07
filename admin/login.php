@@ -39,7 +39,7 @@ if(!empty($_POST)){
             $_SESSION['49_CostCut']['id'] = $record['id'];
 
             //4.タイムライン画面に遷移
-            header('Location: index.php');
+            header('Location: count.php');
             exit();
         }else{
             //認証失敗
@@ -53,8 +53,9 @@ if(!empty($_POST)){
 
 
 ?>
-<!-- <?php include('layouts/header.php'); ?>
- --><body style="margin-top: 60px">
+<!-- <?php include('layouts/header.php'); ?>-->
+ <link href="js/material-kit.css?v=2.0.5" rel="stylesheet" />
+<body style="margin-top: 60px">
     <div class="container">
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2 thumbnail">

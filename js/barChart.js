@@ -7,13 +7,13 @@ function showChart(price_sum) {
 	let syoshinsya = 0;
 
 	price_sum.forEach (function(val){
-		if (val < 35000) {
+		if (val < 15000) {
 	      choujin ++
-	    }else if (val < 70000) {
+	    }else if (val < 22500) {
 	      tetujin ++
-	    }else if (val < 105000) {
+	    }else if (val < 30000) {
 	      futu ++
-	    }else if (val < 120000) {
+	    }else if (val < 45000) {
 	      shiroto ++
 	    }else{
 	      syoshinsya ++

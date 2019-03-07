@@ -63,34 +63,65 @@ foreach($users as $user) {
         $f30 ++;
     }
 }
+    // 円グラフにデータ遷移
+    $type = [$m20,$f20,$m30,$f30];
+
+
 ?>
 
 
 
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="utf-8">
-    <title>セブ生活費シュミレーター</title>
-    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.css">
-</head>
-<body style="margin-top: 60px">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-8 col-xs-offset-2 thumbnail">
-                <h2 class="text-center content_header">管理者画面</h2>
-                <p>本日の利用者 <?php echo $current; ?>人</p>
-                <p>通算の利用者 <?php echo count($users) ?>人</p>
-                <p>29歳以下男性の通算利用者 <?php echo $m20; ?>人</p>
-                <p>29歳以下女性の通算利用者 <?php echo $f20; ?>人</p>
-                <p>30歳以上男性の通算利用者 <?php echo $m30; ?>人</p>
-                <p>30歳以上女性の通算利用者 <?php echo $f30; ?>人</p>
-                <br>
-                <p>新規登録</p>
-                <p>確認</p>
+    <head>
+        <meta charset="utf-8">
+        <title>セブ生活費シュミレーター</title>
+        <link rel="stylesheet" type="text/css" href="js/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700" rel="stylesheet">
+        <link href="js/material-kit.css?v=2.0.5" rel="stylesheet" />
+    </head>
+    <header>
+        <div class='text-center'>
+          <a class="" href="register.php">管理者新規登録</a>
+        </div>
+    </header>
+    <body style="margin-top: 60px">
+        <div class="container text-center">
+            <div class="row">
+                <div class='col-md-1'></div>
+                <div class='col-md-10'>
+                    <h2 class="text-center content_header">管理者画面</h2>
+                    <table class="pageview-table text-center">
+                      <tbody>
+                        <tr class="count">
+                          <td>今日</td>
+                          <td>合計</td>
+                        </tr>
+                        <br>
+                        <tr class="caption">
+                          <td><?php echo $current; ?></td>
+                          <td><?php echo count($users) ?></td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <div id="pie-div">
+                      <canvas id="pieChart"></canvas>
+                    </div>
                 </div>
+                <div class='col-md-1'></div>
             </div>
         </div>
-</body>
+    </body>
+    <script src="js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+    <script src="js/pie.js"></script>
+        <script>
+            showPie(<?php echo json_encode($type);?>);
+        </script>
 </html>
+
+
+
+
