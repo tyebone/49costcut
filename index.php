@@ -128,15 +128,16 @@ $q_sql = 'SELECT * FROM `questions` ORDER BY `q_id`';
 $q_stmt = $dbh->prepare($q_sql);
 $q_stmt->execute();
 
-// $qsという名前の配列を作る
-$qs = [];
+// $questionsという名前の配列を作る
+$questions = [];
 while(true){
-$qs = $q_stmt->fetch(PDO::FETCH_ASSOC);
-if($qs == false){
+// $question_tableという名前の連想配列を作り、一件ずつレコードを追加していく
+$question_table = $q_stmt->fetch(PDO::FETCH_ASSOC);
+if($question_table == false){
   break;
 }
-// $qsの中に$qという連想配列を作り、一件ずつレコードを追加していく
-$q[] = $qs;
+// $questionsの中に$question_tableを配置する
+$questions[] = $question_table;
 }
 
 // $optionsテーブルからデータを取得する
@@ -156,7 +157,7 @@ $q[] = $qs;
 // }
 
 // echo '<pre>';
-// var_dump($o);
+// var_dump($questions_table)[0];
 // echo '</pre>';
 
 ?>
@@ -218,7 +219,7 @@ $q[] = $qs;
                 <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                   <fieldset>
                     <p class =><span class="under">問題1</span></p>
-                    <p class = "title"><?php echo $q[0]['content']; ?></p>
+                    <p class = "title"><?php echo $questions[0]['content']; ?></p>
                     <label><p><input type="radio" class="" id="question_1" checked="checked" name="Q1" value="1">&nbsp;29歳以下の男性&nbsp;&nbsp;&nbsp;</p></label>
                     <label><p><input type="radio" class="" id="question_1" name="Q1" value="2">&nbsp;29歳以下の女性&nbsp;&nbsp;&nbsp;</p></label>
                     <label><p><input type="radio" class="" id="question_1" name="Q1" value="3">&nbsp;30歳以上の男性&nbsp;&nbsp;&nbsp;</p></label>
@@ -234,7 +235,7 @@ $q[] = $qs;
               <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題2</span></p>
-                  <p class = "title"><?php echo $q[1]['content']; ?></p>
+                  <p class = "title"><?php echo $questions[1]['content']; ?></p>
                   <label><p><input type="radio" class="" id="question_2" checked="checked" name="Q2" value="0">&nbsp;食べない、もしくは学校で用意されている&nbsp;&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_2" name="Q2" value="1500">&nbsp;軽く食べる&nbsp;&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_2" name="Q2" value="4500">&nbsp;しっかり食べる</label>
@@ -249,7 +250,7 @@ $q[] = $qs;
               <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題3</span></p>
-                  <p class = "title"><?php echo $q[2]['content']; ?></p>
+                  <p class = "title"><?php echo $questions[2]['content']; ?></p>
                   <label><p><input type="radio" class="" id="question_3" checked="checked" name="Q3" value="0">&nbsp;食べない、もしくは学校で用意されている&nbsp;&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_3" name="Q3" value="1500">&nbsp;軽く食べる&nbsp;&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_3" name="Q3" value="4500">&nbsp;しっかり食べる</label>
@@ -264,7 +265,7 @@ $q[] = $qs;
               <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題4</span></p>
-                  <p class = "title"><?php echo $q[3]['content']; ?></p>
+                  <p class = "title"><?php echo $questions[3]['content']; ?></p>
                   <label><p><input type="radio" class="" id="question_4" checked="checked" name="Q4" value="0">&nbsp;食べない、もしくは学校で用意されている&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_4" name="Q4" value="1500">&nbsp;軽く食べる&nbsp;&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_4" name="Q4" value="9000">&nbsp;しっかり食べる</label>
@@ -280,7 +281,7 @@ $q[] = $qs;
               <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題5</span></p>
-                  <p class = "title"><?php echo $q[4]['content']; ?></p>
+                  <p class = "title"><?php echo $$questions[4]['content']; ?></p>
                   <label><p><input type="radio" class="" id="question_5" checked="checked" name="Q5" value="0">&nbsp;徒歩&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_5" name="Q5" value="400">&nbsp;ジプニー&nbsp;&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_5" name="Q5" value="2000">&nbsp;バイクタクシー&nbsp;&nbsp;&nbsp;</p></label>
@@ -296,7 +297,7 @@ $q[] = $qs;
                 <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                   <fieldset>
                     <p class ="font"><span class="under">問題6</span></p>
-                    <p class = "title"><?php echo $q[5]['content']; ?></p>
+                    <p class = "title"><?php echo $questions[5]['content']; ?></p>
                     <label><p><input type="radio" class="" id="question_6" checked="checked" name="Q6" value="0">&nbsp;自分で手洗いする&nbsp;&nbsp;</p></label>
                     <label><p><input type="radio" class="" id="question_6" name="Q6" value="1500">&nbsp;軽く食べる&nbsp;&nbsp;&nbsp;</p></label>
                     <label><p><input type="radio" class="" id="question_6" name="Q6" value="9000">&nbsp;しっかり食べる</label>
@@ -311,7 +312,7 @@ $q[] = $qs;
               <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題7</span></p>
-                  <p class = "title"><?php echo $q[6]['content']; ?></p>
+                  <p class = "title"><?php echo $questions[6]['content']; ?></p>
                   <label><p><input type="radio" class="" id="question_7" checked="checked" name="Q7" value="0">&nbsp;Wi-Fiのみ利用する&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_7" name="Q7" value="500">&nbsp;少しチャージして利用する&nbsp;&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_7" name="Q7" value="1000">&nbsp;しっかりチャージして利用する</label>
@@ -326,7 +327,7 @@ $q[] = $qs;
               <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題8</span></p>
-                  <p class = "title"><?php echo $q[7]['content']; ?></p>
+                  <p class = "title"><?php echo $questions[7]['content']; ?></p>
                   <label><p><input type="radio" class="" id="question_8" checked="checked" name="Q8" value="0">&nbsp;吸わない&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_8" name="Q8" value="1500">&nbsp;一日一箱以下吸う&nbsp;&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_8" name="Q8" value="3000">&nbsp;一日一箱以上吸う</label>
@@ -341,7 +342,7 @@ $q[] = $qs;
               <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題9</span></p>
-                  <p class = "title"><?php echo $q[8]['content']; ?></p>
+                  <p class = "title"><?php echo $questions[8]['content']; ?></p>
                   <label><p><input type="radio" class="" id="question_9" checked="checked" name="Q9" value="0">&nbsp;行かない&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_9" name="Q9" value="2000">&nbsp;週1〜2回行く&nbsp;&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_9" name="Q9" value="6000">&nbsp;週3回以上行く</label>
@@ -356,7 +357,7 @@ $q[] = $qs;
               <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題10</span></p>
-                  <p class = "title"><?php echo $q[9]['content']; ?></p>
+                  <p class = "title"><?php echo $questions[9]['content']; ?></p>
                   <label><p><input type="radio" class="" id="question_10" checked="checked" name="Q10" value="0">&nbsp;どこにも行かない&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_10" name="Q10" value="2000">&nbsp;日帰りで遊びに行く&nbsp;&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_10" name="Q10" value="6000">&nbsp;泊まりで旅行に行く</label>
@@ -371,7 +372,7 @@ $q[] = $qs;
               <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題11</span></p>
-                  <p class = "title"><?php echo $q[10]['content']; ?></p>
+                  <p class = "title"><?php echo $questions[10]['content']; ?></p>
                   <label><p><input type="radio" class="" id="question_11" checked="checked" name="Q11" value="0">&nbsp;行かない&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_11" name="Q11" value="800">&nbsp;リーズナブルなところに行く&nbsp;&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_11" name="Q11" value="2000">&nbsp;高級スパに行く</label>
@@ -386,7 +387,7 @@ $q[] = $qs;
               <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題12</span></p>
-                  <p class = "title"><?php echo $q[11]['content']; ?></p>
+                  <p class = "title"><?php echo $questions[11]['content']; ?></p>
                   <label><p><input type="radio" class="" id="question_12" checked="checked" name="Q12" value="0">&nbsp;買わない&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_12" name="Q12" value="1500">&nbsp;1〜2着買う&nbsp;&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_12" name="Q12" value="4000">&nbsp;3着以上買いたい</label>
@@ -401,7 +402,7 @@ $q[] = $qs;
               <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題13</span></p>
-                  <p class = "title"><?php echo $q[12]['content']; ?></p>
+                  <p class = "title"><?php echo $questions[12]['content']; ?></p>
                   <label><p><input type="radio" class="" id="question_13" checked="checked" name="Q13" value="0">&nbsp;通わない&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_13" name="Q13" value="1000">&nbsp;1つだけ通う&nbsp;&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_13" name="Q13" value="3000">&nbsp;2つ以上通う</label>
@@ -416,7 +417,7 @@ $q[] = $qs;
               <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題14</span></p>
-                  <p class = "title"><?php echo $q[13]['content']; ?></p>
+                  <p class = "title"><?php echo $questions[13]['content']; ?></p>
                   <label><p><input type="radio" class="" id="question_14" checked="checked" name="Q14" value="0">&nbsp;行かない&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_14" name="Q14" value="2000">&nbsp;週1〜2回行きたい&nbsp;&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_14" name="Q14" value="6000">&nbsp;週3回以上行きたい</label>
@@ -431,7 +432,7 @@ $q[] = $qs;
               <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題15</span></p>
-                  <p class = "title"><?php echo $q[14]['content']; ?></p>
+                  <p class = "title"><?php echo $questions[14]['content']; ?></p>
                   <label><p><input type="radio" class="" id="question_15" checked="checked" name="Q15" value="0">&nbsp;行かない&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_15" name="Q15" value="2000">&nbsp;一度は行きたい&nbsp;&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_15" name="Q15" value="8000">&nbsp;それ以上行きたい</label>
@@ -446,7 +447,7 @@ $q[] = $qs;
                 <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                   <fieldset>
                     <p class ="font"><span class="under">問題16</span></p>
-                    <p class = "title"><?php echo $q[15]['content']; ?></p>
+                    <p class = "title"><?php echo $questions[15]['content']; ?></p>
                     <label><p><input type="radio" class="" id="question_16" checked="checked" name="Q16" value="0">&nbsp;買わない&nbsp;&nbsp;</p></label>
                     <label><p><input type="radio" class="" id="question_16" name="Q16" value="2000">&nbsp;自分用に少し欲しい&nbsp;&nbsp;&nbsp;</p></label>
                     <label><p><input type="radio" class="" id="question_16" name="Q16" value="4000">&nbsp;友達にもたくさん買いたい</label>
