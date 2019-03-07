@@ -28,7 +28,6 @@ if (!empty($_POST)){
   //time関数は投稿した時間、rand関数はランダムの数列が代入
   $code = time() . '_' . rand();
 
-
   // カテゴリー分け
   $category = 0;
   $category1 = 0;
@@ -85,7 +84,6 @@ foreach ($answers as $key => $value) {
   $sql = 'SELECT `code`, SUM(`price`) AS `price_sum` FROM `answers` GROUP BY `code`';
   $stmt = $dbh->prepare($sql);
   $stmt->execute();
-
   $prices = [];
   while (true) {
     $price = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -109,7 +107,6 @@ foreach ($answers as $key => $value) {
     }else if ($your_price < 22500) {
       $your_type = '達人';
       $bun = 'たまにハメを外してしまうことがありますが、胸を張れる家計状況であると言えるでしょう。'.'<br>'.'節約の仕方を周りの人にアドバイスしてあげましょう。';
-
     }else if ($your_price < 30000) {
       $your_type = '普通';
       $bun = 'まさに平均点。さまざまなカテゴリーで改善の余地があります。'.'<br>'.'さらなる高みを目指してください。';
@@ -120,14 +117,12 @@ foreach ($answers as $key => $value) {
       $your_type = '初心者';
       $bun = 'ヘタしたら日本にいるときよりも、浪費しているのではないでしょうか。'.'<br>'.'財布の中身と相談してセブライフを楽しみましょう。';
     }
-
 }
 
 // $questionsテーブルからデータを取得する
 $q_sql = 'SELECT * FROM `questions` ORDER BY `q_id`';
 $q_stmt = $dbh->prepare($q_sql);
 $q_stmt->execute();
-
 // $questionsという名前の配列を作る
 $questions = [];
 while(true){
@@ -144,7 +139,6 @@ $questions[] = $question_table;
 $o_sql = 'SELECT * FROM `options` ORDER BY `question_id`';
 $o_stmt = $dbh->prepare($o_sql);
 $o_stmt->execute();
-
 // $optionsという名前の配列を作る
 $options = [];
 while(true){
@@ -156,14 +150,6 @@ if($option_table == false){
 // $optionの中に$option_tableを配置する
 $options[] = $option_table;
 }
-
-
-
-echo '<pre>';
-var_dump($options[6]['price']);
-echo '</pre>';
-
-
 ?>
 
 <!DOCTYPE html>
@@ -526,9 +512,7 @@ echo '</pre>';
               </div>
             <div class ="col-md-3"></div>
         </div>
-
       <?php endif; ?>
-
     </div>
   </body>
     <script src="js/jquery.js"></script>
