@@ -165,48 +165,52 @@ $options[] = $option_table;
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="css/material-kit.css?v=2.0.5" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </head>
 
 
   <header>
-    <div class='text-center'>
-      <a class="" href="index.php">TOP </a>
-      <a class="" href="">About</a>
-      <a class="" href="admin/login.php">管理者ログイン</a>
-    </div>
+  <nav class="navbar">
+    <a class="navbar-brand"></a>
+    <div class="dropdown">
+      <button type="button" id="dropdownMenuButton" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dropdown
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="z-index:9999">
+        <a class="dropdown-item" href="index.php">TOP </a>
+        <a class="dropdown-item" href="プロフィール/profile.html">About</a>
+        <a class="dropdown-item" href="admin/login.php">管理者ログイン</a>
+      </div>
+  </nav>
   </header>
 
 
-  <body class="bg-warning">
-    <div class="container">
+  <body class=" mx-auto center-block">
+    <div class="all_area box-sizing">
       <div class="text-center">
         <p>セブ島留学生のための生活費シュミレーター</p>
       </div>
       <div class="row">
-        <div class='col-md-2'></div>
-        <div class='col-md-8'>
-          <img class="text-center img-fluid" src="image/top.jpg">
+        <div class='mx-auto'>
+          <img class="mx-auto d-block col-md-9" src="image/top.jpg">
         </div>
-        <div class='col-md-2'></div>
       </div>
       <br>
 
       <div class="row">
-        <div class ="col-md-3"></div>
-        <div class ='col-md-6 card card-body bg-light mb-3 border-dark'>
-          <p>リーズナブルに楽しめるセブ島留学ですが、気づいたらお金を使いすぎた……ということになりがち。セブ島節約シュミレーターで、あなたの節約度を診断してみましょう。</p>
+        <div class ='col-md-8 card card-body bg-light mb-3 border-dark mx-auto'>
+          <p>リーズナブルに楽しめるセブ島留学ですが、気づいたらお金を使いすぎた……ということになりがち。<br>セブ島節約シュミレーターで、あなたの節約度を診断してみましょう。</p>
         </div>
-        <div class ="col-md-3"></div>
       </div>
       <br>
 
       <form method="POST" action="index.php#回答">
-        <section class="What inView -in rounded-lg row">
-          <div class ="col-md-1"></div>
-          <div class="col-md-10 card card-body bg-light mb-3 border-dark">
+        <section class=" mx-auto">
+          <div class="col-md-9 card card-body bg-light mb-3 border-dark mx-auto">
             <div class="row">
-                <div class ="col-md-1"></div>
-                <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+                <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                   <fieldset>
                     <p class =><span class="under">問題1</span></p>
                     <p class = "title"><?php echo $questions[0]['content']; ?></p>
@@ -216,13 +220,11 @@ $options[] = $option_table;
                     <label><p><input type="radio" class="" id="question_1" name="Q1" value="4">&nbsp;<?php echo $options[3]['content']; ?></p></label>
                   </fieldset>
                 </div>
-                <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-1"></div>
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                 <fieldset>
                   <p class ="font"><span class="under">問題2</span></p>
                   <p class = "title"><?php echo $questions[1]['content']; ?></p>
@@ -231,13 +233,11 @@ $options[] = $option_table;
                   <label><p><input type="radio" class="" id="question_2" name="Q2" value="<?php echo $options[6]['value']; ?>">&nbsp;<?php echo $options[6]['content']; ?></label>
                 </fieldset>
               </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-1"></div>
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                 <fieldset>
                   <p class ="font"><span class="under">問題3</span></p>
                   <p class = "title"><?php echo $questions[2]['content']; ?></p>
@@ -246,13 +246,11 @@ $options[] = $option_table;
                   <label><p><input type="radio" class="" id="question_3" name="Q3" value="<?php echo $options[9]['value']; ?>">&nbsp;<?php echo $options[9]['content']; ?></label>
                 </fieldset>
               </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-1"></div>
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                 <fieldset>
                   <p class ="font"><span class="under">問題4</span></p>
                   <p class = "title"><?php echo $questions[3]['content']; ?></p>
@@ -261,14 +259,12 @@ $options[] = $option_table;
                   <label><p><input type="radio" class="" id="question_4" name="Q4" value="<?php echo $options[12]['value']; ?>">&nbsp;<?php echo $options[12]['content']; ?></label>
                 </fieldset>
               </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
 
             <div class="row">
-              <div class ="col-md-1"></div>
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                 <fieldset>
                   <p class ="font"><span class="under">問題5</span></p>
                   <p class = "title"><?php echo $questions[4]['content']; ?></p>
@@ -277,13 +273,11 @@ $options[] = $option_table;
                   <label><p><input type="radio" class="" id="question_5" name="Q5" value="<?php echo $options[15]['value']; ?>">&nbsp;<?php echo $options[15]['content']; ?></p></label>
                 </fieldset>
               </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-1"></div>
-                <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+                <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                   <fieldset>
                     <p class ="font"><span class="under">問題6</span></p>
                     <p class = "title"><?php echo $questions[5]['content']; ?></p>
@@ -292,13 +286,11 @@ $options[] = $option_table;
                     <label><p><input type="radio" class="" id="question_6" name="Q6" value="<?php echo $options[18]['value']; ?>">&nbsp;<?php echo $options[18]['content']; ?></label>
                   </fieldset>
                 </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-1"></div>
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                 <fieldset>
                   <p class ="font"><span class="under">問題7</span></p>
                   <p class = "title"><?php echo $questions[6]['content']; ?></p>
@@ -307,13 +299,11 @@ $options[] = $option_table;
                   <label><p><input type="radio" class="" id="question_7" name="Q7" value="<?php echo $options[21]['value']; ?>">&nbsp;<?php echo $options[21]['content']; ?></label>
                 </fieldset>
               </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-1"></div>
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                 <fieldset>
                   <p class ="font"><span class="under">問題8</span></p>
                   <p class = "title"><?php echo $questions[7]['content']; ?></p>
@@ -322,13 +312,11 @@ $options[] = $option_table;
                   <label><p><input type="radio" class="" id="question_8" name="Q8" value="<?php echo $options[24]['value']; ?>">&nbsp;<?php echo $options[24]['content']; ?></label>
                 </fieldset>
               </div>
-              <div class ="col-md-1"></div>
               </div>
             <br>
 
             <div class="row">
-            <div class ="col-md-1"></div>
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                 <fieldset>
                   <p class ="font"><span class="under">問題9</span></p>
                   <p class = "title"><?php echo $questions[8]['content']; ?></p>
@@ -337,13 +325,11 @@ $options[] = $option_table;
                   <label><p><input type="radio" class="" id="question_9" name="Q9" value="<?php echo $options[27]['value']; ?>">&nbsp;<?php echo $options[27]['content']; ?></label>
                 </fieldset>
               </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-1"></div>
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                 <fieldset>
                   <p class ="font"><span class="under">問題10</span></p>
                   <p class = "title"><?php echo $questions[9]['content']; ?></p>
@@ -352,13 +338,11 @@ $options[] = $option_table;
                   <label><p><input type="radio" class="" id="question_10" name="Q10" value="<?php echo $options[30]['value']; ?>">&nbsp;<?php echo $options[30]['content']; ?></label>
                 </fieldset>
               </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-1"></div>
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                 <fieldset>
                   <p class ="font"><span class="under">問題11</span></p>
                   <p class = "title"><?php echo $questions[10]['content']; ?></p>
@@ -367,13 +351,11 @@ $options[] = $option_table;
                   <label><p><input type="radio" class="" id="question_11" name="Q11" value="<?php echo $options[33]['value']; ?>">&nbsp;<?php echo $options[33]['content']; ?></label>
                 </fieldset>
               </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-1"></div>
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                 <fieldset>
                   <p class ="font"><span class="under">問題12</span></p>
                   <p class = "title"><?php echo $questions[11]['content']; ?></p>
@@ -382,13 +364,11 @@ $options[] = $option_table;
                   <label><p><input type="radio" class="" id="question_12" name="Q12" value="<?php echo $options[36]['value']; ?>">&nbsp;<?php echo $options[36]['content']; ?></label>
                 </fieldset>
               </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-1"></div>
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                 <fieldset>
                   <p class ="font"><span class="under">問題13</span></p>
                   <p class = "title"><?php echo $questions[12]['content']; ?></p>
@@ -397,13 +377,11 @@ $options[] = $option_table;
                   <label><p><input type="radio" class="" id="question_13" name="Q13" value="<?php echo $options[39]['value']; ?>">&nbsp;<?php echo $options[39]['content']; ?></label>
                 </fieldset>
               </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-1"></div>
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                 <fieldset>
                   <p class ="font"><span class="under">問題14</span></p>
                   <p class = "title"><?php echo $questions[13]['content']; ?></p>
@@ -412,13 +390,11 @@ $options[] = $option_table;
                   <label><p><input type="radio" class="" id="question_14" name="Q14" value="<?php echo $options[42]['value']; ?>">&nbsp;<?php echo $options[42]['content']; ?></label>
                 </fieldset>
               </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-1"></div>
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                 <fieldset>
                   <p class ="font"><span class="under">問題15</span></p>
                   <p class = "title"><?php echo $questions[14]['content']; ?></p>
@@ -427,13 +403,11 @@ $options[] = $option_table;
                   <label><p><input type="radio" class="" id="question_15" name="Q15" value="<?php echo $options[45]['value']; ?>">&nbsp;<?php echo $options[45]['content']; ?></label>
                 </fieldset>
               </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-1"></div>
-                <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+                <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                   <fieldset>
                     <p class ="font"><span class="under">問題16</span></p>
                     <p class = "title"><?php echo $questions[15]['content']; ?></p>
@@ -442,19 +416,15 @@ $options[] = $option_table;
                     <label><p><input type="radio" class="" id="question_16" name="Q16" value="<?php echo $options[48]['value']; ?>">&nbsp;<?php echo $options[48]['content']; ?></label>
                   </fieldset>
                 </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-3"></div>
-              <div class ='col-md-6 text-center'>
+              <div class ='col-md-6 text-center mx-auto'>
                 <input type = "submit" class="btn btn-primary" value="結果表示">
               </div>
-              <div class ="col-md-3"></div>
             </div>
           </div>
-          <div class ="col-md-1"></div>
         </div>
         </section>
       </form>
@@ -463,41 +433,34 @@ $options[] = $option_table;
       <?php if(!empty($_POST)): ?>
         <div id="回答" class="all_area box-sizing">
           <div class="row">
-            <div class ="col-md-3"></div>
-              <div class ='col-md-6 card card-body bg-light mb-3 border-dark text-center'>
+              <div class ='col-md-6 card card-body bg-light mb-3 border-dark text-center mx-auto'>
               <!-- 節約度別の説明文 -->
                 <h2>あなたの節約度は・・・</h2>
                 <h3><strong class="text-danger"><?php echo $your_type ;?></strong>&nbsp;&nbsp;&nbsp;レベルです</h3>
               </div>
-            <div class ="col-md-3"></div>
           </div>
-          <div class="chart_area1x">
+          <div class="chart_area1x m-2">
             <div class="chart1and2 row">
-              <div class="col-md-1 text-center"></div>
-              <div id="result_chart1" class="col-md-5 text-center">
+              <div id="result_chart1" class="col-md-5 text-center mx-auto">
                 <!-- 比較グラフ１ -->
                 <canvas id = "pieChart1" width="400" height="400"></canvas>
               </div>
-              <div id="result_chart2" class="col-md-5 text-center">
+              <div id="result_chart2" class="col-md-5 text-center mx-auto">
                 <!-- 比較グラフ２ -->
                 <canvas id = "pieChart2" width="400" height="400"></canvas>
               </div>
-              <div class="col-md-1 text-center"></div>
             </div>
           <div class="result_sentence1"></div>
           </div>
 
-          <div class="chart_area2 row text-center">
-            <div class="col-md-2"></div>
-            <div id='barChartarea' class="col-md-8">
+          <div class="chart_area2 row text-center mx-auto">
+            <div id='barChartarea' class="col-md-8 mx-auto">
             <!-- ラインチャート -->
               <div class="row">
-                <div class ="col-md-1"></div>
-                <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+                <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                   <!-- 節約度別の説明文 -->
                   <p><?php echo $bun?></p>
                 </div>
-                <div class ="col-md-1"></div>
               </div>
               <canvas id = "barChart" width="400" height="200"></canvas>
             </div>

@@ -6220,7 +6220,7 @@ button.bg-info:focus {
 }
 
 .bg-warning {
-  background-color: #ffeb3b !important;
+  background-color: #ffffff !important;
 }
 
 a.bg-warning:hover,
@@ -14722,18 +14722,18 @@ h1,
 
 h2,
 .h2 {
-  font-size: 2.25rem;
-  line-height: 1.5em;
+  font-size: 1.5625rem;
+  line-height: 1.4em;
   color: #153940;
   font-weight:bold;
 }
 
 h3,
 .h3 {
-  font-size: 1.5625rem;
-  line-height: 1.4em;
+  font-size: 2.25rem;
+  line-height: 1.5em;
   color: #153940;
-  font-weight:bolds;
+  font-weight:bold;
 }
 
 h4,
@@ -17353,7 +17353,7 @@ footer .pull-center {
 }
 
 .section {
-  padding: 70px 0;
+  /*padding: 70px 0;*/
 }
 
 .profile-page .page-header {
