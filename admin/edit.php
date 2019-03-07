@@ -1,9 +1,9 @@
 <?php
 require('../dbconnect.php');
 
-if(!empty($_GET)){
-    echo '変更が完了しました';
-}
+// if(!empty($_GET)){
+//     echo '変更が完了しました';
+// }
 
 // $questionsテーブルからデータを取得する
 $q_sql = 'SELECT * FROM `questions` ORDER BY `q_id`';
@@ -50,17 +50,13 @@ $options[] = $option_table;
 
 if(!empty($_POST)){
 
-// echo '<pre>';
-// var_dump($_POST['q_q3']);
-// echo '</pre>';
-
     for($i = 2; $i < 17; $i++){
     $q_sql = '
     UPDATE `questions`
     SET `content` = ?
     WHERE `q_id` = ?
     ';
-    $q_data = [$_POST['q_q'.$i],$i];
+    $q_data = [$_POST['q'.$i],$i];
     $q_stmt = $dbh->prepare($q_sql);
     $q_stmt->execute($q_data);
 
@@ -91,64 +87,67 @@ header('Location: edit.php');
 
 <h1>問題2</h1>
 <!-- textarea内にユーザーが記述したものはそのままvalueになる -->
-<textarea name = "q_q2"><?php echo $questions[1]['content']; ?></textarea><br>
+<textarea name = "q2"><?php echo $questions[1]['content']; ?></textarea><br>
+<!-- <p>問題2の回答1</p>
+<!-- <textarea name = "q2"><?php echo $questions[1]['content']; ?></textarea><br> -->
+ -->
 
 <h1>問題3</h1>
 <!-- textarea内にユーザーが記述したものはそのままvalueになる -->
-<textarea name = "q_q3"><?php echo $questions[2]['content']; ?></textarea><br>
+<textarea name = "q3"><?php echo $questions[2]['content']; ?></textarea><br>
 
 <h1>問題4</h1>
 <!-- textarea内にユーザーが記述したものはそのままvalueになる -->
-<textarea name = "q_q4"><?php echo $questions[3]['content']; ?></textarea><br>
+<textarea name = "q4"><?php echo $questions[3]['content']; ?></textarea><br>
 
 <h1>問題5</h1>
 <!-- textarea内にユーザーが記述したものはそのままvalueになる -->
-<textarea name = "q_q5"><?php echo $questions[4]['content']; ?></textarea><br>
+<textarea name = "q5"><?php echo $questions[4]['content']; ?></textarea><br>
 
 <h1>問題6</h1>
 <!-- textarea内にユーザーが記述したものはそのままvalueになる -->
-<textarea name = "q_q6"><?php echo $questions[5]['content']; ?></textarea><br>
+<textarea name = "q6"><?php echo $questions[5]['content']; ?></textarea><br>
 
 <h1>問題7</h1>
 <!-- textarea内にユーザーが記述したものはそのままvalueになる -->
-<textarea name = "q_q7"><?php echo $questions[6]['content']; ?></textarea><br>
+<textarea name = "q7"><?php echo $questions[6]['content']; ?></textarea><br>
 
 <h1>問題8</h1>
 <!-- textarea内にユーザーが記述したものはそのままvalueになる -->
-<textarea name = "q_q8"><?php echo $questions[7]['content']; ?></textarea><br>
+<textarea name = "q8"><?php echo $questions[7]['content']; ?></textarea><br>
 
 <h1>問題9</h1>
 <!-- textarea内にユーザーが記述したものはそのままvalueになる -->
-<textarea name = "q_q9"><?php echo $questions[8]['content']; ?></textarea><br>
+<textarea name = "q9"><?php echo $questions[8]['content']; ?></textarea><br>
 
 <h1>問題10</h1>
 <p>問題文</p>
 <!-- textarea内にユーザーが記述したものはそのままvalueになる -->
-<textarea name = "q_q10"><?php echo $questions[9]['content']; ?></textarea><br>
+<textarea name = "q10"><?php echo $questions[9]['content']; ?></textarea><br>
 
 <h1>問題11</h1>
 <!-- textarea内にユーザーが記述したものはそのままvalueになる -->
-<textarea name = "q_q11"><?php echo $questions[10]['content']; ?></textarea><br>
+<textarea name = "q11"><?php echo $questions[10]['content']; ?></textarea><br>
 
 <h1>問題12</h1>
 <!-- textarea内にユーザーが記述したものはそのままvalueになる -->
-<textarea name = "q_q12"><?php echo $questions[11]['content']; ?></textarea><br>
+<textarea name = "q12"><?php echo $questions[11]['content']; ?></textarea><br>
 
 <h1>問題13</h1>
 <!-- textarea内にユーザーが記述したものはそのままvalueになる -->
-<textarea name = "q_q13"><?php echo $questions[12]['content']; ?></textarea><br>
+<textarea name = "q13"><?php echo $questions[12]['content']; ?></textarea><br>
 
 <h1>問題14</h1>
 <!-- textarea内にユーザーが記述したものはそのままvalueになる -->
-<textarea name = "q_q14"><?php echo $questions[13]['content']; ?></textarea><br>
+<textarea name = "q14"><?php echo $questions[13]['content']; ?></textarea><br>
 
 <h1>問題15</h1>
 <!-- textarea内にユーザーが記述したものはそのままvalueになる -->
-<textarea name = "q_q15"><?php echo $questions[14]['content']; ?></textarea><br>
+<textarea name = "q15"><?php echo $questions[14]['content']; ?></textarea><br>
 
 <h1>問題16</h1>
 <!-- textarea内にユーザーが記述したものはそのままvalueになる -->
-<textarea name = "q_q16"><?php echo $questions[15]['content']; ?></textarea><br>
+<textarea name = "q16"><?php echo $questions[15]['content']; ?></textarea><br>
 
 <input type = "submit" class="btn btn-primary" value="変更">
 
