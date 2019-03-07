@@ -1,17 +1,22 @@
- <?php
+<?php
+// dbconnect.phpを利用
 require('dbconnect.php');
 
+// date_default_timezone_set関数で時間を指定
 date_default_timezone_set('Asia/Manila');
-$today = date("Y/m/d");
+// $today = date("Y/m/d");
 
-// POST送信だったら
-//$answersテーブルが定義される
+// ユーザーによる回答はform内のmethod="POST"によってPOST送信される
+// そしてPOST送信だったら$answersテーブルが定義される
+// answersテーブルは配列である
+$answers = [];
 if (!empty($_POST)){
-
-  $answers = [];
+  // $iは問題文の数だけ増えていく
   for ($i = 1; $i < 17; $i++) {
+    //$keyにQ1,Q2という引数が代入される
     $key = 'Q' . $i;
-    //この時点で、$answers[Q1]とか$answer[Q2]とかの数字が代入される
+    //$answers[Q1]、$answer[Q2]など数字が代入される
+    // intval関数は変数を整数型に変換する
     $answers[$key] = intval($_POST[$key]);
 }
 
@@ -25,7 +30,6 @@ if (!empty($_POST)){
 
 
   // カテゴリー分け
-  //一旦、0入れとく
   $category = 0;
   $category1 = 0;
   $category2 = 0;
@@ -34,8 +38,8 @@ if (!empty($_POST)){
   $category5 = 0;
   $category6 = 0;
 
-//$keyが['Q1']のときは無視、それぞれ費目ごとに代入
-  foreach ($answers as $key => $value) {
+//$keyが['Q1']のときは無視、それぞれ費目ごとにvalue（値段）が代入
+foreach ($answers as $key => $value) {
     if ($key == 'Q1') {
       continue;
     }elseif($key == 'Q2' || $key == 'Q3' || $key == 'Q4') {
@@ -52,7 +56,7 @@ if (!empty($_POST)){
       $category = 6;  // 趣味・娯楽
     }
 
-// 一件ずつ、SQLのanswersテーブルに代入
+// answersテーブルのレコードを一件ずつ、SQLのanswersテーブルに代入
     $sql = 'INSERT INTO`answers`(`category`, `price`, `code`,`type`) VALUES (?, ?, ?, ?)';
     $data = [$category,$value,$code,$type];
     $stmt = $dbh->prepare($sql);
@@ -86,9 +90,7 @@ $category = [$category1, $category2,  $category3,  $category4, $category5,  $cat
   $stmt = $dbh->prepare($sql);
   $stmt->execute();
 
-
   $prices = [];
-
   while (true) {
     $price = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($price == false) {
@@ -97,30 +99,13 @@ $category = [$category1, $category2,  $category3,  $category4, $category5,  $cat
     $prices[] = $price;
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 $price_sum = array_column($prices, 'price_sum');
-  echo '<pre>';
-  var_dump($type);
-  echo '</pre>';
 }
+
+
+
+
 ?>
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="ja">
