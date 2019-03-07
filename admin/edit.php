@@ -78,7 +78,7 @@ if(!empty($_POST)){
 
 
     }
-    // header('Location: edit.php');
+    header('Location: edit.php');
 }
 
 
