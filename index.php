@@ -281,7 +281,7 @@ $questions[] = $question_table;
               <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
                 <fieldset>
                   <p class ="font"><span class="under">問題5</span></p>
-                  <p class = "title"><?php echo $$questions[4]['content']; ?></p>
+                  <p class = "title"><?php echo $questions[4]['content']; ?></p>
                   <label><p><input type="radio" class="" id="question_5" checked="checked" name="Q5" value="0">&nbsp;徒歩&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_5" name="Q5" value="400">&nbsp;ジプニー&nbsp;&nbsp;&nbsp;</p></label>
                   <label><p><input type="radio" class="" id="question_5" name="Q5" value="2000">&nbsp;バイクタクシー&nbsp;&nbsp;&nbsp;</p></label>
