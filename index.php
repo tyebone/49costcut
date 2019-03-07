@@ -140,19 +140,29 @@ foreach ($answers as $key => $value) {
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="css/material-kit.css?v=2.0.5" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </head>
 
 
   <header>
-    <div class='text-center'>
-      <a class="" href="index.php">TOP </a>
-      <a class="" href="">About</a>
-      <a class="" href="admin/login.php">管理者ログイン</a>
-    </div>
+  <nav class="navbar">
+    <a class="navbar-brand"></a>
+    <div class="dropdown">
+      <button type="button" id="dropdownMenuButton" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dropdown
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="z-index:9999">
+        <a class="dropdown-item" href="index.php">TOP </a>
+        <a class="dropdown-item" href="プロフィール/profile.html">About</a>
+        <a class="dropdown-item" href="admin/login.php">管理者ログイン</a>
+      </div>
+  </nav>
   </header>
 
 
-  <body class="bg-warning mx-auto">
+  <body class=" mx-auto center-block">
     <div class="all_area box-sizing">
       <div class="text-center">
         <p>セブ島留学生のための生活費シュミレーター</p>
@@ -165,7 +175,7 @@ foreach ($answers as $key => $value) {
       <br>
 
       <div class="row">
-        <div class ='col-md-9 card card-body bg-light mb-3 border-dark mx-auto'>
+        <div class ='col-md-8 card card-body bg-light mb-3 border-dark mx-auto'>
           <p>リーズナブルに楽しめるセブ島留学ですが、気づいたらお金を使いすぎた……ということになりがち。<br>セブ島節約シュミレーターで、あなたの節約度を診断してみましょう。</p>
         </div>
       </div>
@@ -175,7 +185,7 @@ foreach ($answers as $key => $value) {
         <section class=" mx-auto">
           <div class="col-md-9 card card-body bg-light mb-3 border-dark mx-auto">
             <div class="row">
-                <div class ='col-md-9 card card-body bg-light mb-3 border-dark mx-auto'>
+                <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                   <fieldset>
                     <p class =><span class="under">問題1</span></p>
                     <p class = "title">年齢と性別を選んでください</p>
