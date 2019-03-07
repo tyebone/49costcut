@@ -152,36 +152,30 @@ foreach ($answers as $key => $value) {
   </header>
 
 
-  <body class="bg-warning">
-    <div class="container">
+  <body class="bg-warning mx-auto">
+    <div class="all_area box-sizing">
       <div class="text-center">
         <p>セブ島留学生のための生活費シュミレーター</p>
       </div>
       <div class="row">
-        <div class='col-md-2'></div>
-        <div class='col-md-8'>
-          <img class="text-center img-fluid" src="image/top.jpg">
+        <div class='mx-auto'>
+          <img class="mx-auto d-block col-md-9" src="image/top.jpg">
         </div>
-        <div class='col-md-2'></div>
       </div>
       <br>
 
       <div class="row">
-        <div class ="col-md-3"></div>
-        <div class ='col-md-6 card card-body bg-light mb-3 border-dark'>
-          <p>リーズナブルに楽しめるセブ島留学ですが、気づいたらお金を使いすぎた……ということになりがち。セブ島節約シュミレーターで、あなたの節約度を診断してみましょう。</p>
+        <div class ='col-md-9 card card-body bg-light mb-3 border-dark mx-auto'>
+          <p>リーズナブルに楽しめるセブ島留学ですが、気づいたらお金を使いすぎた……ということになりがち。<br>セブ島節約シュミレーターで、あなたの節約度を診断してみましょう。</p>
         </div>
-        <div class ="col-md-3"></div>
       </div>
       <br>
 
       <form method="POST" action="index.php#回答">
-        <section class="What inView -in rounded-lg row">
-          <div class ="col-md-1"></div>
-          <div class="col-md-10 card card-body bg-light mb-3 border-dark">
+        <section class=" mx-auto">
+          <div class="col-md-9 card card-body bg-light mb-3 border-dark mx-auto">
             <div class="row">
-                <div class ="col-md-1"></div>
-                <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+                <div class ='col-md-9 card card-body bg-light mb-3 border-dark mx-auto'>
                   <fieldset>
                     <p class =><span class="under">問題1</span></p>
                     <p class = "title">年齢と性別を選んでください</p>
@@ -191,13 +185,11 @@ foreach ($answers as $key => $value) {
                     <label><p><input type="radio" class="" id="question_1" name="Q1" value="4">&nbsp;30歳以上の女性</p></label>
                   </fieldset>
                 </div>
-                <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-1"></div>
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                 <fieldset>
                   <p class ="font"><span class="under">問題2</span></p>
                   <p class = "title">朝食をどれぐらい食べますか</p>
@@ -206,13 +198,11 @@ foreach ($answers as $key => $value) {
                   <label><p><input type="radio" class="" id="question_2" name="Q2" value="4500">&nbsp;しっかり食べる</label>
                 </fieldset>
               </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-1"></div>
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                 <fieldset>
                   <p class ="font"><span class="under">問題3</span></p>
                   <p class = "title">昼食をどれぐらい食べますか</p>
@@ -221,13 +211,11 @@ foreach ($answers as $key => $value) {
                   <label><p><input type="radio" class="" id="question_3" name="Q3" value="4500">&nbsp;しっかり食べる</label>
                 </fieldset>
               </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-1"></div>
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                 <fieldset>
                   <p class ="font"><span class="under">問題4</span></p>
                   <p class = "title">夕食をどれぐらい食べますか</p>
@@ -236,14 +224,12 @@ foreach ($answers as $key => $value) {
                   <label><p><input type="radio" class="" id="question_4" name="Q4" value="9000">&nbsp;しっかり食べる</label>
                 </fieldset>
               </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
 
             <div class="row">
-              <div class ="col-md-1"></div>
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                 <fieldset>
                   <p class ="font"><span class="under">問題5</span></p>
                   <p class = "title">おもな交通手段はなんですか</p>
@@ -253,13 +239,11 @@ foreach ($answers as $key => $value) {
                   <label><p><input type="radio" class="" id="question_5" name="Q5" value="3000">&nbsp;タクシー</p></label>
                 </fieldset>
               </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-1"></div>
-                <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+                <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                   <fieldset>
                     <p class ="font"><span class="under">問題6</span></p>
                     <p class = "title">洗濯の頻度はどれぐらいですか</p>
@@ -268,13 +252,11 @@ foreach ($answers as $key => $value) {
                     <label><p><input type="radio" class="" id="question_6" name="Q6" value="9000">&nbsp;しっかり食べる</label>
                   </fieldset>
                 </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-1"></div>
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                 <fieldset>
                   <p class ="font"><span class="under">問題7</span></p>
                   <p class = "title">携帯電話をどれぐらい利用しますか</p>
@@ -283,13 +265,11 @@ foreach ($answers as $key => $value) {
                   <label><p><input type="radio" class="" id="question_7" name="Q7" value="1000">&nbsp;しっかりチャージして利用する</label>
                 </fieldset>
               </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-1"></div>
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                 <fieldset>
                   <p class ="font"><span class="under">問題8</span></p>
                   <p class = "title">タバコを吸いますか</p>
@@ -298,13 +278,11 @@ foreach ($answers as $key => $value) {
                   <label><p><input type="radio" class="" id="question_8" name="Q8" value="3000">&nbsp;一日一箱以上吸う</label>
                 </fieldset>
               </div>
-              <div class ="col-md-1"></div>
               </div>
             <br>
 
             <div class="row">
-            <div class ="col-md-1"></div>
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                 <fieldset>
                   <p class ="font"><span class="under">問題9</span></p>
                   <p class = "title">飲み会に行きますか</p>
@@ -313,13 +291,11 @@ foreach ($answers as $key => $value) {
                   <label><p><input type="radio" class="" id="question_9" name="Q9" value="6000">&nbsp;週3回以上行く</label>
                 </fieldset>
               </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-1"></div>
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                 <fieldset>
                   <p class ="font"><span class="under">問題10</span></p>
                   <p class = "title">週末はどのように過ごしますか</p>
@@ -328,13 +304,11 @@ foreach ($answers as $key => $value) {
                   <label><p><input type="radio" class="" id="question_10" name="Q10" value="6000">&nbsp;泊まりで旅行に行く</label>
                 </fieldset>
               </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-1"></div>
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                 <fieldset>
                   <p class ="font"><span class="under">問題11</span></p>
                   <p class = "title">マッサージに行きますか</p>
@@ -343,13 +317,11 @@ foreach ($answers as $key => $value) {
                   <label><p><input type="radio" class="" id="question_11" name="Q11" value="2000">&nbsp;高級スパに行く</label>
                 </fieldset>
               </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-1"></div>
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                 <fieldset>
                   <p class ="font"><span class="under">問題12</span></p>
                   <p class = "title">現地の服を買いますか</p>
@@ -358,13 +330,11 @@ foreach ($answers as $key => $value) {
                   <label><p><input type="radio" class="" id="question_12" name="Q12" value="4000">&nbsp;3着以上買いたい</label>
                 </fieldset>
               </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-1"></div>
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                 <fieldset>
                   <p class ="font"><span class="under">問題13</span></p>
                   <p class = "title">習い事やジムに通いますか</p>
@@ -373,13 +343,11 @@ foreach ($answers as $key => $value) {
                   <label><p><input type="radio" class="" id="question_13" name="Q13" value="3000">&nbsp;2つ以上通う</label>
                 </fieldset>
               </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-1"></div>
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                 <fieldset>
                   <p class ="font"><span class="under">問題14</span></p>
                   <p class = "title">カジノに行きますか</p>
@@ -388,13 +356,11 @@ foreach ($answers as $key => $value) {
                   <label><p><input type="radio" class="" id="question_14" name="Q14" value="6000">&nbsp;週3回以上行きたい</label>
                 </fieldset>
               </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-1"></div>
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                 <fieldset>
                   <p class ="font"><span class="under">問題15</span></p>
                   <p class = "title">夜のスポットに遊びに行きますか</p>
@@ -403,13 +369,11 @@ foreach ($answers as $key => $value) {
                   <label><p><input type="radio" class="" id="question_15" name="Q15" value="8000">&nbsp;それ以上行きたい</label>
                 </fieldset>
               </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-1"></div>
-                <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+                <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                   <fieldset>
                     <p class ="font"><span class="under">問題16</span></p>
                     <p class = "title">おみやげを買いますか</p>
@@ -418,19 +382,15 @@ foreach ($answers as $key => $value) {
                     <label><p><input type="radio" class="" id="question_16" name="Q16" value="4000">&nbsp;友達にもたくさん買いたい</label>
                   </fieldset>
                 </div>
-              <div class ="col-md-1"></div>
             </div>
             <br>
 
             <div class="row">
-              <div class ="col-md-3"></div>
-              <div class ='col-md-6 text-center'>
+              <div class ='col-md-6 text-center mx-auto'>
                 <input type = "submit" class="btn btn-primary" value="結果表示">
               </div>
-              <div class ="col-md-3"></div>
             </div>
           </div>
-          <div class ="col-md-1"></div>
         </div>
         </section>
       </form>
@@ -439,41 +399,34 @@ foreach ($answers as $key => $value) {
       <?php if(!empty($_POST)): ?>
         <div id="回答" class="all_area box-sizing">
           <div class="row">
-            <div class ="col-md-3"></div>
-              <div class ='col-md-6 card card-body bg-light mb-3 border-dark text-center'>
+              <div class ='col-md-6 card card-body bg-light mb-3 border-dark text-center mx-auto'>
               <!-- 節約度別の説明文 -->
                 <h2>あなたの節約度は・・・</h2>
                 <h3><strong class="text-danger"><?php echo $your_type ;?></strong>&nbsp;&nbsp;&nbsp;レベルです</h3>
               </div>
-            <div class ="col-md-3"></div>
           </div>
-          <div class="chart_area1x">
+          <div class="chart_area1x m-2">
             <div class="chart1and2 row">
-              <div class="col-md-1 text-center"></div>
-              <div id="result_chart1" class="col-md-5 text-center">
+              <div id="result_chart1" class="col-md-5 text-center mx-auto">
                 <!-- 比較グラフ１ -->
                 <canvas id = "pieChart1" width="400" height="400"></canvas>
               </div>
-              <div id="result_chart2" class="col-md-5 text-center">
+              <div id="result_chart2" class="col-md-5 text-center mx-auto">
                 <!-- 比較グラフ２ -->
                 <canvas id = "pieChart2" width="400" height="400"></canvas>
               </div>
-              <div class="col-md-1 text-center"></div>
             </div>
           <div class="result_sentence1"></div>
           </div>
 
-          <div class="chart_area2 row text-center">
-            <div class="col-md-2"></div>
-            <div id='barChartarea' class="col-md-8">
+          <div class="chart_area2 row text-center mx-auto">
+            <div id='barChartarea' class="col-md-8 mx-auto">
             <!-- ラインチャート -->
               <div class="row">
-                <div class ="col-md-1"></div>
-                <div class ='col-md-10 card card-body bg-light mb-3 border-dark'>
+                <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
                   <!-- 節約度別の説明文 -->
                   <p><?php echo $bun?></p>
                 </div>
-                <div class ="col-md-1"></div>
               </div>
               <canvas id = "barChart" width="400" height="200"></canvas>
             </div>
