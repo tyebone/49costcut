@@ -1,6 +1,10 @@
 <?php
 require('../dbconnect.php');
 
+if(!empty($_GET)){
+    echo '変更が完了しました';
+}
+
 // $questionsテーブルからデータを取得する
 $q_sql = 'SELECT * FROM `questions` ORDER BY `q_id`';
 $q_stmt = $dbh->prepare($q_sql);
@@ -50,7 +54,7 @@ if(!empty($_POST)){
 // var_dump($_POST['q_q3']);
 // echo '</pre>';
 
-    if($i = 3){
+    for($i = 2; $i < 17; $i++){
     $q_sql = '
     UPDATE `questions`
     SET `content` = ?
@@ -85,25 +89,68 @@ header('Location: edit.php');
 
 <form method="POST" action="edit.php">
 
+<h1>問題2</h1>
+<!-- textarea内にユーザーが記述したものはそのままvalueになる -->
+<textarea name = "q_q2"><?php echo $questions[1]['content']; ?></textarea><br>
+
 <h1>問題3</h1>
-<p>問題文</p>
 <!-- textarea内にユーザーが記述したものはそのままvalueになる -->
 <textarea name = "q_q3"><?php echo $questions[2]['content']; ?></textarea><br>
-<p>問題1の回答1</p>
-<textarea></textarea>
-<textarea></textarea>
-<p>回答1の値段</p>
-<textarea input type="number"></textarea>
-<p>問題1の回答2</p>
-<textarea></textarea>
-<p>回答2の値段</p>
-<textarea input type="number"></textarea>
-<p>問題1の回答3</p>
-<textarea></textarea>
-<p>回答3の値段</p>
-<textarea input type="number"></textarea>
 
-<input type = "submit" class="btn btn-primary" value="結果表示">
+<h1>問題4</h1>
+<!-- textarea内にユーザーが記述したものはそのままvalueになる -->
+<textarea name = "q_q4"><?php echo $questions[3]['content']; ?></textarea><br>
+
+<h1>問題5</h1>
+<!-- textarea内にユーザーが記述したものはそのままvalueになる -->
+<textarea name = "q_q5"><?php echo $questions[4]['content']; ?></textarea><br>
+
+<h1>問題6</h1>
+<!-- textarea内にユーザーが記述したものはそのままvalueになる -->
+<textarea name = "q_q6"><?php echo $questions[5]['content']; ?></textarea><br>
+
+<h1>問題7</h1>
+<!-- textarea内にユーザーが記述したものはそのままvalueになる -->
+<textarea name = "q_q7"><?php echo $questions[6]['content']; ?></textarea><br>
+
+<h1>問題8</h1>
+<!-- textarea内にユーザーが記述したものはそのままvalueになる -->
+<textarea name = "q_q8"><?php echo $questions[7]['content']; ?></textarea><br>
+
+<h1>問題9</h1>
+<!-- textarea内にユーザーが記述したものはそのままvalueになる -->
+<textarea name = "q_q9"><?php echo $questions[8]['content']; ?></textarea><br>
+
+<h1>問題10</h1>
+<p>問題文</p>
+<!-- textarea内にユーザーが記述したものはそのままvalueになる -->
+<textarea name = "q_q10"><?php echo $questions[9]['content']; ?></textarea><br>
+
+<h1>問題11</h1>
+<!-- textarea内にユーザーが記述したものはそのままvalueになる -->
+<textarea name = "q_q11"><?php echo $questions[10]['content']; ?></textarea><br>
+
+<h1>問題12</h1>
+<!-- textarea内にユーザーが記述したものはそのままvalueになる -->
+<textarea name = "q_q12"><?php echo $questions[11]['content']; ?></textarea><br>
+
+<h1>問題13</h1>
+<!-- textarea内にユーザーが記述したものはそのままvalueになる -->
+<textarea name = "q_q13"><?php echo $questions[12]['content']; ?></textarea><br>
+
+<h1>問題14</h1>
+<!-- textarea内にユーザーが記述したものはそのままvalueになる -->
+<textarea name = "q_q14"><?php echo $questions[13]['content']; ?></textarea><br>
+
+<h1>問題15</h1>
+<!-- textarea内にユーザーが記述したものはそのままvalueになる -->
+<textarea name = "q_q15"><?php echo $questions[14]['content']; ?></textarea><br>
+
+<h1>問題16</h1>
+<!-- textarea内にユーザーが記述したものはそのままvalueになる -->
+<textarea name = "q_q16"><?php echo $questions[15]['content']; ?></textarea><br>
+
+<input type = "submit" class="btn btn-primary" value="変更">
 
 </form>
 </body>
