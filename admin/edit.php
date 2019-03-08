@@ -76,10 +76,10 @@ if(!empty($_POST)){
     $o_stmt = $dbh->prepare($o_sql);
     $o_stmt->execute($o_data);
 
-
     }
     header('Location: edit.php');
 }
+
 
 
 ?>
@@ -101,6 +101,7 @@ if(!empty($_POST)){
 <form method="POST" action="edit.php">
 
 <h1>問題2</h1>
+
 <p>問題</p>
 <textarea name = "q2"><?php echo $questions[1]['content']; ?></textarea><br>
 <p>回答1</p>

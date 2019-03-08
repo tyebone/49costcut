@@ -80,13 +80,25 @@ foreach($users as $user) {
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700" rel="stylesheet">
         <link href="js/material-kit.css?v=2.0.5" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </head>
-    <header>
-        <div class='text-center'>
-          <a class="" href="register.php">管理者新規登録</a>
-        </div>
-    </header>
-    <body style="margin-top: 60px">
+    <body class="mx-auto center-block" >
+        <header>
+          <nav class="navbar">
+            <a class="navbar-brand"></a>
+            <div class="dropdown row">
+              <button type="button" id="dropdownMenuButton" class="btn btn-secondary dropdown-toggle m-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="z-index:9999">
+                <a class="dropdown-item" href="../index.php">TOP </a>
+                <a class="dropdown-item" href="../プロフィール/profile.html">About</a>
+              </div>
+            </div>
+          </nav>
+        </header>
         <div class="container text-center">
             <div class="row">
                 <div class='col-md-1'></div>

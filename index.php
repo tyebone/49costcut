@@ -171,23 +171,22 @@ $options[] = $option_table;
   </head>
 
 
-  <header>
-  <nav class="navbar">
-    <a class="navbar-brand"></a>
-    <div class="dropdown">
-      <button type="button" id="dropdownMenuButton" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Dropdown
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="z-index:9999">
-        <a class="dropdown-item" href="index.php">TOP </a>
-        <a class="dropdown-item" href="プロフィール/profile.html">About</a>
-        <a class="dropdown-item" href="admin/login.php">管理者ログイン</a>
-      </div>
-  </nav>
-  </header>
-
-
   <body class=" mx-auto center-block">
+    <header>
+      <nav class="navbar">
+        <a class="navbar-brand"></a>
+        <div class="dropdown">
+          <button type="button" id="dropdownMenuButton" class="btn btn-secondary dropdown-toggle m-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            メニュー
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="z-index:9999">
+            <a class="dropdown-item" href="index.php">TOP </a>
+            <a class="dropdown-item" href="プロフィール/profile.html">About</a>
+            <a class="dropdown-item" href="admin/login.php">管理者ログイン</a>
+          </div>
+        </div>
+      </nav>
+    </header>
     <div class="all_area box-sizing">
       <div class="text-center">
         <p class = title>セブ島留学生のための生活費シュミレーター</p>
@@ -425,7 +424,6 @@ $options[] = $option_table;
               </div>
             </div>
           </div>
-        </div>
         </section>
       </form>
 
