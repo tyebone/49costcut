@@ -176,7 +176,7 @@ $options[] = $option_table;
     <a class="navbar-brand"></a>
     <div class="dropdown">
       <button type="button" id="dropdownMenuButton" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Dropdown
+        メニュー
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="z-index:9999">
         <a class="dropdown-item" href="index.php">TOP </a>
