@@ -28,6 +28,8 @@ SET time_zone = "+00:00";
 -- テーブルの構造 `answers`
 --
 
+DROP TABLE IF EXISTS `answers` ;
+
 CREATE TABLE `answers` (
   `id` int(11) NOT NULL,
   `category` int(11) NOT NULL,
@@ -444,6 +446,8 @@ INSERT INTO `answers` (`id`, `category`, `price`, `code`, `type`) VALUES
 -- テーブルの構造 `options`
 --
 
+DROP TABLE IF EXISTS `options` ;
+
 CREATE TABLE `options` (
   `id` int(11) NOT NULL,
   `question_id` int(11) NOT NULL,
@@ -516,6 +520,8 @@ INSERT INTO `options` (`id`, `question_id`, `q_q_id`, `content`, `price`, `creat
 -- テーブルの構造 `owners`
 --
 
+DROP TABLE IF EXISTS `owners` ;
+
 CREATE TABLE `owners` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL DEFAULT '名無しさん',
@@ -541,6 +547,8 @@ INSERT INTO `owners` (`id`, `name`, `email`, `password`, `created`, `updated`) V
 --
 -- テーブルの構造 `questions`
 --
+
+DROP TABLE IF EXISTS `questions` ;
 
 CREATE TABLE `questions` (
   `id` int(11) NOT NULL,
