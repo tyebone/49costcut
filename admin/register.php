@@ -89,9 +89,15 @@ if (!empty($_POST)){
 <head>
     <meta charset="utf-8">
     <title>CebuCostsSimulator</title>
+    <link rel="stylesheet" type="text/css" href="js/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link href="js/material-kit.css?v=2.0.5" rel="stylesheet" />
 </head>
 <body style="margin-top: 60px">
     <div class="container">
