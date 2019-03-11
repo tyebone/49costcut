@@ -199,15 +199,11 @@ $options[] = $option_table;
 
 
     <div class="all_area box-sizing">
-      <div class="text-center">
-        <p class = title>セブ島留学生のための生活費シュミレーター</p>
+      <div class="col-md-9mx-auto" >
+        <img class="mx-auto d-block col-md-9 img-fluid img-title" src="image/money-924828_900.jpg">
       </div>
-      <div class="row">
-        <div class='mx-auto'>
-          <img class="mx-auto d-block col-md-9" src="image/1522112832.png">
-        </div>
-      </div>
-      <br>
+    </div>
+    <br>
 
       <!-- <div class="row">
         <div class ='col-md-8 card card-body bg-light mb-3 border-dark mx-auto'>
@@ -436,8 +432,9 @@ $options[] = $option_table;
               <div class ='col-md-6 text-center mx-auto'>
                 <input type = "submit" class="btn rounded-0 submit-btn" value="診断します">
               </div>
+            </div>
         </section>
-        <br><br><br><br>
+        <br><br><br>
       </form>
 
       <?php if(!empty($_POST)): ?>

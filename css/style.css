@@ -7,6 +7,20 @@
 .title{font-size: 28px;}
 
 
+.img-title{
+/*	width: 30%;
+	float:right;*/
+	width :1400px;
+}
+
+.smaller{
+	font-size:40px;
+}
+
+.bigger{
+	font-size:80px ;
+}
+
 body {
 	font-family: 'Noto Sans JP', sans-serif;
 	/*background-color: #fff000*/;
@@ -20,3 +34,7 @@ body {
 	background-color: #ffd700;
 	font-size: 25px;
 }
+
+/*.frontimg{
+	background-color: #ffd700;
+}*/
