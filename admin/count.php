@@ -1,5 +1,13 @@
 <?php
+//session（セッション）を使うときは一番最初に書く
+session_start();
 require('../dbconnect.php');
+
+if (!isset($_SESSION['49_CostCut'])) {
+        header('Location: login.php');
+        exit();
+    }
+
 // date_default_timezone_set関数で時間を取得する場所を指定
 date_default_timezone_set('Asia/Manila');
 
@@ -95,6 +103,8 @@ foreach($users as $user) {
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="z-index:9999">
                 <a class="dropdown-item" href="../index.php">TOP </a>
                 <a class="dropdown-item" href="../プロフィール/profile.html">About</a>
+                <a class="dropdown-item" href="edit.php">編集</a>
+                <a class="dropdown-item" href="signout.php">サインアウト</a>
               </div>
             </div>
           </nav>
