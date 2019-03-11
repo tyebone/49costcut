@@ -163,13 +163,20 @@ $options[] = $option_table;
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="css/material-kit.css?v=2.0.5" rel="stylesheet" />
+
+    <!-- timのスタイルシート -->
+    <!-- <link href="css/material-kit.css?v=2.0.5" rel="stylesheet" /> -->
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
 
 
@@ -189,6 +196,8 @@ $options[] = $option_table;
         </div>
       </nav>
     </header>
+
+
     <div class="all_area box-sizing">
       <div class="text-center">
         <p class = title>セブ島留学生のための生活費シュミレーター</p>
@@ -200,18 +209,19 @@ $options[] = $option_table;
       </div>
       <br>
 
-      <div class="row">
+      <!-- <div class="row">
         <div class ='col-md-8 card card-body bg-light mb-3 border-dark mx-auto'>
           <p>リーズナブルに楽しめるセブ島留学ですが、気づいたらお金を使いすぎた……ということになりがち。<br>セブ島節約シュミレーターで、あなたの節約度を診断してみましょう。</p>
         </div>
       </div>
-      <br>
+      <br> -->
 
       <form method="POST" action="index.php#回答">
         <section class=" mx-auto">
-          <div class="col-md-9 card card-body bg-light mb-3 border-dark mx-auto">
+          <div class="col-md-9 card card-body mx-auto rounded-0 border border-0 backcontainer">
+            <br><br>
             <div class="row">
-                <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
+                <div class ='col-md-10 card card-body mb-3 border-dark mx-auto rounded-0 border border-0 bg-color'>
                   <fieldset>
                     <p class =><span class="under">問題1</span></p>
                     <p class = "title"><?php echo $questions[0]['content']; ?></p>
@@ -225,7 +235,7 @@ $options[] = $option_table;
             <br>
 
             <div class="row">
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
+              <div class ='col-md-10 card card-body mb-3 border-dark mx-auto rounded-0 border border-0 bg-color'>
                 <fieldset>
                   <p class ="font"><span class="under">問題2</span></p>
                   <p class = "title"><?php echo $questions[1]['content']; ?></p>
@@ -238,7 +248,7 @@ $options[] = $option_table;
             <br>
 
             <div class="row">
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
+              <div class ='col-md-10 card card-body mb-3 border-dark mx-auto rounded-0 border border-0 bg-color'>
                 <fieldset>
                   <p class ="font"><span class="under">問題3</span></p>
                   <p class = "title"><?php echo $questions[2]['content']; ?></p>
@@ -251,7 +261,7 @@ $options[] = $option_table;
             <br>
 
             <div class="row">
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
+              <div class ='col-md-10 card card-body mb-3 border-dark mx-auto rounded-0 border border-0 bg-color'>
                 <fieldset>
                   <p class ="font"><span class="under">問題4</span></p>
                   <p class = "title"><?php echo $questions[3]['content']; ?></p>
@@ -265,7 +275,7 @@ $options[] = $option_table;
 
 
             <div class="row">
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
+              <div class ='col-md-10 card card-body mb-3 border-dark mx-auto rounded-0 border border-0 bg-color'>
                 <fieldset>
                   <p class ="font"><span class="under">問題5</span></p>
                   <p class = "title"><?php echo $questions[4]['content']; ?></p>
@@ -278,7 +288,7 @@ $options[] = $option_table;
             <br>
 
             <div class="row">
-                <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
+                <div class ='col-md-10 card card-body mb-3 border-dark mx-auto rounded-0 border border-0 bg-color'>
                   <fieldset>
                     <p class ="font"><span class="under">問題6</span></p>
                     <p class = "title"><?php echo $questions[5]['content']; ?></p>
@@ -291,7 +301,7 @@ $options[] = $option_table;
             <br>
 
             <div class="row">
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
+              <div class ='col-md-10 card card-body mb-3 border-dark mx-auto rounded-0 border border-0 bg-color'>
                 <fieldset>
                   <p class ="font"><span class="under">問題7</span></p>
                   <p class = "title"><?php echo $questions[6]['content']; ?></p>
@@ -304,7 +314,7 @@ $options[] = $option_table;
             <br>
 
             <div class="row">
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
+              <div class ='col-md-10 card card-body mb-3 border-dark mx-auto rounded-0 border border-0 bg-color'>
                 <fieldset>
                   <p class ="font"><span class="under">問題8</span></p>
                   <p class = "title"><?php echo $questions[7]['content']; ?></p>
@@ -317,7 +327,7 @@ $options[] = $option_table;
             <br>
 
             <div class="row">
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
+              <div class ='col-md-10 card card-body mb-3 border-dark mx-auto rounded-0 border border-0 bg-color'>
                 <fieldset>
                   <p class ="font"><span class="under">問題9</span></p>
                   <p class = "title"><?php echo $questions[8]['content']; ?></p>
@@ -330,7 +340,7 @@ $options[] = $option_table;
             <br>
 
             <div class="row">
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
+              <div class ='col-md-10 card card-body mb-3 border-dark mx-auto rounded-0 border border-0 bg-color'>
                 <fieldset>
                   <p class ="font"><span class="under">問題10</span></p>
                   <p class = "title"><?php echo $questions[9]['content']; ?></p>
@@ -343,7 +353,7 @@ $options[] = $option_table;
             <br>
 
             <div class="row">
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
+              <div class ='col-md-10 card card-body mb-3 border-dark mx-auto rounded-0 border border-0 bg-color'>
                 <fieldset>
                   <p class ="font"><span class="under">問題11</span></p>
                   <p class = "title"><?php echo $questions[10]['content']; ?></p>
@@ -356,7 +366,7 @@ $options[] = $option_table;
             <br>
 
             <div class="row">
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
+              <div class ='col-md-10 card card-body mb-3 border-dark mx-auto rounded-0 border border-0 bg-color'>
                 <fieldset>
                   <p class ="font"><span class="under">問題12</span></p>
                   <p class = "title"><?php echo $questions[11]['content']; ?></p>
@@ -369,7 +379,7 @@ $options[] = $option_table;
             <br>
 
             <div class="row">
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
+              <div class ='col-md-10 card card-body mb-3 border-dark mx-auto rounded-0 border border-0 bg-color'>
                 <fieldset>
                   <p class ="font"><span class="under">問題13</span></p>
                   <p class = "title"><?php echo $questions[12]['content']; ?></p>
@@ -382,7 +392,7 @@ $options[] = $option_table;
             <br>
 
             <div class="row">
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
+              <div class ='col-md-10 card card-body mb-3 border-dark mx-auto rounded-0 border border-0 bg-color'>
                 <fieldset>
                   <p class ="font"><span class="under">問題14</span></p>
                   <p class = "title"><?php echo $questions[13]['content']; ?></p>
@@ -395,7 +405,7 @@ $options[] = $option_table;
             <br>
 
             <div class="row">
-              <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
+              <div class ='col-md-10 card card-body mb-3 border-dark mx-auto rounded-0 border border-0 bg-color'>
                 <fieldset>
                   <p class ="font"><span class="under">問題15</span></p>
                   <p class = "title"><?php echo $questions[14]['content']; ?></p>
@@ -408,7 +418,7 @@ $options[] = $option_table;
             <br>
 
             <div class="row">
-                <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
+                <div class ='col-md-10 card card-body mb-3 border-dark mx-auto rounded-0 border border-0 bg-color'>
                   <fieldset>
                     <p class ="font"><span class="under">問題16</span></p>
                     <p class = "title"><?php echo $questions[15]['content']; ?></p>
@@ -418,22 +428,22 @@ $options[] = $option_table;
                   </fieldset>
                 </div>
             </div>
-            <br>
-
-            <div class="row">
-              <div class ='col-md-6 text-center mx-auto'>
-                <input type = "submit" class="btn btn-primary" value="結果表示">
-              </div>
+            <br><br>
             </div>
           </div>
+          <br><br>
+          <div class="row">
+              <div class ='col-md-6 text-center mx-auto'>
+                <input type = "submit" class="btn rounded-0 submit-btn" value="診断します">
+              </div>
         </section>
+        <br><br><br><br>
       </form>
-
 
       <?php if(!empty($_POST)): ?>
         <div id="回答" class="all_area box-sizing">
           <div class="row">
-              <div class ='col-md-6 card card-body bg-light mb-3 border-dark text-center mx-auto'>
+              <div class ='col-md-6 card card-body mb-3 border-dark text-center mx-auto'>
               <!-- 節約度別の説明文 -->
                 <h2>あなたの節約度は・・・</h2>
                 <h3><strong class="text-danger"><?php echo $your_type ;?></strong>&nbsp;&nbsp;&nbsp;レベルです</h3>

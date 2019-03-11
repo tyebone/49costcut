@@ -1,6 +1,5 @@
 .under {
-  background: linear-gradient(transparent 70%, yellow 30%);
-  color: #3C4858;
+  background: linear-gradient(transparent 70%, #ffd700 30%);
   font-weight: 700;
 }
 .wf-mplus1p { font-family: "Mplus 1p"; }
@@ -10,10 +9,14 @@
 
 body {
 	font-family: 'Noto Sans JP', sans-serif;
-	background-color: #fff000;
+	/*background-color: #fff000*/;
 }
 
-.font {
-  color: #3C4858;
-  font-weight: 700;
+.backcontainer{
+	background-color: #d3d3d3;
+}
+
+.submit-btn{
+	background-color: #ffd700;
+	font-size: 25px;
 }
