@@ -8,9 +8,8 @@
 
 
 .img-title{
-/*	width: 30%;
-	float:right;*/
-	width :1400px;
+
+	float:right;
 }
 
 .smaller{
@@ -35,6 +34,6 @@ body {
 	font-size: 25px;
 }
 
-/*.frontimg{
+.frontimg{
 	background-color: #ffd700;
-}*/
+}

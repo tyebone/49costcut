@@ -199,8 +199,10 @@ $options[] = $option_table;
 
 
     <div class="all_area box-sizing">
-      <div class="col-md-9mx-auto" >
-        <img class="mx-auto d-block col-md-9 img-fluid img-title" src="image/money-924828_900.jpg">
+      <div class ="row">
+      <div class="col-md-9mx-auto front-img" >
+        <img class="mx-auto d-block col-md-9 img-fluid img-title" src="image/1534069729.png">
+      </div>
       </div>
     </div>
     <br>
