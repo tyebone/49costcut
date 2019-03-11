@@ -7,10 +7,10 @@
 .title{font-size: 28px;}
 
 
-.img-title{
-
-	float:right;
+/*.img-title{
+	margin-right: ($spacer * .25)
 }
+*/
 
 .smaller{
 	font-size:40px;
@@ -34,6 +34,11 @@ body {
 	font-size: 25px;
 }
 
-.frontimg{
+/*.border-top{
+	border-width:5px;
+}*/
+
+
+/*.topimg{
 	background-color: #ffd700;
-}
+}*/

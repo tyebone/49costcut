@@ -169,10 +169,7 @@ $options[] = $option_table;
 
     <!-- timのスタイルシート -->
     <!-- <link href="css/material-kit.css?v=2.0.5" rel="stylesheet" /> -->
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700" rel="stylesheet">
@@ -199,9 +196,13 @@ $options[] = $option_table;
 
 
     <div class="all_area box-sizing">
-      <div class ="row">
-      <div class="col-md-9mx-auto front-img" >
-        <img class="mx-auto d-block col-md-9 img-fluid img-title" src="image/1534069729.png">
+      <div class ="row mx-auto">
+      <div class="col-md-9 card card-body mx-auto rounded-0 border-top">
+        <p>セブ島留学生のための</p>
+        <p>節約診断サイト。</p
+        <div class>
+        <img class=" d-block col-md-4 img-fluid" src="image/1534069729.png">
+      </div>
       </div>
       </div>
     </div>
@@ -218,6 +219,7 @@ $options[] = $option_table;
         <section class=" mx-auto">
           <div class="col-md-9 card card-body mx-auto rounded-0 border border-0 backcontainer">
             <br><br>
+
             <div class="row">
                 <div class ='col-md-10 card card-body mb-3 border-dark mx-auto rounded-0 border border-0 bg-color'>
                   <fieldset>
