@@ -150,6 +150,8 @@ if($option_table == false){
 // $optionの中に$option_tableを配置する
 $options[] = $option_table;
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -227,9 +229,9 @@ $options[] = $option_table;
                 <fieldset>
                   <p class ="font"><span class="under">問題2</span></p>
                   <p class = "title"><?php echo $questions[1]['content']; ?></p>
-                  <label><p><input type="radio" class="" id="question_2" checked="checked" name="Q2" value="<?php echo $options[4]['value']; ?>">&nbsp;<?php echo $options[4]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_2" name="Q2" value="<?php echo $options[5]['value']; ?>">&nbsp;<?php echo $options[5]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_2" name="Q2" value="<?php echo $options[6]['value']; ?>">&nbsp;<?php echo $options[6]['content']; ?></label>
+                  <label><p><input type="radio" class="" id="question_2" checked="checked" name="Q2" value="<?php echo $options[4]['price']; ?>">&nbsp;<?php echo $options[4]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
+                  <label><p><input type="radio" class="" id="question_2" name="Q2" value="<?php echo $options[5]['price']; ?>">&nbsp;<?php echo $options[5]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
+                  <label><p><input type="radio" class="" id="question_2" name="Q2" value="<?php echo $options[6]['price']; ?>">&nbsp;<?php echo $options[6]['content']; ?></label>
                 </fieldset>
               </div>
             </div>
@@ -240,9 +242,9 @@ $options[] = $option_table;
                 <fieldset>
                   <p class ="font"><span class="under">問題3</span></p>
                   <p class = "title"><?php echo $questions[2]['content']; ?></p>
-                  <label><p><input type="radio" class="" id="question_3" checked="checked" name="Q3" value="<?php echo $options[7]['value']; ?>">&nbsp;<?php echo $options[7]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_3" name="Q3" value="<?php echo $options[8]['value']; ?>">&nbsp;<?php echo $options[8]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_3" name="Q3" value="<?php echo $options[9]['value']; ?>">&nbsp;<?php echo $options[9]['content']; ?></label>
+                  <label><p><input type="radio" class="" id="question_3" checked="checked" name="Q3" value="<?php echo $options[7]['price']; ?>">&nbsp;<?php echo $options[7]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
+                  <label><p><input type="radio" class="" id="question_3" name="Q3" value="<?php echo $options[8]['price']; ?>">&nbsp;<?php echo $options[8]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
+                  <label><p><input type="radio" class="" id="question_3" name="Q3" value="<?php echo $options[9]['price']; ?>">&nbsp;<?php echo $options[9]['content']; ?></label>
                 </fieldset>
               </div>
             </div>
@@ -253,9 +255,9 @@ $options[] = $option_table;
                 <fieldset>
                   <p class ="font"><span class="under">問題4</span></p>
                   <p class = "title"><?php echo $questions[3]['content']; ?></p>
-                  <label><p><input type="radio" class="" id="question_4" checked="checked" name="Q4" value="<?php echo $options[10]['value']; ?>">&nbsp;<?php echo $options[10]['content']; ?>&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_4" name="Q4" value="<?php echo $options[11]['value']; ?>">&nbsp;<?php echo $options[11]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_4" name="Q4" value="<?php echo $options[12]['value']; ?>">&nbsp;<?php echo $options[12]['content']; ?></label>
+                  <label><p><input type="radio" class="" id="question_4" checked="checked" name="Q4" value="<?php echo $options[10]['price']; ?>">&nbsp;<?php echo $options[10]['content']; ?>&nbsp;&nbsp;</p></label>
+                  <label><p><input type="radio" class="" id="question_4" name="Q4" value="<?php echo $options[11]['price']; ?>">&nbsp;<?php echo $options[11]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
+                  <label><p><input type="radio" class="" id="question_4" name="Q4" value="<?php echo $options[12]['price']; ?>">&nbsp;<?php echo $options[12]['content']; ?></label>
                 </fieldset>
               </div>
             </div>
@@ -267,9 +269,9 @@ $options[] = $option_table;
                 <fieldset>
                   <p class ="font"><span class="under">問題5</span></p>
                   <p class = "title"><?php echo $questions[4]['content']; ?></p>
-                  <label><p><input type="radio" class="" id="question_5" checked="checked" name="Q5" value="<?php echo $options[13]['value']; ?>">&nbsp;<?php echo $options[13]['content']; ?>&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_5" name="Q5" value="<?php echo $options[14]['value']; ?>">&nbsp;<?php echo $options[14]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_5" name="Q5" value="<?php echo $options[15]['value']; ?>">&nbsp;<?php echo $options[15]['content']; ?></p></label>
+                  <label><p><input type="radio" class="" id="question_5" checked="checked" name="Q5" value="<?php echo $options[13]['price']; ?>">&nbsp;<?php echo $options[13]['content']; ?>&nbsp;&nbsp;</p></label>
+                  <label><p><input type="radio" class="" id="question_5" name="Q5" value="<?php echo $options[14]['price']; ?>">&nbsp;<?php echo $options[14]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
+                  <label><p><input type="radio" class="" id="question_5" name="Q5" value="<?php echo $options[15]['price']; ?>">&nbsp;<?php echo $options[15]['content']; ?></p></label>
                 </fieldset>
               </div>
             </div>
@@ -280,9 +282,9 @@ $options[] = $option_table;
                   <fieldset>
                     <p class ="font"><span class="under">問題6</span></p>
                     <p class = "title"><?php echo $questions[5]['content']; ?></p>
-                    <label><p><input type="radio" class="" id="question_6" checked="checked" name="Q6" value="<?php echo $options[16]['value']; ?>">&nbsp;<?php echo $options[16]['content']; ?>&nbsp;&nbsp;</p></label>
-                    <label><p><input type="radio" class="" id="question_6" name="Q6" value="<?php echo $options[17]['value']; ?>">&nbsp;<?php echo $options[17]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
-                    <label><p><input type="radio" class="" id="question_6" name="Q6" value="<?php echo $options[18]['value']; ?>">&nbsp;<?php echo $options[18]['content']; ?></label>
+                    <label><p><input type="radio" class="" id="question_6" checked="checked" name="Q6" value="<?php echo $options[16]['price']; ?>">&nbsp;<?php echo $options[16]['content']; ?>&nbsp;&nbsp;</p></label>
+                    <label><p><input type="radio" class="" id="question_6" name="Q6" value="<?php echo $options[17]['price']; ?>">&nbsp;<?php echo $options[17]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
+                    <label><p><input type="radio" class="" id="question_6" name="Q6" value="<?php echo $options[18]['price']; ?>">&nbsp;<?php echo $options[18]['content']; ?></label>
                   </fieldset>
                 </div>
             </div>
@@ -293,9 +295,9 @@ $options[] = $option_table;
                 <fieldset>
                   <p class ="font"><span class="under">問題7</span></p>
                   <p class = "title"><?php echo $questions[6]['content']; ?></p>
-                  <label><p><input type="radio" class="" id="question_7" checked="checked" name="Q7" value="<?php echo $options[19]['value']; ?>">&nbsp;<?php echo $options[19]['content']; ?>&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_7" name="Q7" value="<?php echo $options[20]['value']; ?>">&nbsp;<?php echo $options[20]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_7" name="Q7" value="<?php echo $options[21]['value']; ?>">&nbsp;<?php echo $options[21]['content']; ?></label>
+                  <label><p><input type="radio" class="" id="question_7" checked="checked" name="Q7" value="<?php echo $options[19]['price']; ?>">&nbsp;<?php echo $options[19]['content']; ?>&nbsp;&nbsp;</p></label>
+                  <label><p><input type="radio" class="" id="question_7" name="Q7" value="<?php echo $options[20]['price']; ?>">&nbsp;<?php echo $options[20]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
+                  <label><p><input type="radio" class="" id="question_7" name="Q7" value="<?php echo $options[21]['price']; ?>">&nbsp;<?php echo $options[21]['content']; ?></label>
                 </fieldset>
               </div>
             </div>
@@ -306,9 +308,9 @@ $options[] = $option_table;
                 <fieldset>
                   <p class ="font"><span class="under">問題8</span></p>
                   <p class = "title"><?php echo $questions[7]['content']; ?></p>
-                  <label><p><input type="radio" class="" id="question_8" checked="checked" name="Q8" value="<?php echo $options[22]['value']; ?>">&nbsp;<?php echo $options[22]['content']; ?>&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_8" name="Q8" value="<?php echo $options[23]['value']; ?>">&nbsp;<?php echo $options[23]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_8" name="Q8" value="<?php echo $options[24]['value']; ?>">&nbsp;<?php echo $options[24]['content']; ?></label>
+                  <label><p><input type="radio" class="" id="question_8" checked="checked" name="Q8" value="<?php echo $options[22]['price']; ?>">&nbsp;<?php echo $options[22]['content']; ?>&nbsp;&nbsp;</p></label>
+                  <label><p><input type="radio" class="" id="question_8" name="Q8" value="<?php echo $options[23]['price']; ?>">&nbsp;<?php echo $options[23]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
+                  <label><p><input type="radio" class="" id="question_8" name="Q8" value="<?php echo $options[24]['price']; ?>">&nbsp;<?php echo $options[24]['content']; ?></label>
                 </fieldset>
               </div>
               </div>
@@ -319,9 +321,9 @@ $options[] = $option_table;
                 <fieldset>
                   <p class ="font"><span class="under">問題9</span></p>
                   <p class = "title"><?php echo $questions[8]['content']; ?></p>
-                  <label><p><input type="radio" class="" id="question_9" checked="checked" name="Q9" value="<?php echo $options[25]['value']; ?>">&nbsp;<?php echo $options[25]['content']; ?>&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_9" name="Q9" value="<?php echo $options[26]['value']; ?>">&nbsp;<?php echo $options[26]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_9" name="Q9" value="<?php echo $options[27]['value']; ?>">&nbsp;<?php echo $options[27]['content']; ?></label>
+                  <label><p><input type="radio" class="" id="question_9" checked="checked" name="Q9" value="<?php echo $options[25]['price']; ?>">&nbsp;<?php echo $options[25]['content']; ?>&nbsp;&nbsp;</p></label>
+                  <label><p><input type="radio" class="" id="question_9" name="Q9" value="<?php echo $options[26]['price']; ?>">&nbsp;<?php echo $options[26]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
+                  <label><p><input type="radio" class="" id="question_9" name="Q9" value="<?php echo $options[27]['price']; ?>">&nbsp;<?php echo $options[27]['content']; ?></label>
                 </fieldset>
               </div>
             </div>
@@ -332,9 +334,9 @@ $options[] = $option_table;
                 <fieldset>
                   <p class ="font"><span class="under">問題10</span></p>
                   <p class = "title"><?php echo $questions[9]['content']; ?></p>
-                  <label><p><input type="radio" class="" id="question_10" checked="checked" name="Q10" value="<?php echo $options[28]['value']; ?>">&nbsp;<?php echo $options[28]['content']; ?>&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_10" name="Q10" value="<?php echo $options[29]['value']; ?>">&nbsp;<?php echo $options[29]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_10" name="Q10" value="<?php echo $options[30]['value']; ?>">&nbsp;<?php echo $options[30]['content']; ?></label>
+                  <label><p><input type="radio" class="" id="question_10" checked="checked" name="Q10" value="<?php echo $options[28]['price']; ?>">&nbsp;<?php echo $options[28]['content']; ?>&nbsp;&nbsp;</p></label>
+                  <label><p><input type="radio" class="" id="question_10" name="Q10" value="<?php echo $options[29]['price']; ?>">&nbsp;<?php echo $options[29]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
+                  <label><p><input type="radio" class="" id="question_10" name="Q10" value="<?php echo $options[30]['price']; ?>">&nbsp;<?php echo $options[30]['content']; ?></label>
                 </fieldset>
               </div>
             </div>
@@ -345,9 +347,9 @@ $options[] = $option_table;
                 <fieldset>
                   <p class ="font"><span class="under">問題11</span></p>
                   <p class = "title"><?php echo $questions[10]['content']; ?></p>
-                  <label><p><input type="radio" class="" id="question_11" checked="checked" name="Q11" value="<?php echo $options[31]['value']; ?>">&nbsp;<?php echo $options[31]['content']; ?>&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_11" name="Q11" value="<?php echo $options[32]['value']; ?>">&nbsp;<?php echo $options[32]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_11" name="Q11" value="<?php echo $options[33]['value']; ?>">&nbsp;<?php echo $options[33]['content']; ?></label>
+                  <label><p><input type="radio" class="" id="question_11" checked="checked" name="Q11" value="<?php echo $options[31]['price']; ?>">&nbsp;<?php echo $options[31]['content']; ?>&nbsp;&nbsp;</p></label>
+                  <label><p><input type="radio" class="" id="question_11" name="Q11" value="<?php echo $options[32]['price']; ?>">&nbsp;<?php echo $options[32]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
+                  <label><p><input type="radio" class="" id="question_11" name="Q11" value="<?php echo $options[33]['price']; ?>">&nbsp;<?php echo $options[33]['content']; ?></label>
                 </fieldset>
               </div>
             </div>
@@ -358,9 +360,9 @@ $options[] = $option_table;
                 <fieldset>
                   <p class ="font"><span class="under">問題12</span></p>
                   <p class = "title"><?php echo $questions[11]['content']; ?></p>
-                  <label><p><input type="radio" class="" id="question_12" checked="checked" name="Q12" value="<?php echo $options[34]['value']; ?>">&nbsp;<?php echo $options[34]['content']; ?>&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_12" name="Q12" value="<?php echo $options[35]['value']; ?>">&nbsp;<?php echo $options[35]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_12" name="Q12" value="<?php echo $options[36]['value']; ?>">&nbsp;<?php echo $options[36]['content']; ?></label>
+                  <label><p><input type="radio" class="" id="question_12" checked="checked" name="Q12" value="<?php echo $options[34]['price']; ?>">&nbsp;<?php echo $options[34]['content']; ?>&nbsp;&nbsp;</p></label>
+                  <label><p><input type="radio" class="" id="question_12" name="Q12" value="<?php echo $options[35]['price']; ?>">&nbsp;<?php echo $options[35]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
+                  <label><p><input type="radio" class="" id="question_12" name="Q12" value="<?php echo $options[36]['price']; ?>">&nbsp;<?php echo $options[36]['content']; ?></label>
                 </fieldset>
               </div>
             </div>
@@ -371,9 +373,9 @@ $options[] = $option_table;
                 <fieldset>
                   <p class ="font"><span class="under">問題13</span></p>
                   <p class = "title"><?php echo $questions[12]['content']; ?></p>
-                  <label><p><input type="radio" class="" id="question_13" checked="checked" name="Q13" value="<?php echo $options[37]['value']; ?>">&nbsp;<?php echo $options[37]['content']; ?>&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_13" name="Q13" value="<?php echo $options[38]['value']; ?>">&nbsp;<?php echo $options[38]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_13" name="Q13" value="<?php echo $options[39]['value']; ?>">&nbsp;<?php echo $options[39]['content']; ?></label>
+                  <label><p><input type="radio" class="" id="question_13" checked="checked" name="Q13" value="<?php echo $options[37]['price']; ?>">&nbsp;<?php echo $options[37]['content']; ?>&nbsp;&nbsp;</p></label>
+                  <label><p><input type="radio" class="" id="question_13" name="Q13" value="<?php echo $options[38]['price']; ?>">&nbsp;<?php echo $options[38]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
+                  <label><p><input type="radio" class="" id="question_13" name="Q13" value="<?php echo $options[39]['price']; ?>">&nbsp;<?php echo $options[39]['content']; ?></label>
                 </fieldset>
               </div>
             </div>
@@ -384,9 +386,9 @@ $options[] = $option_table;
                 <fieldset>
                   <p class ="font"><span class="under">問題14</span></p>
                   <p class = "title"><?php echo $questions[13]['content']; ?></p>
-                  <label><p><input type="radio" class="" id="question_14" checked="checked" name="Q14" value="<?php echo $options[40]['value']; ?>">&nbsp;<?php echo $options[40]['content']; ?>&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_14" name="Q14" value="<?php echo $options[41]['value']; ?>">&nbsp;<?php echo $options[41]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_14" name="Q14" value="<?php echo $options[42]['value']; ?>">&nbsp;<?php echo $options[42]['content']; ?></label>
+                  <label><p><input type="radio" class="" id="question_14" checked="checked" name="Q14" value="<?php echo $options[40]['price']; ?>">&nbsp;<?php echo $options[40]['content']; ?>&nbsp;&nbsp;</p></label>
+                  <label><p><input type="radio" class="" id="question_14" name="Q14" value="<?php echo $options[41]['price']; ?>">&nbsp;<?php echo $options[41]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
+                  <label><p><input type="radio" class="" id="question_14" name="Q14" value="<?php echo $options[42]['price']; ?>">&nbsp;<?php echo $options[42]['content']; ?></label>
                 </fieldset>
               </div>
             </div>
@@ -397,9 +399,9 @@ $options[] = $option_table;
                 <fieldset>
                   <p class ="font"><span class="under">問題15</span></p>
                   <p class = "title"><?php echo $questions[14]['content']; ?></p>
-                  <label><p><input type="radio" class="" id="question_15" checked="checked" name="Q15" value="<?php echo $options[43]['value']; ?>">&nbsp;<?php echo $options[43]['content']; ?>&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_15" name="Q15" value="<?php echo $options[44]['value']; ?>">&nbsp;<?php echo $options[44]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
-                  <label><p><input type="radio" class="" id="question_15" name="Q15" value="<?php echo $options[45]['value']; ?>">&nbsp;<?php echo $options[45]['content']; ?></label>
+                  <label><p><input type="radio" class="" id="question_15" checked="checked" name="Q15" value="<?php echo $options[43]['price']; ?>">&nbsp;<?php echo $options[43]['content']; ?>&nbsp;&nbsp;</p></label>
+                  <label><p><input type="radio" class="" id="question_15" name="Q15" value="<?php echo $options[44]['price']; ?>">&nbsp;<?php echo $options[44]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
+                  <label><p><input type="radio" class="" id="question_15" name="Q15" value="<?php echo $options[45]['price']; ?>">&nbsp;<?php echo $options[45]['content']; ?></label>
                 </fieldset>
               </div>
             </div>
@@ -410,9 +412,9 @@ $options[] = $option_table;
                   <fieldset>
                     <p class ="font"><span class="under">問題16</span></p>
                     <p class = "title"><?php echo $questions[15]['content']; ?></p>
-                    <label><p><input type="radio" class="" id="question_16" checked="checked" name="Q16" value="<?php echo $options[46]['value']; ?>">&nbsp;<?php echo $options[46]['content']; ?>&nbsp;&nbsp;</p></label>
-                    <label><p><input type="radio" class="" id="question_16" name="Q16" value="<?php echo $options[47]['value']; ?>">&nbsp;<?php echo $options[47]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
-                    <label><p><input type="radio" class="" id="question_16" name="Q16" value="<?php echo $options[48]['value']; ?>">&nbsp;<?php echo $options[48]['content']; ?></label>
+                    <label><p><input type="radio" class="" id="question_16" checked="checked" name="Q16" value="<?php echo $options[46]['price']; ?>">&nbsp;<?php echo $options[46]['content']; ?>&nbsp;&nbsp;</p></label>
+                    <label><p><input type="radio" class="" id="question_16" name="Q16" value="<?php echo $options[47]['price']; ?>">&nbsp;<?php echo $options[47]['content']; ?>&nbsp;&nbsp;&nbsp;</p></label>
+                    <label><p><input type="radio" class="" id="question_16" name="Q16" value="<?php echo $options[48]['price']; ?>">&nbsp;<?php echo $options[48]['content']; ?></label>
                   </fieldset>
                 </div>
             </div>
