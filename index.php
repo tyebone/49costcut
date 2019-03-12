@@ -200,8 +200,7 @@ $options[] = $option_table;
 <div class="all_area box-sizing">
   <section class=" mx-auto">
     <div class = "title-area">
-    <img class="col-md-9 card card-body mx-auto rounded-0 border border-0 top-img" src="image/top-img.png">
-    <p>セブ島留学生のための<br>節約診断サイト<br>あなたの金銭感覚を簡単に診断します</p>
+    <img class="col-md-9 card card-body mx-auto rounded-0 border border-0 top-img" src="image/top_2145.jpg">
     </div>
   </section>
     <br>
@@ -438,7 +437,7 @@ $options[] = $option_table;
               </div>
             </div>
         </section>
-        <br>
+        <br><br>
       </form>
 
 
