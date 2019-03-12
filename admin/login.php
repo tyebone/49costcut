@@ -77,43 +77,52 @@ if(!empty($_POST)){
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 
-<body class=" mx-auto center-block">
-    <div class="all_area box-sizing">
-    <section class=" mx-auto">
+<body>
+    <div class="container">
         <div class="row">
-
-            <div class="col-xs-8 col-xs-offset-2 thumbnail mx-auto">
+            <div class="col-md-12 mx-auto">
                 <br><br><br>
                 <h2 class="text-center content_header mx-auto">サインイン</h2>
                 <br>
-                <form method="POST" action="login.php" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label for="email">メールアドレス</label>
-                        <input type="email" name="input_email" class="form-control rounded-0" id="email" placeholder="email">
+            </div>
+        </div>
+        <form method="POST" action="login.php" enctype="multipart/form-data">
+        <div class="form-group row">
+            <div class = "col-md-3"></div>
+            <div class = "col-md-6">
+                <label for="email">メールアドレス</label>
+                <input type="email" name="input_email" class="form-control rounded-0" id="email" placeholder="email">
                         <?php if(isset($errors['signin']) && $errors['signin'] =='blank'): ?>
-                            <p class= 'text-danger'>メールアドレスとパスワードを正しく入力してください</p>
+                            <p class= 'text-danger'>正しく入力してください</p>
                         <?php endif; ?>
                         <?php if(isset($errors['signin']) && $errors['signin'] =='failed'): ?>
                             <p class= 'text-danger'>サインインに失敗しました</p>
                         <?php endif; ?>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">パスワード</label>
-                        <input type="password" name="input_password" class="form-control rounded-0" id="password" placeholder="password">
-                    </div>
-
-
-                <div class='row'>
-                    <div class = 'col-md-6 mx-auto'>
-                    <input type="submit" class="btn rounded-0 signin-btn mx-auto margin-left" value="サインイン">
-                </div>
-                <div class = 'col-md-6 mx-auto'>
-                    <a class = 'btn rounded-0 submit-btn mx-auto reverse-btn' href="../index.php">戻る</a>
-                    </div>
-                 </div>
-                </form>
             </div>
+            <div class = "col-md-3"></div>
         </div>
+
+        <div class="form-group row">
+            <div class = "col-md-3"></div>
+            <div class = "col-md-6">
+                <label for="password">パスワード</label>
+                <input type="password" name="input_password" class="form-control rounded-0" id="password" placeholder="password">
+            </div>
+            <div class = "col-md-3"></div>
+        </div>
+
+        <br>
+        <div class='row'>
+            <div class = "col-md-3"></div>
+            <div class = "col-md-2 float-left">
+                    <input type="submit" class="btn rounded-0 signin-btn mx-auto margin-left" value="サインイン">
+            </div>
+            <div class = "col-md-4">
+                <a class = 'btn rounded-0 submit-btn mx-auto reverse-btn' href="../index.php">戻る</a>
+            </div>
+            <div class = "col-md-3"></div>
+        </div>
+        </form>
     </div>
 </section>
 </div>
