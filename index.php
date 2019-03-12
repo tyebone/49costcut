@@ -444,13 +444,18 @@ $options[] = $option_table;
       </form>
 
 <?php if(!empty($_POST)): ?>
+<br>
+<div class="col-md-9 card card-body mx-auto rounded-0 border border-0 backcontaineranswer">
+
 <div id="answer" class="all_area box-sizing">
   <div class="row">
-    <div class ='col-md-6 card card-body mb-3 border-dark text-center mx-auto'>
+    <!-- <div class ='col-md-6 card card-body mb-3 border-dark text-center mx-auto'> -->
     <!-- 節約度別の説明文 -->
+    <div class = "text-center">
     <h2>あなたの節約度は・・・</h2>
     <h3><strong class="text-danger"><?php echo $your_type ;?></strong>&nbsp;&nbsp;&nbsp;レベルです</h3>
-    </div>
+  </div>
+    <!-- </div> -->
   </div>
 
   <div class="chart_area1x m-2">
@@ -495,6 +500,7 @@ $options[] = $option_table;
             <div class ="col-md-3"></div>
         </div>
       <?php endif; ?>
+    </div>
     </div>
   </body>
     <script src="js/jquery.js"></script>
