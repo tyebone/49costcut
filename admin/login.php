@@ -106,10 +106,9 @@ if(!empty($_POST)){
                     </div>
                     <div class = 'text-left mx-auto'>
                     <input type="submit" class="btn " value="サインイン">
+                    <a class = 'text-right' href="../index.php">戻る</a>
                     </div>
-                    <div class = 'text-right mx-auto'>
-                    <a href="../index.php">戻る</a>
-                    </div>
+                     </div>
                 </form>
             </div>
         </div>
