@@ -182,7 +182,7 @@ $options[] = $option_table;
       <nav class="navbar">
         <a class="navbar-brand"></a>
         <div class="dropdown">
-          <button type="button" id="dropdownMenuButton" class="btn btn-secondary dropdown-toggle m-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button type="button" id="dropdownMenuButton" class="btn btn-secondary rounded-0 menu-btn dropdown-toggle m-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             メニュー
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="z-index:9999">
@@ -215,8 +215,10 @@ $options[] = $option_table;
       </div>
       <br> -->
 
-      <form method="POST" action="index.php#回答">
+      <form method="POST" action="index.php#answer">
+<!-- mx-autoは中央 -->
         <section class=" mx-auto">
+
           <div class="col-md-9 card card-body mx-auto rounded-0 border border-0 backcontainer">
             <br><br>
 
@@ -441,22 +443,26 @@ $options[] = $option_table;
         <br><br><br>
       </form>
 
-      <?php if(!empty($_POST)): ?>
-        <div id="回答" class="all_area box-sizing">
-          <div class="row">
-              <div class ='col-md-6 card card-body mb-3 border-dark text-center mx-auto'>
-              <!-- 節約度別の説明文 -->
-                <h2>あなたの節約度は・・・</h2>
-                <h3><strong class="text-danger"><?php echo $your_type ;?></strong>&nbsp;&nbsp;&nbsp;レベルです</h3>
-              </div>
-          </div>
-          <div class="chart_area1x m-2">
-            <div class="chart1and2 row">
-              <div id="result_chart1" class="col-md-5 text-center mx-auto">
-                <!-- 比較グラフ１ -->
-                <canvas id = "pieChart1" width="400" height="400"></canvas>
-              </div>
-              <div id="result_chart2" class="col-md-5 text-center mx-auto">
+<?php if(!empty($_POST)): ?>
+<div id="answer" class="all_area box-sizing">
+  <div class="row">
+    <div class ='col-md-6 card card-body mb-3 border-dark text-center mx-auto'>
+    <!-- 節約度別の説明文 -->
+    <h2>あなたの節約度は・・・</h2>
+    <h3><strong class="text-danger"><?php echo $your_type ;?></strong>&nbsp;&nbsp;&nbsp;レベルです</h3>
+    </div>
+  </div>
+
+  <div class="chart_area1x m-2">
+  <div class="chart1and2 row">
+
+
+<div id="result_chart1" class="col-md-5 text-center mx-auto">
+<!-- 比較グラフ１ -->
+  <canvas id = "pieChart1" width="400" height="400"></canvas>
+</div>
+
+<div id="result_chart2" class="col-md-5 text-center mx-auto">
                 <!-- 比較グラフ２ -->
                 <canvas id = "pieChart2" width="400" height="400"></canvas>
               </div>
@@ -465,6 +471,8 @@ $options[] = $option_table;
           </div>
 
           <div class="chart_area2 row text-center mx-auto">
+
+
             <div id='barChartarea' class="col-md-8 mx-auto">
             <!-- ラインチャート -->
               <div class="row">

@@ -12,6 +12,11 @@
 }
 */
 
+.menu-btn{
+	background-color: black;
+	color: white;
+}
+
 .smaller{
 	font-size:40px;
 }
