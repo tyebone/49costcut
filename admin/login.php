@@ -56,6 +56,7 @@ if(!empty($_POST)){
 <!-- <?php include('layouts/header.php'); ?>-->
  <link href="js/material-kit.css?v=2.0.5" rel="stylesheet" />
 <body style="margin-top: 60px">
+
     <div class="container">
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2 thumbnail">

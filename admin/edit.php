@@ -110,22 +110,7 @@ if(!empty($_POST)){
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-          <nav class="navbar">
-            <a class="navbar-brand"></a>
-            <div class="dropdown row">
-              <button type="button" id="dropdownMenuButton" class="btn btn-secondary dropdown-toggle m-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="z-index:9999">
-                <a class="dropdown-item" href="../index.php">TOP </a>
-                <a class="dropdown-item" href="../プロフィール/profile.html">About</a>
-                <a class="dropdown-item" href="edit.php">編集</a>
-                <a class="dropdown-item" href="signout.php">サインアウト</a>
-              </div>
-            </div>
-          </nav>
-        </header>
+    <?php include('../navbar.php'); ?>
 
     <form method="POST" action="edit.php">
 

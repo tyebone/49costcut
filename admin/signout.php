@@ -11,5 +11,5 @@ $_SESSION = [];
 session_destroy();
 
 //2.サインイン画面に遷移する
-header("Location: login.php");
+header("Location: ../index.php");
 exit();
