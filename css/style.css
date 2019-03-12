@@ -1,6 +1,5 @@
 .under {
-  background: linear-gradient(transparent 70%, yellow 30%);
-  color: #3C4858;
+  background: linear-gradient(transparent 70%, #ffd700 30%);
   font-weight: 700;
 }
 .wf-mplus1p { font-family: "Mplus 1p"; }
@@ -8,12 +7,58 @@
 .title{font-size: 28px;}
 
 
-body {
-	font-family: 'Noto Sans JP', sans-serif;
-	background-color: #fff000;
+/*.img-title{
+	margin-right: ($spacer * .25)
+}
+*/
+.top-img{
+	padding: 0px;
 }
 
-.font {
-  color: #3C4858;
-  font-weight: 700;
+.title-area{
+	position: relative;/*相対配置*/
 }
+
+.title-area p{
+	position: absolute;/*絶対配置*/
+	top: 40%;
+	left: 20%;
+}
+
+.menu-btn{
+	background-color: black;
+	color: white;
+}
+
+.smaller{
+	font-size:40px;
+}
+
+.bigger{
+	font-size:80px ;
+}
+
+body {
+	font-family: 'Noto Sans JP', sans-serif;
+	/*background-color: #fff000*/;
+}
+
+.backcontainer{
+	background-color: #d3d3d3;
+}
+
+.backcontaineranswer{
+	background-color: #ffd700;
+}
+
+.submit-btn{
+	background-color: #ffd700;
+	font-size: 25px;
+}
+
+.share{
+	font-size: 25px;
+	background-color: #00acee;
+	color: white;
+}
+

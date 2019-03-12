@@ -17,7 +17,7 @@ function showPie2(category) {
       options:{
         title:{
           display: true,
-          text: '出費割合'
+          text: 'あなたの生活の割合'
         }
 
       }
