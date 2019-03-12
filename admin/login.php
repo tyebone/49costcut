@@ -118,7 +118,7 @@ if(!empty($_POST)){
                     <input type="submit" class="btn rounded-0 signin-btn mx-auto margin-left" value="サインイン">
             </div>
             <div class = "col-md-4">
-                <a class = 'btn rounded-0 submit-btn mx-auto reverse-btn' href="../index.php">戻る</a>
+                <a class = 'btn rounded-0 submit-btn mx-auto reverse-btn' href="../index.php">&nbsp;戻る&nbsp;</a>
             </div>
             <div class = "col-md-3"></div>
         </div>
