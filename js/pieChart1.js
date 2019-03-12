@@ -1,5 +1,5 @@
 //円グラフ
-
+Chart.defaults.global.defaultFontColor = 'black';
 const aCtx = $('#pieChart1')
 function showPie1(type) {
     let data = []
@@ -29,7 +29,7 @@ function showPie1(type) {
       options:{
         title:{
           display: true,
-          text: '出費割合'
+          text: 'あなたと同じ性別・年代の平均'
         }
 
       }

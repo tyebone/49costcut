@@ -443,19 +443,19 @@ $options[] = $option_table;
         <br><br><br>
       </form>
 
+
+<!-- ここから節約診断結果のページ -->
 <?php if(!empty($_POST)): ?>
-<br>
 <div class="col-md-9 card card-body mx-auto rounded-0 border border-0 backcontaineranswer">
 
 <div id="answer" class="all_area box-sizing">
   <div class="row">
-    <!-- <div class ='col-md-6 card card-body mb-3 border-dark text-center mx-auto'> -->
+    <div class ='col-md-6  mb-3 border-dark text-center mx-auto'>
     <!-- 節約度別の説明文 -->
-    <div class = "text-center">
+    <br><br>
     <h2>あなたの節約度は・・・</h2>
     <h3><strong class="text-danger"><?php echo $your_type ;?></strong>&nbsp;&nbsp;&nbsp;レベルです</h3>
-  </div>
-    <!-- </div> -->
+    </div>
   </div>
 
   <div class="chart_area1x m-2">
@@ -491,17 +491,24 @@ $options[] = $option_table;
           </div>
               <div class="text-center row border-box">
                 <div class ="col-md-3"></div>
-                <div class ='col-md-6 text-center'>
-                  <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="セブ生活費シュミレーター
-                    私の診断結果は節約の<?php echo $your_type ;?>です。" data-url="http://localhost/49_CostCut/index.php" data-show-count="false">シェアする</a>
-                  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
                 </div>
               </div>
             <div class ="col-md-3"></div>
+            <br><br>
         </div>
       <?php endif; ?>
     </div>
     </div>
+
+<br><br>
+    <div class="row">
+    <div class ='col-md-6 text-center mx-auto'>
+    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="セブ生活費シュミレーター私の診断結果は節約の<?php echo $your_type ;?>です。" data-url="http://localhost/49_CostCut/index.php" data-show-count="false">シェアします</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</div>
+<br><br>
   </body>
     <script src="js/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
