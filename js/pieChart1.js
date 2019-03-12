@@ -12,6 +12,7 @@ function showPie1(type) {
     } else {
     data = [5,45,20,10,25,19]
     }
+
     new Chart(aCtx,{
       type: 'pie',
       data: {

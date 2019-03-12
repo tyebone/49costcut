@@ -11,6 +11,19 @@
 	margin-right: ($spacer * .25)
 }
 */
+.top-img{
+	padding: 0px;
+}
+
+.title-area{
+	position: relative;/*相対配置*/
+}
+
+.title-area p{
+	position: absolute;/*絶対配置*/
+	top: 40%;
+	left: 20%;
+}
 
 .menu-btn{
 	background-color: black;
@@ -43,11 +56,9 @@ body {
 	font-size: 25px;
 }
 
-/*.border-top{
-	border-width:5px;
-}*/
+.share{
+	font-size: 25px;
+	background-color: #00acee;
+	color: white;
+}
 
-
-/*.topimg{
-	background-color: #ffd700;
-}*/

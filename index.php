@@ -103,7 +103,7 @@ foreach ($answers as $key => $value) {
   // 文字代入
   if ($your_price < 15000) {
     $your_type = '超人';
-    $bun = 'すべてのカテゴリーにおいて理想的な家計状況であると言えるでしょう。'.'<br>'.'これからもセブライフを楽しんでください。';
+    $bun = 'すべてのカテゴリーにおいて理想的な家計状況であると言えるでしょう。これからもセブライフを楽しんでください。';
     }else if ($your_price < 22500) {
       $your_type = '達人';
       $bun = 'たまにハメを外してしまうことがありますが、胸を張れる家計状況であると言えるでしょう。'.'<br>'.'節約の仕方を周りの人にアドバイスしてあげましょう。';
@@ -174,11 +174,13 @@ $options[] = $option_table;
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   </head>
 
 
   <body class=" mx-auto center-block">
     <header>
+
       <nav class="navbar">
         <a class="navbar-brand"></a>
         <div class="dropdown">
@@ -195,17 +197,13 @@ $options[] = $option_table;
     </header>
 
 
-    <div class="all_area box-sizing">
-      <div class ="row mx-auto">
-      <div class="col-md-9 card card-body mx-auto rounded-0 border-top">
-        <p>セブ島留学生のための</p>
-        <p>節約診断サイト。</p
-        <div class>
-        <img class=" d-block col-md-4 img-fluid" src="image/1534069729.png">
-      </div>
-      </div>
-      </div>
+<div class="all_area box-sizing">
+  <section class=" mx-auto">
+    <div class = "title-area">
+    <img class="col-md-9 card card-body mx-auto rounded-0 border border-0 top-img" src="image/top-img.png">
+    <p>セブ島留学生のための<br>節約診断サイト<br>あなたの金銭感覚を簡単に診断します</p>
     </div>
+  </section>
     <br>
 
       <!-- <div class="row">
@@ -436,11 +434,11 @@ $options[] = $option_table;
           <br><br>
           <div class="row">
               <div class ='col-md-6 text-center mx-auto'>
-                <input type = "submit" class="btn rounded-0 submit-btn" value="診断します">
+                <input type = "submit" class="btn rounded-0 submit-btn" value="&nbsp;診断する&nbsp;">
               </div>
             </div>
         </section>
-        <br><br><br>
+        <br>
       </form>
 
 
@@ -453,11 +451,18 @@ $options[] = $option_table;
     <div class ='col-md-6  mb-3 border-dark text-center mx-auto'>
     <!-- 節約度別の説明文 -->
     <br><br>
-    <h2>あなたの節約度は・・・</h2>
-    <h3><strong class="text-danger"><?php echo $your_type ;?></strong>&nbsp;&nbsp;&nbsp;レベルです</h3>
+    <h3>あなたの節約度は</h3>
+    <h1><strong class="text-danger"><?php echo $your_type ;?></strong>レベルです</h1>
     </div>
   </div>
+  <div class="row">
+                <div class ='col-md-9 mx-auto'>
+                  <!-- 節約度別の説明文 -->
+                  <p class = 'mondaibun'><?php echo $bun?></p>
+                </div>
+              </div>
 
+<br><br>
   <div class="chart_area1x m-2">
   <div class="chart1and2 row">
 
@@ -480,12 +485,7 @@ $options[] = $option_table;
 
             <div id='barChartarea' class="col-md-8 mx-auto">
             <!-- ラインチャート -->
-              <div class="row">
-                <div class ='col-md-10 card card-body bg-light mb-3 border-dark mx-auto'>
-                  <!-- 節約度別の説明文 -->
-                  <p><?php echo $bun?></p>
-                </div>
-              </div>
+              
               <canvas id = "barChart" width="400" height="200"></canvas>
             </div>
           </div>
@@ -497,16 +497,24 @@ $options[] = $option_table;
             <div class ="col-md-3"></div>
             <br><br>
         </div>
+        <br><br>
+    <div class="row">
+    <div class ='col-md-6 text-center mx-auto'>
+    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="btn rounded-0 share" data-size="large" data-text="セブ生活費シュミレーター私の診断結果は節約の<?php echo $your_type ;?>です。" data-url="http://localhost/49_CostCut/index.php" data-show-count="false">&nbsp;<i class="fab fa-twitter"></i>&nbsp;シェアする&nbsp;</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
       <?php endif; ?>
+
     </div>
     </div>
 
-<br><br>
-    <div class="row">
-    <div class ='col-md-6 text-center mx-auto'>
-    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="セブ生活費シュミレーター私の診断結果は節約の<?php echo $your_type ;?>です。" data-url="http://localhost/49_CostCut/index.php" data-show-count="false">シェアします</a>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
+
+<!--     <div class="row">
+              <div class ='col-md-6 text-center mx-auto'>
+                <input type = "submit" class="btn rounded-0 submit-btn" value="診断します">
+              </div> -->
+
+
 </div>
 <br><br>
   </body>
