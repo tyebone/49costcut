@@ -94,7 +94,7 @@ foreach($users as $user) {
   </head>
 
 
-    <body class="mx-auto center-block admin-back" >
+<body>
         <header>
           <nav class="navbar">
             <a class="navbar-brand"></a>
@@ -109,33 +109,51 @@ foreach($users as $user) {
             </div>
           </nav>
         </header>
-        <div class="container text-center">
-            <div class="row">
-                <div class='col-md-1'></div>
-                <div class='col-md-10'>
-                    <h2 class="text-center content_header">管理者画面</h2>
-                    <table class="pageview-table text-center">
-                      <tbody>
-                        <tr class="count">
-                          <td>今日</td>
-                          <td>合計</td>
-                        </tr>
-                        <br>
-                        <tr class="caption">
-                          <td><?php echo $current; ?></td>
-                          <td><?php echo count($users) ?></td>
-                        </tr>
-                      </tbody>
-                    </table>
 
-                    <div id="pie-div">
-                      <canvas id="pieChart"></canvas>
-                    </div>
-                </div>
-                <div class='col-md-1'></div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mx-auto">
+            <br><br><br>
+            <h2 class="text-center content_header mx-auto">ユーザー数確認ページ</h2>
+            <br>
             </div>
         </div>
-    </body>
+
+        <div class="row">
+            <div class = "col-md-4"></div>
+            <div class = "col-md-2 mx-auto">
+                <p>本日の利用者数</p>
+            </div>
+            <div class = "col-md-2 mx-auto">
+                <p>これまでの利用者数</p>
+            </div>
+            <div class = "col-md-4"></div>
+        </div>
+
+        <div class="row">
+            <div class = "col-md-4"></div>
+            <div class = "col-md-2 mx-auto">
+                <?php echo $current; ?>人
+            </div>
+            <div class = "col-md-2 mx-auto">
+                <?php echo count($users) ?>人
+            </div>
+            <div class = "col-md-4"></div>
+        </div>
+        <br><br>
+
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 mx-auto">
+                <div id="pie-div">
+                    <canvas id="pieChart"></canvas>
+                </div>
+            </div>
+            <div class="col-md-3 mx-auto"></div>
+    </div>
+</body>
     <script src="js/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
     <script src="js/pie.js"></script>
