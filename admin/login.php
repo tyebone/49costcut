@@ -54,16 +54,45 @@ if(!empty($_POST)){
 
 ?>
 <!-- <?php include('layouts/header.php'); ?>-->
- <link href="js/material-kit.css?v=2.0.5" rel="stylesheet" />
-<body style="margin-top: 60px">
-    <div class="container">
+
+
+
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+    <title> セブ生活費シュミレーター</title>
+    <!-- 必要なメタタグ -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- timのスタイルシート -->
+    <!-- <link href="css/material-kit.css?v=2.0.5" rel="stylesheet" /> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  </head>
+
+<body class=" mx-auto center-block">
+    <div class="all_area box-sizing">
+    <section class=" mx-auto">
         <div class="row">
-            <div class="col-xs-8 col-xs-offset-2 thumbnail">
-                <h2 class="text-center content_header">サインイン</h2>
+
+            <div class="col-xs-8 col-xs-offset-2 thumbnail mx-auto">
+                <br><br><br>
+                <h2 class="text-center content_header mx-auto">サインイン</h2>
+                <br>
                 <form method="POST" action="login.php" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="email">メールアドレス</label>
-                        <input type="email" name="input_email" class="form-control" id="email" placeholder="example@gmail.com">
+                        <input type="email" name="input_email" class="form-control rounded-0" id="email" placeholder="email">
                         <?php if(isset($errors['signin']) && $errors['signin'] =='blank'): ?>
                             <p class= 'text-danger'>メールアドレスとパスワードを正しく入力してください</p>
                         <?php endif; ?>
@@ -73,16 +102,20 @@ if(!empty($_POST)){
                     </div>
                     <div class="form-group">
                         <label for="password">パスワード</label>
-                        <input type="password" name="input_password" class="form-control" id="password" placeholder="4 ~ 16文字のパスワード">
+                        <input type="password" name="input_password" class="form-control rounded-0" id="password" placeholder="password">
                     </div>
-                    <input type="submit" class="btn btn-info" value="サインイン">
-                    <span style="float: right; padding-top: 6px;">
-                        <a href="../index.php">戻る</a>
-                    </span>
+                    <div class = 'text-left mx-auto'>
+                    <input type="submit" class="btn " value="サインイン">
+                    </div>
+                    <div class = 'text-right mx-auto'>
+                    <a href="../index.php">戻る</a>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
+</section>
+</div>
 </body>
 <!-- <?php include('layouts/header.php'); ?> -->
 </html>
