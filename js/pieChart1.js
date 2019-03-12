@@ -4,16 +4,16 @@ const aCtx = $('#pieChart1')
 function showPie1(type) {
     let data = []
     if (type == 1) {
-    data = [40,15,20,60,10,49]
+    data = [9000,2000,1500,11000,2300,3000]
     } else if (type == 2) {
-    data = [10,25,40,30,20,19]
+    data = [7500,2000,1500,11000,2300,3000]
     } else if (type == 3) {
-    data = [20,5,45,20,10,59]
+    data = [16500,3000,6000,15000,3500,3000]
     } else {
-    data = [5,45,20,10,25,19]
+    data = [16500,3000,3000,11000,3500,5000]
     }
     new Chart(aCtx,{
-      type: 'pie',
+      type: 'doughnut',
       data: {
         labels:['食事','交通費','生活費','交際費','衣服・美容','趣味・娯楽'],
         datasets: [{

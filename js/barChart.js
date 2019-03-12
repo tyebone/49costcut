@@ -20,14 +20,14 @@ function showChart(price_sum) {
 	    }
 	    })
 	new Chart(cCtx, {
-	    type:'line',
+	    type:'bar',
 		data: {
 	      labels: ['初心者','素人', '普通の人', '達人', '超人'],
 	          datasets: [{
-		 	label: '最高気温(度）',
+		 	label: '節約レベル人数',
 		    data: [choujin,tetujin,futu,shiroto,syoshinsya],
 		    borderColor: "rgba(255,0,0,1)",
-		    backgroundColor: "rgba(0,0,0,0,0,0)"
+		    // backgroundColor: "rgba(0,0,0,0,0,0)"
 		    }],
 	},
 		options: {
