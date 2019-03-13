@@ -489,19 +489,22 @@ $options[] = $option_table;
         <br><br>
     <div class="row">
       <div class = 'col-md-3'></div>
-      <div class ='col-md-6 text-center mx-auto'>
+      <div class ='col-md-6 text-center mx-auto share'>
+        <br>
+      <div class = 'social'>
+      <div class = 'social-inner'>
+      <div class = 'twitter'>
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="セブ生活費シュミレーター    私の診断結果は節約の<?php echo $your_type ;?>です。" data-url="http://localhost/49_CostCut/index.php" data-show-count="false"></a>
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
-      <div class = 'col-md-3'></div>
-    </div>
-
-    <div class="row">
-      <div class = 'col-md-3'></div>
-      <div class ='col-md-6 text-center mx-auto'>
+      <div class = 'facebook'>
         <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.2"></script>
         <div class="fb-share-button" data-href="http://localhost/49_CostCut/index.php" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></div>
+      </div>
+      </div>
+      </div>
+        <br>
       </div>
       <div class = 'col-md-3'></div>
     </div>

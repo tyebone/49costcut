@@ -134,3 +134,11 @@ footer{
 .footer-font{
 	font-size:xx-small;
 }
+
+.share{
+	background-color:#ffd700;
+}
+
+.facebook .twitter{
+	position: relative;
+}
