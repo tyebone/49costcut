@@ -484,7 +484,7 @@ $options[] = $option_table;
     <div class="row">
     <div class ='col-md-6 text-center mx-auto'>
     <a href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-    class="btn rounded-0 share"
+    class="btn rounded-0 share twitter-share-button"
     data-size="large"
     data-text="セブ生活費シュミレーター私の診断結果は節約の<?php echo $your_type ;?>です。"
     data-url="http://localhost/49_CostCut/index.php"
