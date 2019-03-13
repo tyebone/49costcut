@@ -108,43 +108,43 @@ foreach($users as $user) {
     <div class="row">
         <div class="col-md-12 mx-auto">
         <br>
-        <h2 class="text-center content_header mx-auto">ユーザー数確認ページ</h2>
+        <h2 class="text-center content_header mx-auto">ユーザー数確認</h2>
         <br>
         </div>
     </div>
 
         <div class="row">
-            <div class = "col-md-4"></div>
-            <div class = "col-md-2 mx-auto">
+            <div class = "col-md-3"></div>
+            <div class = "col-md-3 text-center">
                 <p>本日の利用者数</p>
             </div>
-            <div class = "col-md-2 mx-auto">
+            <div class = "col-md-3 text-center">
                 <p>これまでの利用者数</p>
             </div>
-            <div class = "col-md-4"></div>
+            <div class = "col-md-3"></div>
         </div>
 
         <div class="row">
-            <div class = "col-md-4"></div>
-            <div class = "col-md-2 mx-auto">
+            <div class = "col-md-3"></div>
+            <div class = "col-md-3 text-center">
                 <?php echo $current; ?>人
             </div>
-            <div class = "col-md-2 mx-auto">
+            <div class = "col-md-3 text-center">
                 <?php echo count($users) ?>人
 
             </div>
-            <div class = "col-md-4"></div>
+            <div class = "col-md-3"></div>
         </div>
-        <br><br>
+        <br><br><br>
 
         <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6 mx-auto">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 mx-auto">
                 <div id="pie-div">
                     <canvas id="pieChart"></canvas>
                 </div>
             </div>
-            <div class="col-md-3 mx-auto"></div>
+            <div class="col-md-2 mx-auto"></div>
     </div>
 </body>
     <script src="js/jquery.js"></script>

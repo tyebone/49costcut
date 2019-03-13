@@ -92,7 +92,9 @@ if(!empty($_POST)){
                 <br>
             </div>
         </div>
-        <form method="POST" action="login.php" enctype="multipart/form-data">
+
+
+    <form method="POST" action="login.php" enctype="multipart/form-data">
         <div class="form-group row">
             <div class = "col-md-3"></div>
             <div class = "col-md-6">
@@ -126,6 +128,7 @@ if(!empty($_POST)){
             <div class = "col-md-7"></div>
         </div>
         <br>
+
          <div class='row'>
             <div class = "col-md-3"></div>
             <div class = "col-md-2 float-left">
@@ -133,9 +136,8 @@ if(!empty($_POST)){
             </div>
             <div class = "col-md-7"></div>
         </div>
-        </form>
+    </form>
     </div>
-</section>
 </div>
 </body>
 <!-- <?php include('layouts/header.php'); ?> -->

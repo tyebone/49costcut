@@ -121,7 +121,7 @@ if(!empty($_POST)){
     <div class = "container">
     <br><br>
 <!-- 問題2 -->
-    <div class = "row mx-auto">
+    <div class = "row">
         <div class = "col-md-1"></div>
         <div class = "col-md-11">
             <h2>問題2</h2>

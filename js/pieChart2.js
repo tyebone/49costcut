@@ -19,7 +19,7 @@ function showPie2(category) {
       options:{
         title:{
           display: true,
-          text: 'あなたの生活の割合'
+          text: 'あなたの回答に基づく生活費の割合'
         }
 
       }

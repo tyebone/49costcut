@@ -86,64 +86,97 @@ if (!empty($_POST)){
 ?>
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
+    <title> セブ生活費シュミレーター</title>
+    <!-- 必要なメタタグ -->
     <meta charset="utf-8">
-    <title>CebuCostsSimulator</title>
-    <link rel="stylesheet" type="text/css" href="js/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- timのスタイルシート -->
+    <!-- <link href="css/material-kit.css?v=2.0.5" rel="stylesheet" /> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../assets/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
-    <link href="js/material-kit.css?v=2.0.5" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
-<body style="margin-top: 60px">
-    <?php include('../navbar.php'); ?>
+
+<body>
     <div class="container">
         <div class="row">
-            <div class="col-xs-8 col-xs-offset-2 thumbnail">
-                <h2 class="text-center content_header">管理者アカウント作成</h2>
-                <form method="POST" ac
-                tion="register.php" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label for="name">ユーザー名</label>
-                        <input type="text" name="input_name" class="form-control" id="name" placeholder="サンミゲル 太郎"
-                            value="<?php echo htmlspecialchars($name); ?>">
-                        <?php if(isset($errors['name']) && $errors['name'] == 'blank'): ?>
-                            <p class="text-danger">ユーザー名を入力してください</p>
-                        <?php endif; ?>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">メールアドレス</label>
-                        <input type="email" name="input_email" class="form-control" id="email" placeholder="example@gmail.com"
-                            value="<?php echo htmlspecialchars($email); ?>">
-                        <?php if(isset($errors['email']) && $errors['email'] == 'blank'): ?>
-                            <p class="text-danger">メールアドレスを入力してください</p>
-                        <?php endif; ?>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">パスワード</label>
-                        <input type="password" name="input_password" class="form-control" id="password" placeholder="4 ~ 16文字のパスワード">
-                        <?php if(isset($errors['password']) && $errors['password'] == 'blank'): ?>
-                            <p class="text-danger">パスワードを入力してください</p>
-                        <?php endif; ?>
-                        <?php if(isset($errors['password']) && $errors['password'] == 'length'): ?>
-                            <p class="text-danger">パスワードは4 ~ 16文字で入力してください</p>
-                        <?php endif; ?>
-                        <?php if(!empty($errors) && isset($errors['rewrite'])): ?>
-                            <p class = "text-danger">パスワードを再度入力してください</p>
-                        <?php endif; ?>
-                    </div>
-                    <input type="submit" class="btn btn-default" value="確認">
-                    <span style="float: right; padding-top: 6px;">ログインは
-                        <a href="login.php">こちら</a>
-                    </span>
-                </form>
+            <div class="col-md-12 mx-auto">
+                <br><br><br>
+                <h2 class="text-center content_header mx-auto">管理者アカウント作成</h2>
+                <br>
             </div>
         </div>
+
+    <form method="POST" action="register.php" enctype="multipart/form-data">
+        <div class="form-group row">
+            <div class = "col-md-3"></div>
+            <div class = "col-md-6">
+                <label for="name">ユーザー名</label>
+                <input type="text" name="input_name" class="form-control rounded-0" id="name" placeholder="新規管理者の名前" value="<?php echo htmlspecialchars($name); ?>">
+                <?php if(isset($errors['name']) && $errors['name'] == 'blank'): ?>
+                <p class="text-danger">ユーザー名を入力してください</p>
+                <?php endif; ?>
+            </div>
+            <div class = "col-md-3"></div>
+        </div>
+
+        <div class="form-group row">
+            <div class = "col-md-3"></div>
+            <div class = "col-md-6">
+                <label for="email">メールアドレス</label>
+                <input type="email" name="input_email" class="form-control rounded-0" id="email" placeholder="新規管理者のメールアドレス" value="<?php echo htmlspecialchars($email); ?>">
+                <?php if(isset($errors['email']) && $errors['email'] == 'blank'): ?>
+                <p class="text-danger">メールアドレスを入力してください</p>
+                <?php endif; ?>
+            </div>
+            <div class = "col-md-3"></div>
+        </div>
+
+        <div class="form-group row">
+            <div class = "col-md-3"></div>
+                <div class = "col-md-6">
+                    <label for="password">パスワード</label>
+                    <input type="password" name="input_password" class="form-control rounded-0" id="password" placeholder="4 ~ 16文字のパスワード">
+                    <?php if(isset($errors['password']) && $errors['password'] == 'blank'): ?>
+                    <p class="text-danger">パスワードを入力してください</p>
+                    <?php endif; ?>
+                    <?php if(isset($errors['password']) && $errors['password'] == 'length'): ?>
+                    <p class="text-danger">パスワードは4 ~ 16文字で入力してください</p>
+                    <?php endif; ?>
+                    <?php if(!empty($errors) && isset($errors['rewrite'])): ?>
+                    <p class = "text-danger">パスワードを再度入力してください</p>
+                    <?php endif; ?>
+                </div>
+            <div class = "col-md-3"></div>
+        </div>
+        <br>
+
+        <div class='row'>
+            <div class = "col-md-3"></div>
+            <div class = "col-md-2 float-left">
+                    <input type="submit" class="btn rounded-0 signin-btn mx-auto margin-left" value="サインイン">
+            </div>
+            <div class = "col-md-7"></div>
+        </div>
+        <br>
+
+        <div class='row'>
+            <div class = "col-md-3"></div>
+            <div class = "col-md-2 float-left">
+                <a class = 'btn rounded-0 submit-btn mx-auto reverse-btn' href="count.php">&nbsp;戻る&nbsp;</a>
+            </div>
+            <div class = "col-md-7"></div>
+        </div>
+    </form>
     </div>
+</div>
 </body>
 <script src="../assets/js/jquery-3.1.1.js"></script>
 <script src="../assets/js/jquery-migrate-1.4.1.js"></script>
