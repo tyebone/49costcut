@@ -494,7 +494,7 @@ $options[] = $option_table;
       <?php endif; ?>
 
 
-        <div id="page_top" style="" class="m-4">
+        <div id="page_top" style="" class="mr-5">
           <a href="#"></a>
         </div>
     </div>

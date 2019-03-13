@@ -22,7 +22,7 @@ function showChart(price_sum) {
 	new Chart(cCtx, {
 	    type:'bar',
 		data: {
-	      labels: ['初心者','素人', '普通の人', '達人', '超人'],
+	      labels: ['素人', '超人', '達人', '普通の人','初心者'],
 	          datasets: [{
 		 	label: '節約レベル人数',
 		    data: [choujin,tetujin,futu,shiroto,syoshinsya],
