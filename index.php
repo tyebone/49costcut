@@ -170,6 +170,8 @@ $options[] = $option_table;
 
     <!-- timのスタイルシート -->
     <!-- <link href="css/material-kit.css?v=2.0.5" rel="stylesheet" /> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -424,7 +426,6 @@ $options[] = $option_table;
         <br><br>
       </form>
 
-
 <!-- ここから節約診断結果のページ -->
 <?php if(!empty($_POST)): ?>
 <div class="col-md-9 card card-body mx-auto rounded-0 border border-0 backcontaineranswer">
@@ -483,18 +484,23 @@ $options[] = $option_table;
         <br><br>
     <div class="row">
     <div class ='col-md-6 text-center mx-auto'>
-    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-    class="btn rounded-0 share twitter-share-button"
-    data-size="large"
-    data-text="セブ生活費シュミレーター私の診断結果は節約の<?php echo $your_type ;?>です。"
-    data-url="http://localhost/49_CostCut/index.php"
-    data-show-count="false">&nbsp;
-    <i class="fab fa-twitter"></i>&nbsp;シェアする&nbsp;</a>
+    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="セブ生活費シュミレーター    私の診断結果は節約の<?php echo $your_type ;?>です。" data-url="http://localhost/49_CostCut/index.php" data-show-count="false"></a>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.2"></script>
+    <div class="fb-share-button" data-href="http://localhost/49_CostCut/index.php" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></div>
+
+
       <?php endif; ?>
+
+
+        <div id="page_top" style="" class="m-4">
+          <a href="#"></a>
+        </div>
     </div>
-  </div>
+    </div>
+
+
 </div>
 <br><br>
   </body>
