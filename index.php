@@ -158,7 +158,7 @@ $options[] = $option_table;
 <!DOCTYPE html>
 <html lang="ja">
 
-  <head>
+<head>
     <title> セブ生活費シュミレーター</title>
     <!-- 必要なメタタグ -->
     <meta charset="utf-8">
@@ -178,21 +178,18 @@ $options[] = $option_table;
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-  </head>
-
-
+</head>
   <body class=" mx-auto center-block">
     <?php include('navbar.php'); ?>
 
 
+<!-- 背景のグレー -->
 <div class="all_area box-sizing">
-  <section class=" mx-auto">
-    <div class = "title-area">
-    <img class="col-md-9 card card-body mx-auto rounded-0 border border-0 top-img" src="image/top-img.png">
-    <p>セブ島留学生のための<br>節約診断サイト<br>あなたの金銭感覚を簡単に診断します</p>
+    <div class = "container_fluid">
+    <img class="col-md-9 card card-body mx-auto rounded-0 border border-0 top-img" src="image/top_2145.jpg">
     </div>
-  </section>
-    <br>
+
+  <br>
 
       <!-- <div class="row">
         <div class ='col-md-8 card card-body bg-light mb-3 border-dark mx-auto'>
@@ -426,7 +423,7 @@ $options[] = $option_table;
               </div>
             </div>
         </section>
-        <br>
+        <br><br>
       </form>
 
 <!-- ここから節約診断結果のページ -->
@@ -495,6 +492,7 @@ $options[] = $option_table;
 
 
       <?php endif; ?>
+
 
         <div id="page_top" style="" class="m-4">
           <a href="#"></a>

@@ -81,46 +81,72 @@ foreach($users as $user) {
 
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="utf-8">
-        <title>セブ生活費シュミレーター</title>
-        <link rel="stylesheet" type="text/css" href="js/style.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700" rel="stylesheet">
-        <link href="js/material-kit.css?v=2.0.5" rel="stylesheet" />
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    </head>
-    <body class="mx-auto center-block" >
-        <?php include('../navbar.php'); ?>
-        <div class="container text-center">
-            <div class="row">
-                <div class='col-md-1'></div>
-                <div class='col-md-10'>
-                    <h2 class="text-center content_header">管理者画面</h2>
-                    <table class="pageview-table text-center">
-                      <tbody>
-                        <tr class="count">
-                          <td>今日</td>
-                          <td>合計</td>
-                        </tr>
-                        <br>
-                        <tr class="caption">
-                          <td><?php echo $current; ?></td>
-                          <td><?php echo count($users) ?></td>
-                        </tr>
-                      </tbody>
-                    </table>
+<head>
+    <title> セブ生活費シュミレーター</title>
+    <!-- 必要なメタタグ -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
 
-                    <div id="pie-div">
-                      <canvas id="pieChart"></canvas>
-                    </div>
-                </div>
-                <div class='col-md-1'></div>
-            </div>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- timのスタイルシート -->
+    <!-- <link href="css/material-kit.css?v=2.0.5" rel="stylesheet" /> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+
+
+<body>
+<?php include('../navbar.php'); ?>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+        <br>
+        <h2 class="text-center content_header mx-auto">ユーザー数確認ページ</h2>
+        <br>
         </div>
-    </body>
+    </div>
+
+        <div class="row">
+            <div class = "col-md-4"></div>
+            <div class = "col-md-2 mx-auto">
+                <p>本日の利用者数</p>
+            </div>
+            <div class = "col-md-2 mx-auto">
+                <p>これまでの利用者数</p>
+            </div>
+            <div class = "col-md-4"></div>
+        </div>
+
+        <div class="row">
+            <div class = "col-md-4"></div>
+            <div class = "col-md-2 mx-auto">
+                <?php echo $current; ?>人
+            </div>
+            <div class = "col-md-2 mx-auto">
+                <?php echo count($users) ?>人
+
+            </div>
+            <div class = "col-md-4"></div>
+        </div>
+        <br><br>
+
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 mx-auto">
+                <div id="pie-div">
+                    <canvas id="pieChart"></canvas>
+                </div>
+            </div>
+            <div class="col-md-3 mx-auto"></div>
+    </div>
+</body>
     <script src="js/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
     <script src="js/pie.js"></script>
@@ -128,7 +154,3 @@ foreach($users as $user) {
             showPie(<?php echo json_encode($type);?>);
         </script>
 </html>
-
-
-
-
