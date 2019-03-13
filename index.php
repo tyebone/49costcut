@@ -487,26 +487,20 @@ $options[] = $option_table;
         <br><br>
     <div class="row">
     <div class ='col-md-6 text-center mx-auto'>
-    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="btn rounded-0 share" data-size="large" data-text="セブ生活費シュミレーター私の診断結果は節約の<?php echo $your_type ;?>です。" data-url="http://localhost/49_CostCut/index.php" data-show-count="false">&nbsp;<i class="fab fa-twitter"></i>&nbsp;シェアする&nbsp;</a>
+    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="セブ生活費シュミレーター    私の診断結果は節約の<?php echo $your_type ;?>です。" data-url="http://localhost/49_CostCut/index.php" data-show-count="false"></a>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.2"></script>
+    <div class="fb-share-button" data-href="http://localhost/49_CostCut/index.php" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></div>
+
+
       <?php endif; ?>
 
         <div id="page_top" style="" class="m-4">
           <a href="#"></a>
-        <!-- <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script> -->
-         <!--  <script id="rendered-js"></script>
-          <script src="https://static.codepen.io/assets/editor/live/css_reload-5619dc0905a68b2e6298901de54f73cefe4e079f65a75406858d92924b4938bf.js"></script> -->
         </div>
     </div>
     </div>
-
-
-<!--     <div class="row">
-              <div class ='col-md-6 text-center mx-auto'>
-                <input type = "submit" class="btn rounded-0 submit-btn" value="診断します">
-              </div> -->
 
 
 </div>
