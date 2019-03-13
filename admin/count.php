@@ -1,5 +1,13 @@
 <?php
+//session（セッション）を使うときは一番最初に書く
+session_start();
 require('../dbconnect.php');
+
+if (!isset($_SESSION['49_CostCut'])) {
+        header('Location: login.php');
+        exit();
+    }
+
 // date_default_timezone_set関数で時間を取得する場所を指定
 date_default_timezone_set('Asia/Manila');
 
@@ -95,20 +103,7 @@ foreach($users as $user) {
 
 
 <body>
-        <header>
-          <nav class="navbar">
-            <a class="navbar-brand"></a>
-            <div class="dropdown row">
-              <button type="button" id="dropdownMenuButton" class="btn btn-secondary dropdown-toggle m-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="z-index:9999">
-                <a class="dropdown-item" href="../index.php">TOP </a>
-                <a class="dropdown-item" href="../プロフィール/profile.html">About</a>
-              </div>
-            </div>
-          </nav>
-        </header>
+         <?php include('../navbar.php'); ?>
 
 
 
@@ -139,6 +134,7 @@ foreach($users as $user) {
             </div>
             <div class = "col-md-2 mx-auto">
                 <?php echo count($users) ?>人
+
             </div>
             <div class = "col-md-4"></div>
         </div>

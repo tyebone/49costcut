@@ -1,4 +1,5 @@
 <?php
+session_start();
 // dbconnect.phpを利用
 require('dbconnect.php');
 
@@ -179,23 +180,7 @@ $options[] = $option_table;
 
 
   <body class=" mx-auto center-block">
-    <header>
-
-      <nav class="navbar">
-        <a class="navbar-brand"></a>
-        <div class="dropdown">
-          <button type="button" id="dropdownMenuButton" class="btn btn-secondary rounded-0 menu-btn dropdown-toggle m-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            メニュー
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="z-index:9999">
-            <a class="dropdown-item" href="index.php">TOP </a>
-            <a class="dropdown-item" href="about.html">About</a>
-            <a class="dropdown-item" href="admin/login.php">管理者ログイン</a>
-          </div>
-        </div>
-      </nav>
-    </header>
-
+    <?php include('navbar.php'); ?>
 
 <div class="all_area box-sizing">
   <section class=" mx-auto">

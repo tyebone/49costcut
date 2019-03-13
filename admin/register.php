@@ -100,6 +100,7 @@ if (!empty($_POST)){
     <link href="js/material-kit.css?v=2.0.5" rel="stylesheet" />
 </head>
 <body style="margin-top: 60px">
+    <?php include('../navbar.php'); ?>
     <div class="container">
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2 thumbnail">
