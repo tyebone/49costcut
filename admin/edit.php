@@ -119,56 +119,62 @@ if(!empty($_POST)){
 <?php include('../navbar.php'); ?>
 <form method="POST" action="edit.php">
     <div class = "container">
-
-        <div class = "row mx-auto">
-            <div class = "col-md-2"></div>
-            <div class = "col-md-8">
-                <p>問題2</p>
-            </div>
-            <div class = "col-md-2"></div>
-        </div>
-        <div class = "row mx-auto">
-            <div class = "col-md-2"></div>
-            <div class = "col-md-8">
-            <p>問題</p>
-            <textarea name = "q2"><?php echo $questions[1]['content']; ?></textarea><br>
-            </div>
-            <div class = "col-md-2"></div>
-        </div>
+    <br><br>
 
     <div class = "row mx-auto">
+        <div class = "col-md-1"></div>
+        <div class = "col-md-11">
+            <h2>問題2</h2>
+        </div>
+    </div>
+    <br>
+
+    <div class = "row mx-auto">
+        <div class = "col-md-1"></div>
+        <div class = "col-md-11">
+            <p>問題</p>
+            <textarea name = "q2"><?php echo $questions[1]['content']; ?></textarea><br>
+        </div>
+    </div>
+    <br>
+
+    <div class = "row mx-auto">
+        <div class = "col-md-1"></div>
         <div class = 'col-md-3 mx-auto'>
             <p>回答1</p>
             <textarea name = "o4"><?php echo $options[4]['content']; ?></textarea>
-                </div>
-
+        </div>
+        <div class = "col-md-1"></div>
         <div class = 'col-md-3 mx-auto'>
             <p>回答2</p>
             <textarea name = "o5"><?php echo $options[5]['content']; ?></textarea>
         </div>
+
+        <div class = "col-md-1"></div>
         <div class = 'col-md-3 mx-auto'>
             <p>回答3</p>
             <textarea name = "o6"><?php echo $options[6]['content']; ?></textarea>
         </div>
     </div>
+    <br>
 
     <div class = "row mx-auto">
-        <div class = "col-md-3"></div>
-        <div class = 'col-md-2 mx-auto'>
-        <p>回答1の値段</p>
-        <input type = 'number' name = "o_pr_4" value ="<?php echo $options[4]['price']; ?>">
+        <div class = "col-md-1"></div>
+        <div class = 'col-md-3 center-block'>
+            <p>回答1の値段</p>
+            <input type = 'number' name = "o_pr_4" value ="<?php echo $options[4]['price']; ?>">
         </div>
-        <div class = 'col-md-2 mx-auto'>
-        <p>回答2の値段</p>
-        <input type = 'number' name = "o_pr_5" value = "<?php echo $options[5]['price']; ?>">
+        <div class = "col-md-1"></div>
+        <div class = 'col-md-3 center-block'>
+            <p>回答2の値段</p>
+            <input type = 'number' name = "o_pr_5" value = "<?php echo $options[5]['price']; ?>">
         </div>
-        <div class = 'col-md-2 mx-auto'>
-        <p>回答3の値段</p>
-        <input type = 'number' name = "o_pr_6" value = "<?php echo $options[6]['price']; ?>">
+        <div class = "col-md-1"></div>
+        <div class = 'col-md-3 center-block'>
+            <p>回答3の値段</p>
+            <input type = 'number' name = "o_pr_6" value = "<?php echo $options[6]['price']; ?>">
         </div>
-        <div class = "col-md-3"></div>
     </div>
-
     <br><br><br>
 
     <!--     <h1>問題3</h1>

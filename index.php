@@ -483,7 +483,13 @@ $options[] = $option_table;
         <br><br>
     <div class="row">
     <div class ='col-md-6 text-center mx-auto'>
-    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="btn rounded-0 share" data-size="large" data-text="セブ生活費シュミレーター私の診断結果は節約の<?php echo $your_type ;?>です。" data-url="http://localhost/49_CostCut/index.php" data-show-count="false">&nbsp;<i class="fab fa-twitter"></i>&nbsp;シェアする&nbsp;</a>
+    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+    class="btn rounded-0 share"
+    data-size="large"
+    data-text="セブ生活費シュミレーター私の診断結果は節約の<?php echo $your_type ;?>です。"
+    data-url="http://localhost/49_CostCut/index.php"
+    data-show-count="false">&nbsp;
+    <i class="fab fa-twitter"></i>&nbsp;シェアする&nbsp;</a>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
       <?php endif; ?>
