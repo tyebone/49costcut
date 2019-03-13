@@ -487,14 +487,16 @@ $options[] = $option_table;
             <br><br>
         </div>
         <br><br>
+
     <div class="row">
       <div class = 'col-md-3'></div>
       <div class ='col-md-6 text-center mx-auto share'>
         <br>
+        <p class = "thx-font">診断結果をシェアしていただけると、とても嬉しいです。</p>
       <div class = 'social'>
       <div class = 'social-inner'>
       <div class = 'twitter'>
-      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="セブ生活費シュミレーター    私の診断結果は節約の<?php echo $your_type ;?>です。" data-url="http://localhost/49_CostCut/index.php" data-show-count="false"></a>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="【セブ島留学生のための節約診断サイト】私の診断結果は「節約の<?php echo $your_type ;?>」でした。"data-url="http://localhost/49_CostCut/index.php" data-show-count="false"></a>
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
       <div class = 'facebook'>
