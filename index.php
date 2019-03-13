@@ -513,9 +513,11 @@ $options[] = $option_table;
     </div>
     </div>
 
-
-</div>
 <br><br>
+  <footer>
+  
+  </footer>
+</div>
   </body>
     <script src="js/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
@@ -531,6 +533,5 @@ $options[] = $option_table;
       <script>
         showChart(<?php echo json_encode($price_sum); ?>);
       </script>
-  <footer>
-  </footer>
+
 </html>
