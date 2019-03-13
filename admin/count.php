@@ -103,14 +103,11 @@ foreach($users as $user) {
 
 
 <body>
-         <?php include('../navbar.php'); ?>
-
-
-
+<?php include('../navbar.php'); ?>
     <div class="container">
         <div class="row">
             <div class="col-md-12 mx-auto">
-            <br><br><br>
+            <br>
             <h2 class="text-center content_header mx-auto">ユーザー数確認ページ</h2>
             <br>
             </div>
@@ -157,7 +154,3 @@ foreach($users as $user) {
             showPie(<?php echo json_encode($type);?>);
         </script>
 </html>
-
-
-
-

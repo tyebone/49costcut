@@ -158,7 +158,7 @@ $options[] = $option_table;
 <!DOCTYPE html>
 <html lang="ja">
 
-  <head>
+<head>
     <title> セブ生活費シュミレーター</title>
     <!-- 必要なメタタグ -->
     <meta charset="utf-8">
@@ -176,9 +176,7 @@ $options[] = $option_table;
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-  </head>
-
-
+</head>
   <body class=" mx-auto center-block">
     <?php include('navbar.php'); ?>
 

@@ -96,43 +96,82 @@ if(!empty($_POST)){
 <!DOCTYPE html>
 <html>
 <head>
-	<title>セブ生活費シュミレーター</title>
+    <title> セブ生活費シュミレーター</title>
     <!-- 必要なメタタグ -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
+
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href="js/material-kit.css?v=2.0.5" rel="stylesheet" />
+
+    <!-- timのスタイルシート -->
+    <!-- <link href="css/material-kit.css?v=2.0.5" rel="stylesheet" /> -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 <body>
-    <?php include('../navbar.php'); ?>
+<!-- ヘッダー部分を取り入れました -->
+<?php include('../navbar.php'); ?>
+<form method="POST" action="edit.php">
+    <div class = "container">
 
-    <form method="POST" action="edit.php">
+        <div class = "row mx-auto">
+            <div class = "col-md-2"></div>
+            <div class = "col-md-8">
+                <p>問題2</p>
+            </div>
+            <div class = "col-md-2"></div>
+        </div>
+        <div class = "row mx-auto">
+            <div class = "col-md-2"></div>
+            <div class = "col-md-8">
+            <p>問題</p>
+            <textarea name = "q2"><?php echo $questions[1]['content']; ?></textarea><br>
+            </div>
+            <div class = "col-md-2"></div>
+        </div>
 
-        <h1>問題2</h1>
+    <div class = "row mx-auto">
+        <div class = 'col-md-3 mx-auto'>
+            <p>回答1</p>
+            <textarea name = "o4"><?php echo $options[4]['content']; ?></textarea>
+                </div>
 
-        <p>問題</p>
-        <textarea name = "q2"><?php echo $questions[1]['content']; ?></textarea><br>
-        <p>回答1</p>
-        <textarea name = "o4"><?php echo $options[4]['content']; ?></textarea><br>
+        <div class = 'col-md-3 mx-auto'>
+            <p>回答2</p>
+            <textarea name = "o5"><?php echo $options[5]['content']; ?></textarea>
+        </div>
+        <div class = 'col-md-3 mx-auto'>
+            <p>回答3</p>
+            <textarea name = "o6"><?php echo $options[6]['content']; ?></textarea>
+        </div>
+    </div>
+
+    <div class = "row mx-auto">
+        <div class = "col-md-3"></div>
+        <div class = 'col-md-2 mx-auto'>
         <p>回答1の値段</p>
-        <textarea type = 'number' name = "o_pr_4"><?php echo $options[4]['price']; ?></textarea><br>
-        <p>回答2</p>
-        <textarea name = "o5"><?php echo $options[5]['content']; ?></textarea><br>
+        <input type = 'number' name = "o_pr_4" value ="<?php echo $options[4]['price']; ?>">
+        </div>
+        <div class = 'col-md-2 mx-auto'>
         <p>回答2の値段</p>
-        <textarea type = 'number' name = "o_pr_5"><?php echo $options[5]['price']; ?></textarea><br>
-        <p>回答3</p>
-        <textarea name = "o6"><?php echo $options[6]['content']; ?></textarea><br>
+        <input type = 'number' name = "o_pr_5" value = "<?php echo $options[5]['price']; ?>">
+        </div>
+        <div class = 'col-md-2 mx-auto'>
         <p>回答3の値段</p>
-        <textarea type = 'number' name = "o_pr_6"><?php echo $options[6]['price']; ?></textarea><br>
-        <br><br><br>
+        <input type = 'number' name = "o_pr_6" value = "<?php echo $options[6]['price']; ?>">
+        </div>
+        <div class = "col-md-3"></div>
+    </div>
 
-        <h1>問題3</h1>
+    <br><br><br>
+
+    <!--     <h1>問題3</h1>
         <p>問題</p>
         <textarea name = "q3"><?php echo $questions[2]['content']; ?></textarea><br>
         <p>回答1</p>
@@ -376,10 +415,12 @@ if(!empty($_POST)){
         <textarea name = "o48"><?php echo $options[48]['content']; ?></textarea><br>
         <p>回答3の値段</p>
         <textarea type = 'number' name = "o_pr_48"><?php echo $options[48]['price']; ?></textarea><br>
-        <br><br><br>
+        <br><br><br> -->
 
-        <input type = "submit" class="btn btn-primary" value="変更">
+<!--         <input type = "submit" class="btn btn-primary" value="変更">
+ -->
 
+    </div>
     </form>
 </body>
 </html>

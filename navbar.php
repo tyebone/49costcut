@@ -5,13 +5,14 @@
 
 <div class = "container">
   <br>
-  <div class = "row p">
-    <div class = "col-md-9 mx-auto ">
+  <div class = "row">
+    <div class = "col-md-9 mx-auto">
       <?php if (isset($_SESSION['49_CostCut'])):?>
         <ul class="nav nav-pills nav-fill ">
           <li class="nav-item"><a href="count.php" class="nav-link">COUNT</a></li>
+          <li class="nav-item"><a href="register.php" class="nav-link">REGISTER</a></li>
           <li class="nav-item"><a href="edit.php" class="nav-link">EDIT</a></li>
-          <li class="nav-item"><a href="admin/signout.php" class="nav-link">LOGOUT</a></li>
+          <li class="nav-item"><a href="signout.php" class="nav-link">LOGOUT</a></li>
         </ul>
       <?php else :?>
         <ul class="nav nav-pills nav-fill">
