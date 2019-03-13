@@ -7,17 +7,19 @@ function showPie2(category) {
         datasets: [{
           data: category,
           backgroundColor:[
-            'rgba(255,91,162,0.8)',
-            'rgba(54,162,233,0.8)',
-            'rgba(255,206,86,0.8)',
-            'rgba(275,99,132,0.8)',
+            '#ff3300',
+            'RGB(255,102,0)',
+            '#f76b1c',
+            '#f7872d',
+            '#f89939',
+            '#f8a13e',
             ],
         }]
       },
       options:{
         title:{
           display: true,
-          text: '出費割合'
+          text: 'あなたの生活の割合'
         }
 
       }

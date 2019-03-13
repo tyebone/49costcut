@@ -26,8 +26,13 @@ function showChart(price_sum) {
 	          datasets: [{
 		 	label: '節約レベル人数',
 		    data: [choujin,tetujin,futu,shiroto,syoshinsya],
-		    borderColor: "rgba(255,0,0,1)",
-		    // backgroundColor: "rgba(0,0,0,0,0,0)"
+		    backgroundColor:[
+	            '#f89939',
+	            '#f7872d',
+	            '#f76b1c',
+	            'RGB(255,102,0)',
+		    	'#ff3300',
+	            ]
 		    }],
 	},
 		options: {

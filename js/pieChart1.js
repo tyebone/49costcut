@@ -1,35 +1,48 @@
 //円グラフ
-
+Chart.defaults.global.defaultFontColor = 'black';
 const aCtx = $('#pieChart1')
 function showPie1(type) {
     let data = []
     if (type == 1) {
-    data = [9000,2000,1500,11000,2300,3000]
+    data = [31,7,5,38,8,10]
     } else if (type == 2) {
-    data = [7500,2000,1500,11000,2300,3000]
+    data = [27,7,5,40,8,11]
     } else if (type == 3) {
-    data = [16500,3000,6000,15000,3500,3000]
+    data = [35,6,13,32,7,6]
     } else {
-    data = [16500,3000,3000,11000,3500,5000]
+    data = [39,7,7,26,8,12]
     }
+
     new Chart(aCtx,{
-      type: 'doughnut',
+      type: 'pie',
       data: {
         labels:['食事','交通費','生活費','交際費','衣服・美容','趣味・娯楽'],
         datasets: [{
           data: data,
           backgroundColor:[
-            'rgba(255,91,162,0.8)',
-            'rgba(54,162,233,0.8)',
-            'rgba(255,206,86,0.8)',
-            'rgba(275,99,132,0.8)',
+            '#ff3300',
+            'RGB(255,102,0)',
+            '#f76b1c',
+            '#f7872d',
+            '#f89939',
+            '#f8a13e',
             ],
         }]
       },
       options:{
+        tooltips: {
+                callbacks: {
+                    label: function (tooltipItem, data){
+                        return data.labels[tooltipItem.index]
+                        + ": "
+                        + data.datasets[0].data[tooltipItem.index]
+                        + " % "
+                    }
+                }
+            },
         title:{
           display: true,
-          text: '出費割合'
+          text: 'あなたと同じ性別・年代の平均'
         }
 
       }
