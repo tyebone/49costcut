@@ -7,7 +7,6 @@ require('../dbconnect.php');
 //     echo '変更が完了しました';
 // }
 
-
  if (!isset($_SESSION['49_CostCut'])) {
         header('Location: login.php');
         exit();
@@ -86,7 +85,7 @@ if(!empty($_POST)){
     $o_stmt->execute($o_data);
 
     }
-    header('Location: ../index.php');
+    header('Location: edit.php');
 }
 
 
@@ -121,7 +120,7 @@ if(!empty($_POST)){
     <div class = "container">
     <br><br>
 <!-- 問題2 -->
-    <div class = "row mx-auto">
+    <div class = "row">
         <div class = "col-md-1"></div>
         <div class = "col-md-11">
             <h2>問題2</h2>
@@ -760,7 +759,7 @@ if(!empty($_POST)){
         <div class = "col-md-1"></div>
         <div class = "col-md-11">
             <p>問題</p>
-            <textarea name = "q13"><?php echo $questions[14]['content']; ?></textarea><br>
+            <textarea name = "q13"><?php echo $questions[12]['content']; ?></textarea><br>
         </div>
     </div>
     <br>

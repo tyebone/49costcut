@@ -1,4 +1,5 @@
 // 円グラフ
+Chart.defaults.global.defaultFontColor = 'black';
 const pCtx = $('#pieChart')
 function showPie(type) {
 new Chart(pCtx,{
@@ -8,17 +9,17 @@ new Chart(pCtx,{
     datasets: [{
       data: type,
       backgroundColor:[
-        'rgba(255,91,162,0.8)',
-        'rgba(54,162,233,0.8)',
-        'rgba(255,206,86,0.8)',
-        'rgba(275,99,132,0.8)',
+        '#1e90ff',
+        '#dc143c',
+        '#191970',
+        '#c71585',
         ],
     }]
   },
   options:{
     title:{
       display: true,
-      text: 'タイプ別利用者数'
+      text: '年代、性別ごとの利用者数'
     }
 
   }

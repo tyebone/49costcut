@@ -42,7 +42,7 @@ function showPie1(type) {
             },
         title:{
           display: true,
-          text: 'あなたと同じ性別・年代の平均'
+          text: 'あなたと同じ性別、年代の平均'
         }
 
       }

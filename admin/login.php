@@ -92,7 +92,9 @@ if(!empty($_POST)){
                 <br>
             </div>
         </div>
-        <form method="POST" action="login.php" enctype="multipart/form-data">
+
+
+    <form method="POST" action="login.php" enctype="multipart/form-data">
         <div class="form-group row">
             <div class = "col-md-3"></div>
             <div class = "col-md-6">
@@ -116,21 +118,26 @@ if(!empty($_POST)){
             </div>
             <div class = "col-md-3"></div>
         </div>
-
         <br>
+
         <div class='row'>
             <div class = "col-md-3"></div>
             <div class = "col-md-2 float-left">
                     <input type="submit" class="btn rounded-0 signin-btn mx-auto margin-left" value="サインイン">
             </div>
-            <div class = "col-md-4">
+            <div class = "col-md-7"></div>
+        </div>
+        <br>
+
+         <div class='row'>
+            <div class = "col-md-3"></div>
+            <div class = "col-md-2 float-left">
                 <a class = 'btn rounded-0 submit-btn mx-auto reverse-btn' href="../index.php">&nbsp;戻る&nbsp;</a>
             </div>
-            <div class = "col-md-3"></div>
+            <div class = "col-md-7"></div>
         </div>
-        </form>
+    </form>
     </div>
-</section>
 </div>
 </body>
 <!-- <?php include('layouts/header.php'); ?> -->
