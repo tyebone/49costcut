@@ -182,13 +182,14 @@ $options[] = $option_table;
   <body class=" mx-auto center-block">
     <?php include('navbar.php'); ?>
 
+
+<!-- 背景のグレー -->
 <div class="all_area box-sizing">
-  <section class=" mx-auto">
-    <div class = "title-area">
+    <div class = "container_fluid">
     <img class="col-md-9 card card-body mx-auto rounded-0 border border-0 top-img" src="image/top_2145.jpg">
     </div>
-  </section>
-    <br>
+
+  <br>
 
       <!-- <div class="row">
         <div class ='col-md-8 card card-body bg-light mb-3 border-dark mx-auto'>
@@ -469,7 +470,7 @@ $options[] = $option_table;
 
             <div id='barChartarea' class="col-md-8 mx-auto">
             <!-- ラインチャート -->
-              
+
               <canvas id = "barChart" width="400" height="200"></canvas>
             </div>
           </div>
@@ -488,17 +489,8 @@ $options[] = $option_table;
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
       <?php endif; ?>
-
     </div>
-    </div>
-
-
-<!--     <div class="row">
-              <div class ='col-md-6 text-center mx-auto'>
-                <input type = "submit" class="btn rounded-0 submit-btn" value="診断します">
-              </div> -->
-
-
+  </div>
 </div>
 <br><br>
   </body>
