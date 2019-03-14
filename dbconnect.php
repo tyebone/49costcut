@@ -4,3 +4,4 @@ $user = 'b5b8dd5bf9a2b6';
 $password='572237fe';
 $dbh = new PDO($dsn, $user, $password);
 $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$dbh->query('SET NAMES utf8');
