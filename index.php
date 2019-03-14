@@ -1,7 +1,7 @@
 <?php
 session_start();
 // dbconnect.phpを利用
-require('dbconnect.php');
+require('./dbconnect.php');
 
 // date_default_timezone_set関数で時間を指定
 date_default_timezone_set('Asia/Manila');
