@@ -975,7 +975,7 @@ if(!empty($_POST)){
     <br><br><br>
               <div class="row mx-auto">
               <div class ='col-md-6 text-center mx-auto'>
-                <input type = "submit" class="btn rounded-0 edit-btn" value="&nbsp;変更します&nbsp;">
+                <input type = "submit" class="btn rounded-0 edit-btn" value="&nbsp;変更する&nbsp;">
               </div>
             </div>
     <br><br>

@@ -161,7 +161,7 @@ if (!empty($_POST)){
         <div class='row'>
             <div class = "col-md-3"></div>
             <div class = "col-md-2 float-left">
-                    <input type="submit" class="btn rounded-0 signin-btn mx-auto margin-left" value="サインイン">
+                    <input type="submit" class="btn rounded-0 signin-btn mx-auto margin-left" value="登録する">
             </div>
             <div class = "col-md-7"></div>
         </div>
