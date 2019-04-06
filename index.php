@@ -202,11 +202,11 @@ $options[] = $option_table;
 <!-- mx-autoは中央 -->
         <section class=" mx-auto">
 
-          <div class="col-md-9 card card-body mx-auto rounded-0 border border-0 backcontainer">
+          <div class="col-md-9 card card-body mx-auto rounded-0 border border-0 backcontainer" >
             <br><br>
 
             <div class="row">
-                <div class ='col-md-10 card card-body mb-3 border-dark mx-auto rounded-0 border border-0 bg-color'>
+                <div class ='col-md-10 card card-body mb-3 border-dark mx-auto rounded-0 border border-0 bg-color' >
                   <fieldset>
                     <p class =><span class="under">問題1</span></p>
                     <p class = "title"><?php echo $questions[0]['content']; ?></p>
@@ -417,11 +417,14 @@ $options[] = $option_table;
             </div>
           </div>
           <br><br>
+          <div class='container'>
           <div class="row">
-              <div class ='col-md-6 text-center mx-auto'>
+              <div class ='col-md-6 text-center mx-auto' style="  padding-right: 0px;
+  padding-left: 0px;">
                 <input type = "submit" class="btn rounded-0 submit-btn" value="&nbsp;診断する&nbsp;">
               </div>
           </div>
+        </div>
         </section>
         <br><br>
       </form>
@@ -487,10 +490,10 @@ $options[] = $option_table;
             <br><br>
         </div>
         <br><br>
-
+    <div class="container">
     <div class="row">
       <div class = 'col-md-3'></div>
-      <div class ='col-md-6 text-center mx-auto share'>
+      <div class ='col-md-6 text-center mx-auto share' style=' padding-right: 0px; padding-left: 0px;'>
         <br>
         <p class = "thx-font">診断結果をシェアしていただけると、とても嬉しいです。</p>
       <div class = 'social'>
@@ -506,9 +509,11 @@ $options[] = $option_table;
       </div>
       </div>
       </div>
+
         <br>
       </div>
       <div class = 'col-md-3'></div>
+    </div>
     </div>
     <?php endif; ?>
 
@@ -520,11 +525,14 @@ $options[] = $option_table;
 
 <br><br>
   <footer>
+  <div class='container'>
   <div class = "row ">
-    <div class = 'col-md-12 text-center mt-3 footer-font'><p>&copy;&nbsp;Cebu&nbsp;Setsu&nbsp;2019&nbsp;All&nbsp;Rights&nbsp;Reseved.</p></div>
+    <div class = 'col-md-12 text-center mt-3 footer-font' style=' padding-right: 0px; padding-left: 0px;'><p>&copy;&nbsp;Cebu&nbsp;Setsu&nbsp;2019&nbsp;All&nbsp;Rights&nbsp;Reseved.</p></div>
     <br><br>
-  </footer>
+  
 </div>
+</div>
+</footer>
   </body>
     <script src="js/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
