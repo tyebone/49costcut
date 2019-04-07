@@ -527,7 +527,7 @@ $options[] = $option_table;
   <footer>
   <div class='container'>
   <div class = "row ">
-    <div class = 'col-md-12 text-center mt-3 footer-font' style=' padding-right: 0px; padding-left: 0px;'><p>&copy;&nbsp;Cebu&nbsp;Setsu&nbsp;2019&nbsp;All&nbsp;Rights&nbsp;Reseved.</p></div>
+    <div class = 'col-md-12 text-center mt-3 footer-font' style=' padding-right: 0px; padding-left: 0px;'><p>&copy;&nbsp;Cebu&nbsp;Cost&nbsp;2019&nbsp;All&nbsp;Rights&nbsp;Reseved.</p></div>
     <br><br>
   
 </div>
