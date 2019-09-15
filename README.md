@@ -12,3 +12,6 @@
 
 ## 必要要件
 MacOS、Windows、iOS、Androidでの動作確認済みです。
+
+## 制作チーム
+チーム「CebuSetsu」計4名で制作しました。代表、takeshita。
